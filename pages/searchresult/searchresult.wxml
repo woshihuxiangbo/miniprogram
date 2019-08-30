@@ -1,0 +1,45 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="searchresult">
+    <view class="fixd">
+        <!-- <view class="search-box">
+            <icon class="searchcion" size='16' type='search'></icon>
+            <input class="inp"  placeholder="请输入商品" value="" />
+        </view> -->
+        <!-- tab -->
+        <view class="select3">
+            <view class="opt " bindtap='swichTab' data-idx='0'>
+                <text class="word {{currentIdx== 0 && 'synthesize'}} ">价格</text>
+            </view>
+            <view class="opt " bindtap='swichTab' data-idx='1'>
+                <text class="word {{currentIdx== 1 && 'synthesize'}}">销量</text>
+            </view>
+            <!-- <view class="opt " bindtap='swichTab' data-idx='2'>
+                <text class="word {{currentIdx== 2 && 'synthesize'}}">价格</text>
+            </view> -->
+        </view>
+        <!-- tab -->
+    </view>
+
+    <view class="goodslist">
+        <view bindtap='goGoodsDetail' data-goodsid='{{item.itemid}}' data-skuid='{{item.skuid}}' data-eventtype='{{item.eventtype||1}}' class="gooditem" wx:for="{{goodsList}}" wx:key=''>
+                    <view class="imgbox">
+                        <image class="goodpic" src="{{ossUrl+item.thumbnail}}"></image>
+                    </view>
+                    <view class="goodinfo">
+                        <view class="name">{{item.name}}</view>
+                        <view class="describe">{{item.effect}}</view>
+                        <view class="money">
+                            <view class="price">￥{{filter.consMoney(item.price)}}</view>
+                            <!-- <view class="ot-money">赚{{item.earn}}元</view> -->
+                            <view class="count">已售{{item.salescount}}单</view>
+                        </view>
+
+                        <!-- <button class="goods-share" open-type="share" data-share='share'>
+                            <image class="share-icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/share.png"></image>
+                            <text class="share-word">分享</text>
+                        </button> -->
+                    </view>
+        </view>       
+    </view>
+    <view class='noList' wx:if="{{listShow}}">没有搜索到此商品</view>
+</view>

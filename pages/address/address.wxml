@@ -1,0 +1,37 @@
+<!--pages/address/address.wxml-->
+<view class='container'>
+  <scroll-view class='scroll' scroll-y>
+    <view class='emptyTips' hidden='{{addressList && addressList.length}}'>您还没有收货地址</view>
+    <view class='item' wx:for='{{addressList}}' wx:key=''>
+      <view bindtap='{{type=="order" && "tapFn"}}' data-idx='{{index}}'>
+        <view class='name'>{{item.name}}
+          <text>{{item.mobile}}</text>
+        </view>
+        <view class='adress'>
+          <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/icons/position.png'></image>
+          <view>{{item.area[0]}} {{item.area[1]}} {{item.area[2]}} {{item.details}}</view>
+        </view>
+      </view>
+      <view class='bottom'>
+        <view class='select' bindtap='swichSelect' data-id='{{item.id}}'>
+          <image wx:if='{{currentId==item.id}}' class='selectIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/selected.png'></image>
+          <view wx:else class='kuang'></view>
+          <view class='selectTxt'>设为默认</view>
+        </view>
+        <view class='space'></view>
+        <view class='edit' bindtap='editTap' data-idx='{{index}}'>
+          <image class='editIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/edit.png'></image>
+          <view class='editTxt'>编辑</view>
+        </view>
+        <view class='delete' bindtap='deleteTap' data-idx='{{index}}'>
+          <image class='deleteIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/delete.png'></image>
+          <view class='deleteTxt'>删除</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='addadress' style='{{addressList.length>adaptNum && "border-top: 2rpx solid #e8e8e8;"}}'>
+    <button class='btn' bindtap='goaddAddress'>新增收货地址</button>
+  </view>
+
+</view>

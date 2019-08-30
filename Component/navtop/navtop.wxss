@@ -1,0 +1,24 @@
+/* Component/navtop/navtop.wxss */
+
+.nav {
+  width: 100vw;
+  background: #fff;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.nav .title {
+  text-align: center;
+  font-size: 15px;
+}
+
+.nav .img {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  padding: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}

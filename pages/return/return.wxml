@@ -1,0 +1,144 @@
+<!--pages/return/return.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <!-- 红色条幅状态说明 -->
+  <view class='status' hidden='{{status==7||status==8}}'>
+    <image src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/{{icon}}.png'></image>
+    <view>
+      <view>{{status && filter.afterSaleStatus(status)}}</view>
+      <view class='time' hidden='{{!(status==1|| status==2)}}'>还剩{{countDown[0].day}}天{{countDown[0].hour}}小时{{countDown[0].minute}}分{{countDown[0].second}}</view>
+      <view class='time' hidden='{{!(status==3||status==9||status==10)}}'>{{filter.formatTime(info.log.createTime)}}</view>
+      <view class='time' hidden='{{!(status==5||status==11)}}'>请按退货地址进行退货</view>
+      <!-- <view class='time' hidden='{{!(status==4)}}'>{{info.log.remark}}</view> -->
+    </view>
+  </view>
+  <!-- 请耐心等待 提示 -->
+  <view hidden='{{!(status==1 || status==2)}}'>
+    <view class='operation'>
+      <image src='http://img.chuangxiaozhu.com/wxapp/icons/okpic.png'></image>
+      <view>您已成功发起退{{info.serviceType==1?"款":"货"}}申请，请耐心等待商家处理</view>
+    </view>
+  </view>
+
+  <view hidden='{{!(status==3)}}'>
+    <view class='orderclose'>您已撤销本次退款申请，如问题仍未解决，您可以重新发起申请</view>
+  </view>
+
+  <view hidden='{{!(status==4)}}'>
+    <view class='orderclose'>拒绝理由：{{info.log.remark}}</view>
+    <button class='again' bindtap='againAmend'>重新发起申请</button>
+  </view>
+  <!-- <view hidden='{{!(status==9)}}'>
+    <view class='orderclose'>本次退款失败，您可以重新发起申请</view>
+  </view> -->
+
+  <!-- 退货/退款 说明 -->
+  <view class='tips' hidden='{{!(status*1==1|| status*1==2)}}'>
+    <view class='tips_item' wx:for='{{tips}}' wx:key=''>{{item}}</view>
+    <view class='btn'>
+      <button hover-class='none' bindtap='cancelTap'>撤销申请</button>
+      <button hover-class='none' bindtap='putRight'>修改申请</button>
+    </view>
+  </view>
+  <!-- 退款成功的 金额 方式 说明 -->
+  <view hidden='{{status!=10}}'>
+    <view class='money'>
+      <view>退款总金额</view>
+      <view>¥{{info.refundDetail.amount && filter.consMoney(info.refundDetail.amount)}}</view>
+    </view>
+    <view class='way'>
+      <view>退货方式</view>
+      <view>原路返回</view>
+    </view>
+  </view>
+  <!-- 退款条例 有上下边框 -->
+  <view hidden='{{!(status==7||status==8)}}'>
+    <view class='return_money'>
+      <view class='return_money_item alt'>
+        <view>退款金额</view>
+        <view>￥{{refond.amount && filter.consMoney(refond.amount)}}</view>
+      </view>
+      <view class='return_money_item'>
+        <view>商家名称</view>
+        <view>{{refond.name}}</view>
+      </view>
+      <view class='return_money_item'>
+        <view>订单编号</view>
+        <view>{{refond.orderid}}</view>
+      </view>
+      <view class='return_money_item'>
+        <view>退款周期</view>
+        <view>2-7工作日</view>
+      </view>
+      <view class='return_money_item'>
+        <view>退款方式</view>
+        <view>原路退回</view>
+      </view>
+    </view>
+    <skeps skepsData='{{delivery}}' addrStr='status' dateStr='createTime' type='money'></skeps>
+  </view>
+  <!-- 退款/退货 信息 -->
+  <view class='info' hidden='{{!(status==1||status==2||status==3||status==9||status==10)}}'>
+    <view class='title'>退款信息</view>
+    <view class='goods' wx:for="{{info.refundDetail.refundOrderList}}" wx:key=''>
+      <image class='thumb' src='{{ossUrl+item.thumbnail}}'></image>
+      <view class='content'>
+        <view class='title'>
+          <view>{{item.itemname}}</view>
+          <view>￥{{item.totalprice && filter.consMoney(item.totalprice)}}</view>
+        </view>
+        <view class='txt'>
+          <view>{{item.specname}}</view>
+          <view>x{{item.count}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='item'>退款原因：{{info.refundDetail.value}}</view>
+    <view class='item'>退款金额：¥{{info.refundDetail.amount && filter.consMoney(info.refundDetail.amount)}}</view>
+    <view class='item'>申请件数：{{info.refundDetail.count}}</view>
+    <view class='item'>退款编号：{{info.refundDetail.refundId}}</view>
+    <view class='item'>申请时间：{{info.refundDetail.createTime && filter.formatTime(info.refundDetail.createTime)}}</view>
+  </view>
+  <!-- 编辑退货物流及凭证 -->
+  <view class='editTui' hidden='{{!(status==5||status==6||status==11)}}'>
+    <view class='tuiItem'>退货地址：{{seller.address}}</view>
+    <view class='tuiItem'>收件人：{{seller.name}}</view>
+    <view class='tuiItem'>联系电话：{{seller.mobile}}</view>
+    <form bindsubmit='submit' hidden='{{!(status==5||status==11)}}'>
+      <picker class='postage' mode="selector" bindchange="deliveryChange" range='{{deliveryArr}}' range-key='name'>
+        <view class='area flex'>
+          <view class='left'>退货物流：</view>
+          <view class='space'></view>
+          <view style='color:{{currentDelivery==null && "#999"}}'>{{deliveryArr[currentDelivery].name||'请选择'}}</view>
+          <image class='more' src='http://img.chuangxiaozhu.com/wxapp/icons/more_1.png'></image>
+        </view>
+      </picker>
+      <view class='postageId'>
+        <view>快递单号：</view>
+        <input placeholder='请输入快递单号' name='expressId'></input>
+      </view>
+      <uppic bindpicChange="getPicArr" title='快递凭证'></uppic>
+      <button class='submit' form-type='submit'>提交</button>
+    </form>
+
+  </view>
+  <!-- 退货 快递-->
+  <view class='delivery' hidden='{{!(status==6)}}'>
+    <view class='type' hidden='{{!expressName}}'>
+      <view>退货物流</view>
+      <view>{{expressName}}</view>
+    </view>
+    <view class='type' hidden='{{!expressId}}'>
+      <view>快递单号</view>
+      <view>{{expressId}}</view>
+    </view>
+    <!-- 退款进程 -->
+    <skeps skepsData='{{delivery}}' addrStr='context' dateStr='time'></skeps>
+  </view>
+
+
+  <view class='tabbar' hidden='{{status==5||status==6||status==7||status==8||status==4||status==11}}'>
+    <button open-type='contact' hover-class='none'>联系客服</button>
+    <button hover-class='none' bindtap='callPhone'>拨打电话</button>
+  </view>
+</view>

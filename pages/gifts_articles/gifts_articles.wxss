@@ -1,0 +1,98 @@
+.gifts_articles {
+  padding: 30rpx;
+}
+
+.gifts_articles .articles_banner {
+  background-color: #df625c;
+  height: 160rpx;
+  overflow: hidden;
+}
+
+.gifts_articles .articles_banner .tit {
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.gifts_articles .container .title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  width: 224rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  border-bottom: 3rpx solid #df625c;
+  margin-left: 16rpx;
+  padding-left: 10rpx;
+}
+
+.gifts_articles .container .intro {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  margin-top: 36rpx;
+  padding: 0 26rpx;
+}
+
+.gifts_articles .container .p {
+  font-size: 24rpx;
+  color: #625f5f;
+  padding: 26rpx;
+  padding-bottom: 0;
+}
+
+.gifts_articles .count_down {
+  position: relative;
+  height: 140rpx;
+  border-bottom: 24rpx solid #df625c;
+  margin-top: 40rpx;
+}
+
+.gifts_articles .count_down .circle1 {
+  position: fixed;
+  right: 20rpx;
+  bottom: 230rpx;
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 50%;
+  border: 3rpx solid #df625c;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.gifts_articles .count_down .circle1 .circle2 {
+  height: 136rpx;
+  width: 136rpx;
+  border-radius: 50%;
+  border: 8rpx solid #df625c;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gifts_articles .count_down .circle1 .circle2 .time {
+  color: #df625c;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.gifts_articles .btn {
+  margin: 50rpx auto;
+  width: 500rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  background-color: #ccc;
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.gifts_articles .can {
+  background-color: #de635c;
+}

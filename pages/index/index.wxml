@@ -1,0 +1,437 @@
+<!--index.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class=" index ">
+  <view style="padding: 0 20rpx;background-color: #fff;">
+    <official-account class="official_account" binderror="offic"></official-account>
+  </view>
+  <view class="search">
+    <navigator url="/pages/search_goods/search_goods" class='searchItem' hover-class="none">
+      <icon color="#666" size="24rpx" type="search"></icon>
+      <text class="word">新品上架</text>
+    </navigator>
+  </view>
+  <view class="swiperbox">
+    <swiper class="swiper" duration="{{2000}}" autoplay='{{swiperTopauto}}' circular="true" indicator-dots="true" indicator-color="#858181" indicator-active-color="#e5e5e5">
+      <block wx:for="{{indexData.bannerImgs}}" wx:key="">
+        <swiper-item>
+          <view hover-class="none" style="height: 100%;" wx:key="" bindtap='goSwiper' data-index="{{index}}" data-name="{{item.title}}">
+            <!-- video标签的poster有bug,此处自己写了个video -->
+            <my-video id='v_1' wx:if="{{item.linkType == 4}}" poster='{{ossUrl+item.imgUrl}}' src='{{item.externalUrl}}' bindstart='videoStart' bindend='videoEnd'></my-video>
+            <image wx:else src="{{ossUrl}}{{item.imgUrl}}" mode="aspectFill" class="slide-image" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="optfour">
+    <view class="item" bindtap="tuanBuy">
+      <!-- <image class='btnpic' src="../../images/icons/index_tuanbuy.png"></image> -->
+      <image class='btnpic' src="{{groupImgUrl}}"></image>
+    </view>
+
+    <view class="item" bindtap="goSign">
+      <image class='btnpic' src="../../images/icons/index_play.png"></image>
+    </view>
+
+  </view>
+
+  <!-- <view class="goods-category">
+    <navigator url="/pages/sale/sale?categoryId={{item.id}}" class="sort-item" wx:for="{{indexData.goodsCategory}}" wx:key='' hover-class="none">
+      <view class="word">
+        <text class="topw">{{item.name}}</text>
+        <text class="topb">{{item.nameEn}}</text>
+      </view>
+      <image src="{{imgUrl}}{{item.icon}}" mode="aspectFit"></image>
+    </navigator>
+  </view> -->
+
+  <!-- --------------menu --------------- -->
+  <view class="goods-category">
+    <!-- 广播begin  -->
+    <view class="message" wx:if="{{indexData.broadcastList.length}}">
+      <swiper class="swiper" vertical='true' autoplay='true' circular='true' interval='2000' duration='500' bindchange='broadcastChange' current='{{hornIdx}}'>
+        <block wx:for="{{indexData.broadcastList}}" wx:key=''>
+          <swiper-item class="swiper_item">
+            <image class="horn" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/horn.png"></image>
+            <text class="word">{{item.content||item.msgDataJson.value.content}}</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 广播end  -->
+    <swiper class='category_swiper' style="height:{{menuCount < 6?'220rpx':'430rpx'}}" indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+      <swiper-item class='category_item' wx:for="{{indexData.goodsCategory}}" wx:key=''>
+        <navigator url="/pages/sale/sale?categoryId={{item.id}}&name={{item.name}}" style="{{menuCount < 6? 'flex:1':''}}" class="sort-item" wx:for="{{item}}" wx:key='' hover-class="none">
+          <view class='menupic' style="{{menuCount<6?'border:none':''}}">
+            <image src="{{ossUrl}}{{item.icon}}" mode="aspectFit"></image>
+          </view>
+          <view class="word">
+            <text class="topw">{{item.name}}</text>
+            <text class="topb">{{item.nameEn}}</text>
+          </view>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 进入到免费领礼品列表 -->
+  <navigator class="hint" hover-class="none" url="/pages/free_gift2/free_gift2" wx:if="{{newMan != null}}">
+    <image mode='widthFix' src="{{ossUrl}}{{newMan}}"></image>
+  </navigator>
+  <!-- 进入到免费领礼品列表end -->
+  <!-- 明星小主b -->
+  <view>
+    <bigtit cn="明星小主" en="STAR SHOP"></bigtit>
+    <view class="goods-category star-shop">
+      <view class='category_swiper'>
+        <scroll-view class='scrollbox' scroll-x="{{true}}">
+          <block wx:for="{{selectIncomeSort[1]}}" wx:key=''>
+            <view class='scrollitem' bindtap='gomy_store' data-userid='{{item.userid}}'>
+              <view class='picbox'>
+                <image class='itempic' src="{{item.url}}"></image>
+              </view>
+              <view class='word'>{{item.name}}</view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <!-- 明星小主e -->
+  <!-- 收益宣传b -->
+  <view class='publicity'>
+    <view class='left'>
+      <view class='tit'>
+        <image class='tit-pic' src="http://img.chuangxiaozhu.com/wxapp/icons/icons_2/gift_icon.png"></image>
+        <view class='word'>小主收益</view>
+      </view>
+      <swiper class='earn-swiper' vertical='true' autoplay='true' circular='true' interval='2000' duration='500'>
+        <swiper-item wx:key='' wx:for="{{selectIncomeSort[0]}}">
+          <view class='line'>{{item.name}}赚了{{item.money/100}}元</view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class='right'>
+      <image class='lpic' src="http://img.chuangxiaozhu.com/wxapp/icons/icons_2/trum.gif"></image>
+      <view class='word-box'>
+        <view class='tit'>创小主头条:</view>
+        <view class='ttte'>
+          <swiper class='head-swiper' vertical='true' autoplay='true' circular='true' interval='2000' duration='500'>
+            <swiper-item wx:for="{{headNews}}" wx:key=''>
+              <view class='info' bindtap='goDetail' data-title='{{item.title}}' data-body='{{item.body}}'>
+                <view class='word'>{{item.title}}</view>
+              </view>
+
+            </swiper-item>
+
+          </swiper>
+          <navigator url="/pages/headnews/headnews">
+            <!-- http://img.chuangxiaozhu.com/wxapp/icons/icons_2/go.gif -->
+            <image class='word-ic' src="/images/icons/arrow.png"></image>
+          </navigator>
+
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 收益宣传e -->
+<!--------------小主权益------------->
+<!-- <view style="background:#fff;overflow:hidden">
+    <bigtit cn="{{shortName}}权益" en="MASTERS' RIGHTS"></bigtit>
+    <view class='advantage1'>
+      <navigator class='item' url="/pages/power_2/power_2?a=1" hover-class="none">
+        <view class='title'>{{lvConfig.lv1.name}}权益
+          <image src="http://img.chuangxiaozhu.com/wxapp/icons/icons_2/gift.png"></image>
+        </view>
+        <view class='m'>
+          <view class="three-icon">
+            <image src="http://img.chuangxiaozhu.com/wxapp/otherImgs/xz1.png"></image>
+            <image src="http://img.chuangxiaozhu.com/wxapp/otherImgs/xz2.png"></image>
+            <image src="http://img.chuangxiaozhu.com/wxapp/otherImgs/xz3.png"></image>
+          </view>
+          <view class='word'>{{shortName}},听说点进来的人,都赚大了!</view>
+        </view>
+
+      </navigator>
+      <navigator class='item' url="/pages/power/power?a=2" hover-class="none">
+        <view class='title'>{{lvConfig.lv2.name}}权益</view>
+        <view class='m'>一部手机就能轻松创业?足不出户就能开豪华店铺?省钱+分享赚钱+业绩分红+自主创业一键搞定? 既能财貌兼得,还能带孩顾家?你难道不想知道这是什么神器? </view>
+      </navigator>
+    </view>
+    <view class='link'>
+      <navigator class='item' url="/pages/power_2/power_2?a=1" hover-class="none" class='item'>了解详情>></navigator>
+      <navigator class='item' url="/pages/power/power?a=2" hover-class="none">了解详情>>
+        <image src="http://img.chuangxiaozhu.com/wxapp/icons/icons_2/gift.png"></image>
+      </navigator>
+    </view>
+  </view> -->
+
+<!--------------小主权益------------->
+
+<!-- <view class="leaflet" wx:if='{{selectIncomeSort}}'>
+    <view class="left">
+      <view class="val">{{shortName}}收益</view>
+      <swiper vertical='true' autoplay='true' circular='true' interval='2000' duration='500'>
+        <swiper-item class="tips" wx:for="{{selectIncomeSort[0]}}" wx:key='index'>{{filter.strSlice(item.name,0,4)}} 赚了{{item.money/100}}元</swiper-item>
+      </swiper>
+    </view>
+    <view class="pic">
+
+
+      <image src="{{ossUrl+logo}}"></image>
+    </view>
+    <view class="right">
+      <view class="val">明星{{shortName}}</view>
+      <swiper vertical='true' autoplay='true' circular='true' interval='2000' duration='500'>
+        <swiper-item class="tips" wx:for="{{selectIncomeSort[1]}}" wx:key='index'>{{item.name}}</swiper-item>
+      </swiper>
+    </view>
+  </view> -->
+<!-- <view class="time-limit" wx:if="{{}}">
+    <view class="box">
+      <view class="top">
+        <text class="tit">限时翻倍赚</text>
+        <text class="sub">MASTER MAKE A LOT OF MONEY</text>
+      </view>
+      <view class="bottom">
+        <view class="left">
+          <view class="word">
+            <view class="name">{{indexData.timeDoubleEarn[0].name}}</view>
+            <view class="tip">为{{lvConfig.lv1.name}}赚</view>
+            <view class="money">
+              <text class="val">{{indexData.timeDoubleEarn[0].earnMoney}}</text>
+              <text class="unit">元</text>
+            </view>
+          </view>
+          <image lazy-load="{{true}}" class="pic" src="{{ossUrl}}{{indexData.timeDoubleEarn[0].thumbnail}}"></image>
+        </view>
+
+        <view class="right">
+          <view class="word">
+            <view class="name">{{indexData.timeDoubleEarn[1].name}}</view>
+            <view class="tip">为{{lvConfig.lv1.name}}赚</view>
+            <view class="money">
+              <text class="val">{{indexData.timeDoubleEarn[1].earnMoney}}</text>
+              <text class="unit">元</text>
+            </view>
+          </view>
+          <image lazy-load="{{true}}" class="pic" src="{{ossUrl}}{{indexData.timeDoubleEarn[0].thumbnail}}"></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="bigmake" wx:if="{{}}">
+    <bigtit cn="{{shortName}}赚翻天" en="MAKE A GREAT FORTUNE"></bigtit>
+    <view class="top3">
+      <view class="item" wx:for="{{indexData.xzShareEarn}}" wx:key=''>
+        <image lazy-load="{{true}}" mode='aspectFill' src="{{ossUrl}}{{item.thumbnail}}"></image>
+        <view class="text">{{item.desc}}</view>
+      </view>
+    </view>
+  </view> -->
+<view class="gift" wx:if="{{indexData.storeGift.length}}">
+  <bigtit cn="入店礼包" en="INCOMING GIFT"></bigtit>
+  <view class="threegift">
+    <swiper class="swiper" indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+      <block wx:for="{{indexData.storeGift}}" wx:key="item">
+        <swiper-item>
+          <view class="item3">
+            <navigator class="an" wx:for="{{item}}" wx:key="" model='aspectFill' url='/pages/goodsDetail/goodsDetail?goodsId={{item.itemId}}&skuId={{item.skuId}}&eventType=5'>
+              <image mode='aspectFill' src="{{ossUrl}}{{item.thumbnail}}"></image>
+              <view class="text">{{item.itemName}}</view>
+            </navigator>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+<view class="video-content" wx:if="{{xzIntroduce}}">
+  <bigtit cn="{{shortName}}介绍" en="MASTER'SINTRODUCTION"></bigtit>
+  <view class="video" hover-class="none">
+    <video class='bgi_video' object-fit="fill" wx:if="{{xzIntroduce.linkType == 4}}" poster="{{ossUrl+xzIntroduce.imgUrl}}" src='{{xzIntroduce.externalUrl}}'></video>
+    <image class="bgi" mode='widthFix' src="{{ossUrl}}{{xzIntroduce.imgUrl}}" wx:else bindtap='goIntroduce'></image>
+  </view>
+</view>
+<view class="video-content" wx:if="{{classroom}}">
+  <bigtit cn="创业课堂" en="BUSINESS CLASS"></bigtit>
+  <view class="video" hover-class="none">
+    <video class='bgi_video' object-fit="fill" wx:if="{{classroom.linkType == 4}}" poster="{{ossUrl+classroom.imgUrl}}" src='{{classroom.externalUrl}}'></video>
+    <image class="bgi" mode='widthFix' src="{{ossUrl}}{{classroom.imgUrl}}" wx:else bindtap='goClassroom'></image>
+  </view>
+</view>
+
+<view class="threebox">
+  <bigtit cn="销售排行" en="TOP SELLING"></bigtit>
+  <view class="swiper_box">
+    <swiper class="swiper" indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+      <!-- 循环第1层数组 -->
+      <block wx:for="{{indexData.sellingTopList}}" wx:key="">
+        <swiper-item class="swiper_item">
+          <view class="top3">
+            <!-- 循环第2层数组 -->
+            <navigator class="item" wx:for="{{item}}" wx:key="" hover-class='none' url='/pages/goodsDetail/goodsDetail?goodsId={{item.itemId}}&skuId={{item.skuId}}&eventType=1'>
+              <image mode='aspectFill' src="{{ossUrl}}{{item.thumbnail}}"></image>
+              <view class="name">{{item.name}}</view>
+            </navigator>
+            <!-- 循环第2层数组 -->
+          </view>
+        </swiper-item>
+      </block>
+      <!-- 循环第1层数组 -->
+    </swiper>
+  </view>
+</view>
+<view class="threebox">
+  <bigtit cn="本月新品" en="NEW ARRIVAL"></bigtit>
+  <view class="swiper_box">
+    <swiper class="swiper" indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+      <block wx:for="{{arr}}" wx:key="">
+        <swiper-item class="swiper_item">
+          <view class="top3">
+            <navigator class="item" wx:for="{{item}}" wx:key="" hover-class='none' url='/pages/goodsDetail/goodsDetail?goodsId={{item.itemId}}&skuId={{item.skuId}}&eventType=1'>
+              <image mode='aspectFill' src="{{ossUrl}}{{item.thumbnail}}"></image>
+              <view class="name">{{item.name}}</view>
+            </navigator>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<!-- <view class="threebox" wx:if="{{}}">
+    <bigtit cn="套餐优惠" en="PROMOTIONAL PACKAGE"></bigtit>
+    <view class="swiper_box">
+      <swiper class="swiper" indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+        <block wx:for="{{arr}}" wx:key="item">
+          <swiper-item class="swiper_item">
+            <view class="top3">
+              <view class="item">
+                <image lazy-load="{{true}}" mode='aspectFill' src="http://img.chuangxiaozhu.com/wxapp/otherImgs/sale-01.png"></image>
+                <view class="name">网红时尚女装</view>
+              </view>
+              <view class="item">
+                <image lazy-load="{{true}}" mode='aspectFill' src="http://img.chuangxiaozhu.com/wxapp/otherImgs/sale-01.png"></image>
+                <view class="name">网红时尚女装</view>
+              </view>
+              <view class="item">
+                <image lazy-load="{{true}}" mode='aspectFill' src="http://img.chuangxiaozhu.com/wxapp/otherImgs/sale-01.png"></image>
+                <view class="name">网红时尚女装</view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view> -->
+<view class="commodity">
+  <bigtit cn="商品推荐" en="COMMODITY RWCOMMENDATION"></bigtit>
+  <view class="recommend-item" wx:for="{{indexData.recommendGoodsList}}" wx:key=''>
+    <image class="item-pic" mode="aspectFill" src="{{ossUrl}}{{item.headerPic}}" bindtap='goGoodsDetail' data-id='{{item.itemId}}' data-skuid='{{item.skuId}}'></image>
+    <view class="introduce">
+      <view class="tit">
+        <text>{{item.name}}</text>
+      </view>
+      <view class="tips">{{item.effect}}</view>
+    </view>
+
+    <view class="goods-info">
+      <text class="price">￥{{filter.consMoney(item.price)}}</text>
+      <view class="tt earn" wx:if='{{item.benefit}}'>赚{{filter.consMoney(item.benefit)}}元</view>
+      <view class='grow'></view>
+      <button class="tt share" data-share='share' data-skuid='{{item.skuId}}' open-type='getUserInfo' bindgetuserinfo='shareTap'>分享赚</button>
+    </view>
+
+
+  </view>
+  <view hidden='{{!isLast}}'>
+    <view class='last'>到底啦</view>
+    <view class='copyright'>版权所有
+      <text></text> 武汉蔻得</view>
+  </view>
+</view>
+<!-- <view class="loading" hidden="{{loading}}">加载中...</view> -->
+
+<!-- 弹窗 b-->
+
+<view class="pop-up" wx:if="{{showPopStatus}}">
+  <!-- 团长 -->
+  <view class='tuanpop' wx:if="{{firstTuan}}">
+    <image class='img' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/cong.png'></image>
+    <view class='content'>
+      <view class='title'>恭喜{{shortName}}</view>
+      <view class='txt'>成为 {{AppName}}团长</view>
+      <view class='tip'>赠送
+        <text>{{lvConfig.lv1.name}}</text> 身份，享财貌兼得</view>
+      <button class='btn' bindtap="closePopTuan">
+        <image class='btnimg' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/congBtn.png'></image>
+        <view>知道了</view>
+      </button>
+    </view>
+  </view>
+
+  <!-- <view class="pop" wx:if="{{firstTuan}}" style="height:400rpx;background: url('http://s2.ax1x.com/2019/02/28/k7UFeI.png') no-repeat ;background-size: cover;">
+      <image class="index_pop2" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/index_pop2.png"></image>
+      <view class="tit">
+        <text class="a">成为</text>
+        <text class="b">{{AppName}}团长</text>
+      </view>
+      <view class="tips">财貌兼得的{{shortName}}就是你啦</view>
+      <image class="red_close" bindtap="closePopTuan" src="http://img.chuangxiaozhu.com/wxapp/icons/red_close.png"></image>
+    </view> -->
+  <!-- 团长 -->
+  <!-- 代金券 moneyShow -->
+  <view class="pop" wx:if="{{moneyShow}}" style="background: url('http://s2.ax1x.com/2019/02/28/k7UFeI.png') no-repeat ;background-size: cover;">
+    <image class="index_pop2" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/index_pop2.png"></image>
+    <view class="tit">{{shortName}},入店礼包专享代金券</view>
+    <view class="pop-card">
+      <view class="money">
+        <text class="tag">￥</text>
+        <text class="mun">{{amount}}</text>
+        <text class="unit">元</text>
+      </view>
+    </view>
+    <view class="sub">购买入店礼包既可减免</view>
+    <view class="go-latte" bindtap="getVoucher">
+      <text>马上领取</text>
+      <image src="http://img.chuangxiaozhu.com/wxapp/otherImgs/return-icon.png"></image>
+    </view>
+
+    <view class="close_pop" bindtap="showPop">
+      <image class="close_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/index_close.png"></image>
+    </view>
+  </view>
+  <!-- 代金券 -->
+</view>
+<!-- 弹窗 e -->
+<view class="pop-up" hidden="{{tuanShow}}" bindtap="tuanSelect" data-btn="3">
+  <view class="tuan">
+    <view class="box">
+      <view class="left" data-btn="1" bindtap="tuanApply">
+        <image class="pic" src="http://img.chuangxiaozhu.com/wxapp/icons/tg_icons.png" data-btn="1"></image>
+        <text class="word" data-btn="1">团长申请</text>
+      </view>
+      <view class="right" data-btn="2">
+        <image class="pic" src="http://img.chuangxiaozhu.com/wxapp/icons/dp_icons.png" data-btn="2"></image>
+        <text class="word" data-btn="2">团购小店</text>
+      </view>
+    </view>
+    <view class="btn" data-btn="0">取消</view>
+  </view>
+</view>
+
+<view hidden='{{!posterBtn}}'>
+  <attachbox footShare='{{footShare}}' isShare='{{false}}' bindshare='shareTap1' right='30' bottom='30'></attachbox>
+</view>
+<shareBar tableShow='{{shareBarShow}}' bindsave='savImg' bindcancel='closePoster'></shareBar>
+<storePoster noPhotosAlbum='{{noPhotosAlbum}}' domShow='{{true}}' tableShow='{{cvsShow}}' avatar='' name='' phone='' sign='' storeId='' bindclose='closePoster' noPhotosAlbum='{{noPhotosAlbum}}' eventType='1' bindsavsuc='closePoster'></storePoster>
+<goodsPoster doCvs='{{doCvs}}' noPhotosAlbum='{{noPhotosAlbum}}' goodsImg='{{ossUrl+shareGoods.thumbnail}}' goodsTitle='{{shareGoods.name}}' goodsDesc='{{shareGoods.effect}}' price='{{filter.consMoney(shareGoods.price*(shareGoods.unit||1))}}' marketPrice='{{filter.consMoney(shareGoods.marketPrice*(shareGoods.unit||1))}}'
+  itemId='{{}}' skuId='{{shareGoods.skuId}}' eventType='1' bindclose='closePoster' bindsavsuc='closePoster'></goodsPoster>
+
+
+<modal modalHidden='{{modalHidden}}' binduserInfoSuc='userInfoSuc'></modal>

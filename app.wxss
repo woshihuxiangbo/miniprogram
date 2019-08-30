@@ -1,0 +1,26 @@
+/**app.wxss**/
+
+button::after {
+  border: none;
+}
+
+/* 版权 */
+
+.copyright {
+  font-size: 24rpx;
+  color: #ccc;
+  text-align: center;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.copyright text{
+  display: inline-block;
+  margin: 0 10rpx;
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 50%;
+  background: #ccc;
+}
+

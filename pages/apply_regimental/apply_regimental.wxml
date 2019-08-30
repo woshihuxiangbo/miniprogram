@@ -1,0 +1,54 @@
+<!--pages/apply_regimental/apply_regimental.wxml-->
+<navtop navTitle='团长申请'></navtop>
+<view class="box">
+  <view class="pic" style="background: url({{ossUrl+powerData.headPic}}) no-repeat ;background-size: cover;">
+    {{powerData.headTitle}}
+  </view>
+  <view class="section">
+    <view class="title">{{powerData.mainTitle}}</view>
+    <view class="item" wx:for='{{powerData.mainContent}}' wx:key='index'>
+      <view class="head">
+        <image class="icon" src="http://img.chuangxiaozhu.com/wxapp/icons/question.png"></image>
+        <view class="h1">{{item.title}}</view>
+      </view>
+      <view class="content">
+        <view class="p" wx:for='{{item.content}}' wx:key='' wx:for-item='item_2'>{{item_2.text}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="word">开团申请步骤</view>
+  <view class="four">
+    <view class="item">
+      <image class="icon4" src="http://img.chuangxiaozhu.com/wxapp/icons/tuanzhan1.png" mode='aspectFit'></image>
+      <view class="sub">
+        <text>提交</text>
+        <text>团长申请</text>
+      </view>
+    </view>
+    <image src="http://img.chuangxiaozhu.com/wxapp/icons/red_go.png" class="go" mode='aspectFit'></image>
+
+    <view class="item">
+      <image class="icon4" src="http://img.chuangxiaozhu.com/wxapp/icons/tuanzhan2.png" mode='aspectFit'></image>
+      <view class="sub">团长申请</view>
+    </view>
+    <image src="http://img.chuangxiaozhu.com/wxapp/icons/red_go.png" class="go" mode='aspectFit'></image>
+
+    <view class="item">
+      <image class="icon4" src="http://img.chuangxiaozhu.com/wxapp/icons/tuanzhan3.png" mode='aspectFit'></image>
+      <view class="sub">
+        <text>联系团长</text>
+        <text>审批员</text>
+      </view>
+    </view>
+    <image src="http://img.chuangxiaozhu.com/wxapp/icons/red_go.png" class="go" mode='aspectFit'></image>
+
+    <view class="item">
+      <image class="icon4" src="http://img.chuangxiaozhu.com/wxapp/icons/tuanzhan4.png" mode='aspectFit'></image>
+      <view class="sub">
+        <text>开团</text>
+      </view>
+    </view>
+  </view>
+
+  <button  open-type='getUserInfo' bindgetuserinfo="goApplyForm" class="btn">申请社区团长</button>
+</view>

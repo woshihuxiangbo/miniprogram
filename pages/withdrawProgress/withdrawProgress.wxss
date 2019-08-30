@@ -1,0 +1,56 @@
+/* pages/withdrawProgress/withdrawProgress.wxss */
+
+page {
+  font-size: 30rpx;
+}
+
+.banner {
+  width: 100%;
+  height: 278rpx;
+}
+
+.totle {
+  position: absolute;
+  top: 77rpx;
+  padding-left: 50rpx;
+  color: #fff;
+}
+
+.totle text {
+  font-size: 72rpx;
+}
+
+.list {
+  position: relative;
+  padding: 0 30rpx;
+  margin-top: -50rpx;
+  z-index: 9;
+}
+
+.item {
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 2rpx 10rpx 8rpx rgba(0, 0, 0, 0.05);
+  margin-bottom: 30rpx;
+}
+
+.item .top {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #ddd;
+}
+
+.item .top .txt {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.item .top .money {
+  color: #de635c;
+  font-weight: bold;
+}
+
+.item .bottom {
+  padding: 30rpx 30rpx 80rpx;
+}

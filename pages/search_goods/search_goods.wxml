@@ -1,0 +1,28 @@
+<!--pages/search_goods/search_goods.wxml-->
+<view class="search_goods">
+     <view class="search-box">
+        <icon class="searchcion" size='16' type='search'></icon>
+        <input class="inp" focus="true" bindconfirm="searchgoods" confirm-type="search" placeholder="请输入商品"/>
+    </view>
+
+    <view class="search-history">
+        <view class="head-box">
+            <view class="tit-name">搜索历史</view>
+            <image bindtap="closeHistory" class="tit-icon" src="http://img.chuangxiaozhu.com/wxapp/icons/delete.png"></image>
+        </view>
+        <view class="search-container">
+            <navigator url="/pages/searchresult/searchresult?goodsName={{item}}" hover-class="none" class="goods-item"  wx:for="{{searchs}}" wx:key='' >{{item}}</navigator>
+        </view>
+    </view>
+
+    <view class="search-recommend">
+        <view class="head-box">
+            <view class="tit-name">搜索推荐</view>
+        </view>
+
+        <!-- <view class="search-container">
+                <navigator url="/pages/searchresult/searchresult" hover-class="none" class="goods-item"  wx:for="{{datas.recommendGoods}}" wx:key='' >{{item.name}}</navigator>
+        </view> -->
+    </view>
+    <!-- <button bindtap="searchgoods">搜索</button> -->
+</view>

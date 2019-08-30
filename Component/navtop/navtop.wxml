@@ -1,0 +1,9 @@
+<!--Component/navtop/navtop.wxml-->
+<view style='height:{{navH+6}}px;'>
+  <view class='nav' style='height:{{navH+6}}px;padding-top:{{statusH}}px;'>
+    <view style='position: relative;'>
+      <image class='img' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/back.png' bindtap='goback'></image>
+      <view class='title' style='line-height:{{navH-statusH}}px;'>{{navTitle}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<!--pages/record/record.wxml-->
+<view class='box'>
+  <view class='card'>
+     <view class='tit'>
+        <image class='pic' src="http://img.chuangxiaozhu.com/wxapp/icons/icons_2/gift.png"></image>
+        <text>结果详情</text>
+     </view>
+     <view class='word'>{{word}}</view>
+     <view class='time'>{{time}}</view>
+  </view>
+</view>

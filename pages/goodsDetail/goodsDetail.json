@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "specification": "/Component/specification/specification",
+    "goodsPoster": "/Component/goodsPoster/goodsPoster",
+    "attachbox": "/Component/attachbox/attachbox",
+    "shareBar":"/Component/shareBar/shareBar",
+    "modal": "/Component/modal/modal",
+    "my-video":"/Component/my-video/my-video"
+  }
+}

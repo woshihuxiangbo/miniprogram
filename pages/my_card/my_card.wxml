@@ -1,0 +1,16 @@
+<view class='container'>
+  <view class='card'>
+    <image class='bg' src='/images/poster/my_card.png'></image>
+    <view class='txt'>
+      <image class='avatar' src='{{avatar}}'></image>
+      <image class='qrcode' src='{{qrcode}}'></image>
+      <image class='logo' src='{{logo}}'></image>
+      <view class='name'>{{name}}</view>
+      <view class='sign'>{{sign}}</view>
+      <view class='phone'>{{phone}}</view>
+      <view class='tips'>{{tips}}</view>
+    </view>
+  </view>
+  <button class='share_btn' bindtap='savImg' open-type='{{noPhotosAlbum?"openSetting":""}}'>保存名片</button>
+</view>
+<canvas canvas-id='card' style='width:345px;height:445px;position:fixed;left:150%;top:4%;'></canvas>

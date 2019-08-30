@@ -1,0 +1,9 @@
+<!--component/scroll-group/scroll-group.wxml-->
+<scroll-view class='scroll' scroll-x>
+  <view class='flex {{group.length<=6 && "auto-center"}}'>
+    <view class='scorllItem' wx:for='{{group}}' wx:key=''>
+      <image class='avatar {{item[avatarStr] || "avatarNoBorder"}}' src='{{item[avatarStr]||"http://img.chuangxiaozhu.com/wxapp/goods_group/empty.png"}}'></image>
+      <view wx:if='{{txtShow}}'>{{txt||item[txtStr]}}</view>
+    </view>
+  </view>
+</scroll-view>

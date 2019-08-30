@@ -1,0 +1,6 @@
+<view class="bigtit">
+        <view class="line">
+          <view class="cn">{{cn}}</view>  
+        </view>
+        <view class="en">{{en}}</view>
+</view>

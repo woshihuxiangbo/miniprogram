@@ -1,0 +1,44 @@
+<!--pages/goods_group/goods_group.wxml-->
+<view class='container'>
+  <view class='goods_detail'>
+    <image class='thumb' mode='aspectFill' src='http://ws3.sinaimg.cn/large/005BYqpgly1g083igxnd8j3076050wfx.jpg'></image>
+    <view class='content'>
+      <view class='title'>商品名称商品名称商品名称商品名称商品名称商品名称</view>
+      <view class='txt'>
+        <view>单买价￥88</view>
+        <view>赚9元</view>
+      </view>
+      <view class='bottom'>
+        <view class='team'>10人团：</view>
+        <view class='price'>￥17.9</view>
+        <view class='inventory'>还剩18件</view>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view class='scroll' scroll-x>
+    <view class='flex {{group.length<=6 && "auto-center"}}'>
+      <view class='scorllItem' wx:for='{{group}}' wx:key=''>
+        <image class='avatar {{item.avatar || "avatarNoBorder"}}' src='{{item.avatar||"http://img.chuangxiaozhu.com/wxapp/goods_group/empty.png"}}'></image>
+        <view wx:if='{{item.groupHead}}'>团长</view>
+      </view>
+    </view>
+  </scroll-view>
+
+
+
+  <view class='cutDown'>
+    <view class='tips'>仅剩
+      <text>5</text>人，快呼唤小伙伴参加吧！</view>
+    <view class='time'>
+      剩余
+      <text>{{countDown[0].day}}</text> 天
+      <text>{{countDown[0].hour}}</text> :
+      <text>{{countDown[0].minute}}</text> :
+      <text>{{countDown[0].second}}</text> 结束
+    </view>
+  </view>
+  <button class='share' open-type='share' hover-class='none'>邀请好友拼团</button>
+
+
+</view>

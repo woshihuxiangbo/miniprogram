@@ -1,0 +1,44 @@
+/* pages/my_referrer/my_referrer.wxss */
+.box{
+    background-color: #f2f2f2;
+    height: 100vh;
+    padding: 30rpx;
+}
+.tit{
+    font-size: 34rpx;
+    color:#333;
+}
+.content{
+    padding: 30rpx;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 30rpx;
+}
+.info{
+    display: flex;
+}
+.info .headpic{
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 20rpx;
+}
+.word{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.name{
+    font-size: 32rpx;
+    font-weight: bold;
+    color:#333;
+}
+.sub{
+    font-size: 24rpx;
+    color:#666;
+}
+.pic{
+    width: 330rpx;
+    height: 330rpx;
+    margin-top: 75rpx;
+    margin-bottom: 130rpx;
+}

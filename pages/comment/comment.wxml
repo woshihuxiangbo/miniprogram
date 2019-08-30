@@ -1,0 +1,32 @@
+<!--pages/comment/comment.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='title'>
+    <view>评价详情</view>
+    <!-- <image class='caricon' src='http://img.chuangxiaozhu.com/wxapp/icons/car.png'></image> -->
+  </view>
+  <view class='list'>
+    <view class='item' wx:for='{{list}}' wx:key=''>
+      <image class='avatar' src='{{item.header && (filter.checkHttp(item.header)?item.header:(ossUrl+item.header))}}'></image>
+      <view class='content'>
+
+        <view class='info'>
+          <view class='name'>{{item.disabled?"匿名":item.nikeName}}</view>
+          <view class='type'>
+            <text>{{filter.formatTime(item.createTime)}}</text>
+            <text>{{item.spec_Name}}</text>
+          </view>
+        </view>
+
+        <view class='txt'>{{item.body}}</view>
+        <view class='img'>
+          <block wx:for='{{item.imgs}}' wx:for-item="imgitem" wx:key=''>
+            <image mode='aspectFill' src='{{ossUrl+imgitem}}'></image>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <emptylist hidden="{{showList}}" markword="暂无评价详情" btnShow='{{btnShow}}'></emptylist>
+  <view class='last' hidden='{{!isLast}}'>没有更多了</view>
+</view>

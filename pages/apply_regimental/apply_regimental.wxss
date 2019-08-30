@@ -1,0 +1,110 @@
+/* pages/apply_regimental/apply_regimental.wxss */
+
+.box {
+  padding: 0 30rpx;
+}
+
+.pic {
+  height: 240rpx;
+  line-height: 240rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  width: 100%;
+  border-radius: 16rpx;
+}
+
+.section {
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.word {
+  font-size: 32rpx;
+  text-align: center;
+  color: #333;
+  margin: 40rpx 0;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin: 30rpx 0;
+}
+
+.icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.head {
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.h1 {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.p {
+  font-size: 24rpx;
+  line-height: 35rpx;
+  color: #666;
+  text-indent: 2em;
+}
+
+.four {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.four .item, .four .go {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.four .item .icon4 {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.four .item .sub {
+  font-size: 24rpx;
+  color: #de635c;
+  text-align: center;
+  height: 60rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rpx;
+}
+
+.four .go {
+  width: 25rpx;
+  height: 50rpx;
+  flex-shrink: 0;
+}
+
+.btn {
+  font-size: 28rpx;
+  color: #fff;
+  width: 240rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #de635c;
+  border-radius: 16rpx;
+  text-align: center;
+  margin: 50rpx auto;
+}

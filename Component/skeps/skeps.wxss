@@ -1,0 +1,50 @@
+.skeps{
+  padding: 50rpx 0;
+}
+.skeps .step_item {
+  margin: 0 50rpx;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 30rpx;
+}
+
+.txt {
+  padding-left: 20rpx;
+}
+
+.addr {
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.date {
+  font-size: 24rpx;
+}
+
+.line {
+  background-color: #ddd;
+  width: 2rpx;
+  /* height: 180rpx; */
+  position: absolute;
+  z-index: 1;
+  left: 14rpx;
+  top: 20rpx;
+  height: 100%;
+}
+
+.step_item:last-child .line {
+  display: none;
+}
+
+.ring {
+  box-sizing: border-box;
+  background-color: #ccc;
+  width: 30rpx;
+  height: 30rpx;
+  flex-shrink: 0;
+  border-radius: 50%;
+  margin-top: 5rpx;
+  position: relative;
+  z-index: 2;
+}

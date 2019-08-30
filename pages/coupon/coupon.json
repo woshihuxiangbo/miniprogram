@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "代金券",
+  "usingComponents": {
+    "emptylist":"/Component/emptylist/emptylist"
+  }
+}

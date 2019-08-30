@@ -1,0 +1,21 @@
+/* pages/bargain_page/bargain_page.wxss */
+.box{
+  border-top:1rpx solid #f2f2f2;
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  color:#333;
+  line-height: 43rpx;
+  text-align: justify;
+}
+.tit{
+  font-size: 36rpx;
+  text-align: center;
+  margin: 40rpx 0;
+}
+.mb{
+  margin-bottom: 36rpx;
+}
+.tit2{
+  text-align: center;
+  margin: 30rpx 0;
+}

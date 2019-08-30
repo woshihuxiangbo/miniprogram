@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "my-video": "/Component/my-video/my-video",
+    "shareBar": "/Component/shareBar/shareBar",
+    "storePoster": "/Component/storePoster/storePoster"
+  },
+  "navigationBarBackgroundColor": "#de635d",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "个人中心",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,135 @@
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.item-left{
+  width: 320rpx;
+}
+.horizontal-center {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deposit .tab {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1rpx solid #f2f2f2;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.deposit .tab .item {
+  line-height: 90rpx;
+  width: 105rpx;
+  text-align: center;
+  border-bottom: 4rpx solid #fff;
+  font-size: 28rpx;
+}
+
+.deposit .tab .active {
+  border-bottom: 4rpx solid #de635c;
+  color: #de635c;
+}
+
+.deposit .head {
+  background-color: #fff;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  height: 94rpx;
+  font-size: 28rpx;
+  border-bottom: 10rpx solid #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deposit .head .datepicker {
+  background-color: #df625c;
+  width: 225rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deposit .head .datepicker .date {
+  color: #fff;
+}
+
+.deposit .head .datepicker .san_jiao_bottom,
+.deposit .head .datepicker .san_jiao_top {
+  width: 0;
+  height: 0;
+  border-left: 13rpx solid transparent;
+  border-right: 13rpx solid transparent;
+}
+
+.deposit .head .datepicker .san_jiao_bottom {
+  margin-top: 20rpx;
+  border-top: 20rpx solid #fff;
+  border-bottom: 20rpx solid transparent;
+}
+
+.deposit .head .datepicker .san_jiao_top {
+  margin-bottom: 20rpx;
+  border-top: 20rpx solid transparent;
+  border-bottom: 20rpx solid #fff;
+}
+
+.deposit .head .money {
+  display: flex;
+  align-items: center;
+}
+
+.deposit .head .money .money-in {
+  color: #df625c;
+}
+
+.deposit .head .money .money-out {
+  color: #333;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.deposit .container .item {
+  font-size: 28rpx;
+  height: 114rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  padding: 0 25rpx;
+}
+
+.deposit .container .item .item-left .type {
+  color: #333;
+}
+
+.deposit .container .item .item-left .date {
+  color: #666;
+}
+
+.deposit .container .item .item-right {
+  line-height: 114rpx;
+}
+
+.deposit .container .item .add {
+  color: #df625c;
+}
+
+.deposit .container .item .reduce {
+  color: #666;
+}
+
+.deposit .container .item .status {
+  line-height: 114rpx;
+}
+
+.deposit .nolist {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  margin: 100rpx auto;
+}

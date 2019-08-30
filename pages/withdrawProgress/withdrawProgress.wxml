@@ -1,0 +1,25 @@
+<!--pages/withdrawProgress/withdrawProgress.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <image class='banner' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/withdrawBanner.png' mode='widthFix'></image>
+  <view class='totle'>
+    <view>
+      <text>{{withdrawProgressList.length}} </text>笔</view>
+    <view>处理中的资金</view>
+  </view>
+  <view class='list'>
+    <view class='item' wx:for='{{withdrawProgressList}}' wx:key='index'>
+
+      <view class='top'>
+        <view>
+          <view>资金审核中</view>
+          <view class='txt'>{{filter.formatTime(item.createtime)}}</view>
+        </view>
+        <view class='money'>{{filter.consMoney(item.money)}}元</view>
+      </view>
+      <view class='bottom'>
+        <wtdwp process='{{item.status>=0?(item.status*1+1):"2"}}'></wtdwp>
+      </view>
+    </view>
+  </view>
+</view>

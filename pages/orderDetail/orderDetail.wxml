@@ -1,0 +1,83 @@
+<!--pages/orderItem/orderItem.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container' wx:for="{{orderArr}}" wx:for-item="orderItem" wx:key=''>
+  <view class='status'>
+    <view class='flx'>
+      <image src='{{orderItem.status*1<3?icons[0]:orderItem.status*1>8?(iconUrl+icons[2]):(iconUrl+icons[1])}}'></image>
+      <view>{{orderItem.orderStatus}}</view>
+    </view>
+  </view>
+  <view class='code' wx:if="{{orderItem.status==4}}">
+    <view class='title'>商品金额 ¥{{filter.consMoney(orderItem.moneyPaid)}}, 请联系商家取货</view>
+    <view class='bg'>
+      <view class='pickUp'>提货码：{{orderId}}</view>
+      <view class='cut'>
+        <view class='circle circleLeft'></view>
+        <view class='line'></view>
+        <view class='circle circleRight'></view>
+      </view>
+      <image class='rqCode' mode='widthFix' src='{{qrcodeUrl}}'></image>
+    </view>
+  </view>
+  <view class='goods' wx:for="{{orderItem.items}}" wx:key="">
+    <view class='store' wx:if="{{orderItem.storeName}}">{{orderItem.storeName}}{{filter.fitStore(orderItem.eventType)}}</view>
+    <view class='goodsDetail'>
+      <image class='thumb' mode="aspectFill" src='{{ossUrl+item.thumb}}'></image>
+      <view class='content'>
+        <view class='name'>
+          <view>{{item.goodName}}</view>
+          <view class='price'>￥{{ filter.consMoney(item.price)}}</view>
+        </view>
+        <view class='txt'>
+          <view>{{item.specName}}</view>
+          <view class='num'>x{{item.goodsNum}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='tui_money' wx:if="{{orderItem.isRefund}}">
+    <view class='tuibtn' bindtap='returnMoney' data-orderid="{{orderItem.orderId}}">退款</view>
+  </view>
+  <view class='way'>
+    <view hidden="{{ orderItem.status == 4}}">
+      <view class='item'>
+        <view>支付方式:</view>
+        <view>{{orderItem.payType}}</view>
+      </view>
+    </view>
+    <view class='item'>
+      <view>配送方式:</view>
+      <view>{{orderItem.transportType}}</view>
+    </view>
+    <view class='item'>
+      <view>{{orderItem.isSplit?"合单运费":"运费"}}:</view>
+      <view>￥{{filter.consMoney(orderItem.freight)}}</view>
+    </view>
+    <view class='item' hidden='{{!(orderItem.reduceAmount*1)}}'>
+      <view>代金券抵扣：</view>
+      <view>-￥{{filter.consMoney(orderItem.reduceAmount)}}</view>
+    </view>
+    <view class='message'>
+      <view>买家留言：</view>
+      <textarea disabled='true' auto-height value="{{orderItem.buyerMessage}}"></textarea>
+    </view>
+  </view>
+  <!-- <view class='totle'>
+    <view>{{orderItem.isSplit?"商品零售价":"实付款 (含运费）"}}</view>
+    <view>￥{{ filter.consMoney(orderItem.moneyPaid)}}</view>
+  </view> -->
+  <view class='orderInfo'>
+    <view class='title'>订单信息</view>
+    <view class='item'>订单编号：{{orderId}}</view>
+    <view class='item' hidden='{{!orderItem.paySn}}'>微信交易编号：{{orderItem.paySn}}</view>
+    <view class='item' hidden='{{!(orderItem.creatTime*1)}}'>创建时间：{{filter.formatTime(orderItem.creatTime)}}</view>
+    <view class='item' hidden='{{!(orderItem.payTime*1)}}'>付款时间：{{filter.formatTime(orderItem.payTime)}}</view>
+  </view>
+  <view class='btn'>
+    <block wx:for="{{orderItem.operations}}" wx:key=''>
+      <button hover-class='none' open-type='{{index==1 && "contact"}}' class='{{index==3 && "paybtn"}}' data-key='{{index}}' bindtap='btnTap'>{{item}}</button>
+    </block>
+
+
+  </view>
+</view>

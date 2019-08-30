@@ -1,0 +1,14 @@
+<!--component/goodsPoster/goodsPoster.wxml-->
+<!-- transform:translateX(-50%); -->
+<view>
+  <view class='dom' hidden='{{!(tempFilePath && closeShow)}}'>
+    <view class='mask'></view>
+    <view class='posterTable'>
+      <image class='close' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/closeWhite.png' bindtap='closeTap'></image>
+      <image class='thumb' mode='widthFix' src='{{tempFilePath}}'></image>
+      <button class='sa' hover-class='none' bindtap='save' open-type='{{noPhotosAlbum?"openSetting":""}}'>保存</button>
+    </view>
+  </view>
+
+  <canvas canvas-id='cvs' style='width:345px;height:490px;position:fixed;z-index:999;left:150%;top:0;'></canvas>
+</view>

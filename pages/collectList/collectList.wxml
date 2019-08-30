@@ -1,0 +1,29 @@
+<!--pages/collectList/collectList.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <emptylist hidden="{{list.length}}" markword='暂无收藏'></emptylist>
+  <!-- <view class='emptyTips' hidden='{{list.length}}'>暂无收藏</view> -->
+  <view class='list'>
+    <view class='item' wx:for='{{list}}' wx:key='index' bindtap='tap' data-skuid='{{item.skuId}}' data-itemId='{{item.itemId}}' data-eventtype='{{item.eventType}}' data-userid='{{item.parentUserId}}' data-idx='{{index}}' data-isexpired='{{item.isExpired}}'>
+      <view class='timout' hidden='{{!item.isExpired}}'>
+        <view>商品已下架</view>
+      </view>
+      <image class='thumb' mode='aspectFill' src='{{ossUrl+item.thumbnail}}'></image>
+      <view class='content'>
+        <view class='title'>{{item.itemName}}</view>
+        <view class='txt'>{{item.effect}}</view>
+        <view class='price'>￥{{item.price && filter.consMoney(item.price)}}</view>
+        <view class='bottom'>
+          <button hover-class='none' data-type='store' hidden='{{item.isExpired||(item.parentUserId.length<19)}}'>店铺</button>
+          <button hover-class='none' data-type='share' hidden='{{item.isExpired}}'>分享</button>
+          <button hover-class='none' data-type='cancel'>删除</button>
+        </view>
+      </view>
+    </view>
+    <view class='last' hidden='{{!isLast}}'>没有更多了</view>
+  </view>
+</view>
+
+<shareBar tableShow='{{shareBarShow}}' bindsave='savImg'></shareBar>
+<goodsPoster doCvs='{{doCvs}}' noPhotosAlbum='{{noPhotosAlbum}}' goodsImg='{{ossUrl+shareGoods.thumbnail}}' goodsTitle='{{shareGoods.itemName}}' goodsDesc='{{shareGoods.effect}}' price='{{filter.consMoney(shareGoods.price*(shareGoods.unit||1))}}' marketPrice='{{filter.consMoney(shareGoods.marketPrice*(shareGoods.unit||1))}}'
+  itemId='{{}}' skuId='{{shareGoods.skuId}}' eventType='1' bindclose='closePoster' bindsavsuc='closePoster'></goodsPoster>

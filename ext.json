@@ -1,0 +1,12 @@
+{
+  "extEnable": false,
+  "extAppid": "wx75b4c611700c6dc4",
+  "directCommit": false,
+  "ext": {
+    "domain": "https://api.koudejun.com/api",
+    "subDomain": "1115549501398974464", 
+    "apiVersion": "v1",
+    "imgUrl": "https://img.koudejun.com/",
+    "mgtUrl": "http://m.mgt.koudejun.com/"
+  }
+}

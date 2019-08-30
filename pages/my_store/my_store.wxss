@@ -1,0 +1,206 @@
+@import '../index/index.wxss';
+
+.my_store .user_info {
+  height: 310rpx;
+  /* background: url('http://ws3.sinaimg.cn/large/005BYqpggy1g0501kzjuuj30ku0da49h.jpg') no-repeat; */
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.search {
+  margin-top: 30rpx;
+}
+
+.follow {
+  width: 110rpx;
+  height: 50rpx;
+  border-radius: 20rpx;
+  background: white;
+  color: #333;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 50rpx;
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+}
+
+.my_store .user_info .return_icon {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 40rpx;
+  top: 70rpx;
+}
+
+.my_store .user_info .info_container {
+  margin-top: 140rpx;
+}
+
+.my_store .user_info .info_container .box {
+  /* height: 15rpx; */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.my_store .user_info .info_container .box .left,
+.my_store .user_info .info_container .box .right {
+  font-size: 24rpx;
+  color: #eee;
+}
+
+.my_store .user_info .info_container .box .head_pic {
+  width: 110rpx;
+  height: 110rpx;
+  border: 10rpx solid #fff;
+  border-radius: 50%;
+  margin: 0 30rpx;
+}
+
+.my_store .user_info .info_container .box .attention {
+  width: 130rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  color: #de635c;
+  font-size: 24rpx;
+  border-radius: 22rpx;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 30rpx;
+}
+
+.my_store .user_info .info_container .info_name,
+.my_store .user_info .info_container .info_intro {
+  color: #666;
+  font-size: 34rpx;
+}
+
+.xz_fans {
+  margin-top: 10rpx;
+  text-align: left;
+}
+
+.xz_fans text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.my_store .user_info .info_container .info_name {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.my_store .user_info .info_container .info_name text {
+  max-width: 300rpx;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.my_store .user_info .info_container .info_intro {
+  font-size: 24rpx;
+  margin-top: 15rpx;
+}
+
+.box {
+  text-align: center;
+}
+
+.pic {
+  width: 184rpx;
+  height: 240rpx;
+  margin-bottom: 45rpx;
+  margin-top: 15vh;
+}
+
+.btn {
+  width: 500rpx;
+  line-height: 60rpx;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #de635c;
+  margin: 80rpx auto;
+}
+
+.xz_dian {
+  color: light;
+  font-size: 28rpx;
+}
+
+.advantage .word {
+  font-size: 24rpx;
+  color: #de635c;
+  font-weight: 0;
+}
+
+.tuan .pic {
+  width: 66rpx;
+  height: 66rpx;
+  margin: 0;
+}
+
+.btn-cancel {
+  margin: 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #de635c;
+}
+
+.emptybox .word {
+  font-size: 28rpx;
+  color: #625f5f;
+}
+
+.white {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+}
+
+
+.store-jie .picbox{
+  margin-top: 50rpx;
+}
+.store-jie .picbox .itempic{
+  height: 160rpx;
+  width: 160rpx;
+  border-radius:16rpx;
+}
+.store-jie .more-store{
+  display: inline-block;
+  width: 120rpx;
+  height: 120rpx;
+  border:1rpx solid #ccc;
+  border-radius: 5rpx;
+  overflow: hidden;
+  font-size: 20rpx;
+}
+.more-store .box{
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding: 25rpx 0;
+}
+.more-store .more-word{
+  flex: 1;
+}
+.more-store .cn{
+  border-bottom:1rpx solid #ccc;
+  letter-spacing:3rpx;
+}

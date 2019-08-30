@@ -1,0 +1,16 @@
+<!--pages/phone_login/phone_login.wxml-->
+<view class="phone-login" >
+        <image class="head-img" src="http://img.chuangxiaozhu.com/wxapp/store.png"></image>
+        <view class="auth-form">
+            <view class="phone">
+                <view class="lab">手机号</view>
+                <input placeholder-class="place-css" placeholder="请输入手机号" class="tel inp" type="text"/>
+            </view>
+            <view class="authcode">
+                <view class="lab">验证码</view>
+                <input placeholder-class="place-css" placeholder="请输入验证码" class="code inp" type="text"/>
+                <view class="get-code">获取验证码</view>
+            </view>
+            <button class="submit">确定</button>
+        </view>
+    </view>

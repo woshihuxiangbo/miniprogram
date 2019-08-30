@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "浏览量",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

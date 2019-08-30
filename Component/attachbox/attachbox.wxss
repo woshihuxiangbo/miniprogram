@@ -1,0 +1,36 @@
+.attachbox {
+  position: fixed;
+  right: 30rpx;
+  bottom: 30rpx;
+  overflow: visible;
+  z-index: 998;
+}
+
+.attachbox .go-share {
+  margin-bottom: 20rpx;
+}
+
+.attachbox .go-share, .attachbox .go-top {
+  padding: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 86rpx;
+  height: 86rpx;
+  border: 1rpx solid #c8c8c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 18rpx rgba(222, 99, 92, 0.5);
+  line-height: 1.5;
+}
+
+.attachbox .go-share .img, .attachbox .go-top .img {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.attachbox .go-share .w, .attachbox .go-top .w {
+  font-size: 20rpx;
+  color: #666;
+}

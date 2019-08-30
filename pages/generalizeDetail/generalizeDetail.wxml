@@ -1,0 +1,42 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<swiper class="container" vertical="true" indicator-dots="true" indicator-active-color="#de635c">
+  <swiper-item class="swiper-item" wx:for="{{list}}" wx:key=''>
+    <image mode="aspectFill" class='pic' src="{{ossUrl+item.thumbnail}}" ></image>
+    <view class='list'>
+      <view class='title'>商品详情</view>
+      <view class='item'>
+          <view class='lab'>商品名称:</view><view class='val'>{{item.itemname}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>商品规格:</view><view class='val'>{{item.specname}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>商品价格:</view><view class='val'>{{filter.consMoney(item.totalprice)}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>下单姓名:</view><view class='val'>{{item.buyusername}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>下单人身份等级:</view><view class='val'>{{item.level}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>下单时间:</view><view class='val'>{{filter.formatTime(item.createtime)}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>完成时间:</view><view class='val'>{{item.finishtime==0?'未完成':filter.formatTime(item.finishtime)}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>收益人:</view><view class='val'>{{item.incomeusername}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>收益金额:</view><view class='val'>{{filter.consMoney(item.totalprice)}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>订单状态:</view><view class='val'>{{filter.generalizeType(item.status)}}</view>
+      </view>
+      <view class='item'>
+          <view class='lab'>返佣类型:</view><view class='val'>{{filter.returnMoneyType(item.type)}}</view>
+      </view>
+    </view>
+  </swiper-item>  
+</swiper>

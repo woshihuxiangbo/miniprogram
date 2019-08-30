@@ -1,0 +1,75 @@
+<view class="seckill">
+  <view class="rob-progree">
+    <view class="rob1">正在疯抢</view>
+    <view class="rob2">即将开抢</view>
+    <view class="rob3">明日预告</view>
+  </view>
+  <view class="seck-time">
+    <view class="current-time">13:00正在疯抢</view>
+    <view class="count-down">
+      <text class="val">距结束</text>
+      <text class="hour">00</text>
+      <text class="minute">24</text>
+      <text class="second">56</text>
+    </view>
+  </view>
+
+  <view class="tips">
+    <text class="inform">小花刚拼团赚取2.2元</text>
+    <text class="recommend">爆款推荐</text>
+  </view>
+
+  <view class="swiper3">
+    <swiper class="swiper" indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+      <block wx:for="{{3}}" wx:key="">
+        <swiper-item>
+          <view class="item3">
+            <view class="an">
+              <image src="{{posterSrc}}"></image>
+              <view class="text">
+                <view class="name">商品名称</view>
+                <view class="price">￥39.9</view>
+              </view>
+            </view>
+            <view class="an">
+              <image src="{{posterSrc}}"></image>
+              <view class="text">
+                <view class="name">商品名称</view>
+                <view class="price">￥39.9</view>
+              </view>
+            </view>
+            <view class="an">
+              <image src="{{posterSrc}}"></image>
+              <view class="text">
+                <view class="name">商品名称</view>
+                <view class="price">￥39.9</view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="goodslist">
+    <view class="gooditem" wx:for="{{5}}" wx:key=''>
+      <view class="imgbox">
+        <image class="goodpic" src="http://img.chuangxiaozhu.com/wxapp/headpic.jpg"></image>
+      </view>
+      <view class="goodinfo">
+        <view class="name">雅诗兰黛补水冷敷的化妆品你值得拥有的化妆品信息</view>
+        <view class="money1">
+          <text class="it-much">￥59.9</text>
+          <text class="it-seck">马上抢</text>
+        </view>
+        <view class="money2">
+          <text class="old-price">￥89</text>
+          <view class="jingdu">
+            <view class="percentage">已售58%</view>
+            <progress activeColor="#f51f13" backgroundColor="#fee7e5" class="jinduline" percent="58"></progress>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

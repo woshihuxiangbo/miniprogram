@@ -1,0 +1,69 @@
+<!--pages/withdraw/withdraw.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='tab'>
+    <view class='item'>
+      <view class='box'>
+        <view class='lab'>可提现金额(元)</view>
+        <view class='val'>{{filter.consMoney(actualTotalAmount)}}</view>
+      </view>
+
+    </view>
+    <view class='item'>
+      <view class='box'>
+        <view class='lab'>待提现金额(元)</view>
+        <view class='val'>{{filter.consMoney(awaitTotalAmount)}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='money'>
+    <view class='label'>提现金额</view>
+    <view class='num'>
+      <view class='icon'>￥</view>
+      <input type='digit' class='inp' type="number" bindinput='inpMeney' placeholder-class='inppl' placeholder='最低金额为1元'></input>
+
+    </view>
+  </view>
+  <!-- <view class='packet'>
+    <view class='left'>当前可提现佣金：￥{{yuMoney}}</view>
+    <view class='tips'>全部提现</view>
+  </view> -->
+  <view class='way'>
+    <!-- <view class='title'>提现方式</view> -->
+    <radio-group class="radio_group" bindchange="radioChange">
+      <view class='radio'>
+        <!-- <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/recharge/wx.png'></image> -->
+        <view class='txt'>提现</view>
+        <radio value="1" checked="true" />
+      </view>
+      <view class='radio'>
+        <!-- <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/recharge/zfb.png'></image> -->
+        <view class='txt'>转预存款</view>
+        <radio value="2" checked="" disabled="{{preDisabled}}" />
+      </view>
+    </radio-group>
+  </view>
+  <!-- <view class='info'>
+    <view class='name'>
+      <view>姓名</view>
+      <input placeholder='请填写正确的姓名' placeholder-class='info-placeholder'></input>
+    </view>
+
+    <view class='account'>
+      <view>账号</view>
+      <input placeholder='请填写正确的微信/支付宝账号' placeholder-class='info-placeholder'></input>
+    </view>
+  </view> -->
+  <view class='moreTips' hidden='{{moreTipsHidden}}'>
+    <image class='bions' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/bions.png'></image>
+    <view class='tip'>你的佣金提现正在审核...</view>
+    <view class='txt'>
+      <text bindtap='gowithdrawProgress'>点击查看  >>></text>
+    </view>
+  </view>
+  <view class='btn'>
+    <button class='submit' bindtap="getMoney" hover-class='none'>提交申请</button>
+    <!-- <button class='goDetail' hover-class='none'>佣金收益明细</button> -->
+  </view>
+
+</view>

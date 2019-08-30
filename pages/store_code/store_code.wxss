@@ -1,0 +1,69 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.pic {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 6rpx solid #fff;
+  margin: 160rpx auto 20rpx;
+}
+
+.txt {
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.txt>view {
+  height: 48rpx;
+}
+.sign{
+  padding: 0 30rpx;
+  line-height: 48rpx;
+}
+
+.txt .title {
+  margin: 260rpx 0 0;
+  letter-spacing: 6rpx;
+}
+
+.txt .subtitle {
+  font-size: 30rpx;
+  margin: 40rpx 0 0;
+}
+
+.txt .footerText {
+  font-size: 30rpx;
+  margin: 60rpx 0 0;
+  letter-spacing: 2rpx;
+}
+
+.qrcode {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  padding: 10rpx;
+  margin: 30rpx auto;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.btn {
+  position: fixed;
+  font-size: 30rpx;
+  color: #333;
+  left: 50%;
+  bottom: 9vh;
+  line-height: 50rpx;
+  padding: 0 30rpx;
+  border-radius: 25rpx;
+  background: rgba(240, 240, 240, 0.5);
+  transform: translateX(-50%);
+}
+
+swiper {
+  height: 100vh;
+}

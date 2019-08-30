@@ -1,0 +1,67 @@
+/* pages/addAddress/addAddress.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  line-height: 88rpx;
+  margin: 0 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.person {
+  padding-top: 20rpx;
+}
+
+.flex .left {
+  margin-right: 50rpx;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.flex .more {
+  display: block;
+  width: 24rpx;
+  height: 24rpx;
+}
+.flex input{
+  flex: 1;
+}
+
+.area .space{
+  flex: 1;
+}
+
+.address {
+  padding: 40rpx 30rpx 30rpx;
+  height: 210rpx;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  background: #db665f;
+  color: #fff;
+  line-height: 60rpx;
+  width: 500rpx;
+  font-size: 28rpx;
+  position: fixed;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}

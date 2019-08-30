@@ -1,0 +1,25 @@
+<!--pages/free_gift2/free_gift2.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="free_gift2">
+  <view class="activity_rules">
+    <view class="tit">活动规则</view>
+    <view class="word">{{shortName}}，奴婢在这恭候多时</view>
+    <view class="word">为您精心准备了{{indexData.storeGift.length}}款限量礼品</view>
+    <view class="word">您仅需点击文章，阅读3分钟免费领取</view>
+    <view class="eng">READ TO RECEIVE A GOOD GIFT</view>
+  </view>
+  <view class="gift_list">
+    <navigator class="gift_item" wx:for="{{indexData.storeGift}}" wx:key="1" url='/pages/goodsDetail/goodsDetail?goodsId={{item.itemId}}&skuId={{item.skuId}}&eventType=6&isShow=1&fuid={{fuid}}'>
+      <image class="gift_pic" src='{{ossUrl}}{{item.thumbnail}}'></image>
+      <view class="gift_price">
+        <view class="name">{{item.itemName}}</view>
+        <view class="price">￥{{filter.consMoney(item.marketPrice||0)}}</view>
+      </view>
+      <view class="zero_buy">付{{filter.consMoney(item.eventPrice)}}邮费 免费领取</view>
+    </navigator>
+  </view>
+  <navigator url="/pages/gifts_articles/gifts_articles?fuid={{fuid}}&articleId={{articleId}}&keepTime={{keepTime}}&voiceSrc={{voiceSrc}}" class="btn" hover-class="none">
+    <view class="word">点击文章阅读3分钟即可领取</view>
+    <view class="word">{{indexData.storeGift.length}}款产品中一款</view>
+  </navigator>
+</view>

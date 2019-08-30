@@ -1,0 +1,287 @@
+/* pages/orderDetail/orderDetail.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.status {
+  min-height: 100rpx;
+  background: #de635c;
+  padding: 30rpx;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.status .flx {
+  display: flex;
+  align-items: center;
+}
+
+.status image {
+  display: block;
+  width: 43rpx;
+  height: 43rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+
+.code .title {
+  font-size: 24rpx;
+  color: #7d7d7d;
+  line-height: 116rpx;
+  text-align: center;
+}
+
+.code .bg {
+  margin: 0 30rpx;
+  /* min-height: 450rpx; */
+  background: #f2f2f2;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.code .bg .pickUp {
+  text-align: center;
+  font-size: 32rpx;
+  color: #4a4a4a;
+  line-height: 100rpx;
+  padding-top: 10rpx;
+}
+
+.code .bg .barCode {
+  display: block;
+  width: 80%;
+  margin: 0 10%;
+  height: 120rpx;
+}
+
+.code .bg .rqCode {
+  display: block;
+  width: 280rpx;
+  margin: 0 auto;
+  padding: 30rpx 0;
+  height: 280rpx;
+}
+
+.code .qrcode {
+  text-align: center;
+  /* padding-top: 50rpx; */
+  margin: 20rpx 0;
+}
+
+.code .bg .cut {
+  display: flex;
+  align-items: center;
+}
+
+.code .bg .circle {
+  width: 14rpx;
+  height: 28rpx;
+  background-color: #fff;
+}
+
+.code .bg .circleLeft {
+  border-radius: 0 14rpx 14rpx 0;
+}
+
+.code .bg .circleRight {
+  border-radius: 14rpx 0 0 14rpx;
+}
+
+.code .bg .line {
+  flex: 1;
+  height: 2rpx;
+  background: #979797;
+}
+
+.code .storeAddress {
+  font-size: 24rpx;
+  color: #666;
+  padding: 0 30rpx;
+  line-height: 64rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  padding: 26rpx 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  line-height: 46rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.info .name text {
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 20rpx;
+}
+
+.info .address {
+  display: flex;
+  align-items: center;
+}
+
+.info .address image {
+  display: block;
+  width: 26rpx;
+  height: 26rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+
+.goods {
+  margin: 0 30rpx;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.goods .store {
+  font-weight: bold;
+  padding-bottom: 20rpx;
+}
+
+.goods .goodsDetail {
+  display: flex;
+}
+
+.tui_money {
+  padding: 20rpx 30rpx 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tui_money .tuibtn {
+  width: 100rpx;
+  text-align: center;
+  border: 1rpx solid #666;
+  color: #666;
+  border-radius: 10rpx;
+}
+
+.goods .goodsDetail .thumb {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.goods .goodsDetail .content {
+  flex: 1;
+}
+
+.goods .goodsDetail .content .name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.goods .goodsDetail .content .price {
+  color: #df625c;
+}
+
+.goods .goodsDetail .content .txt {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+}
+
+.goods .goodsDetail .content .label {
+  color: #df625c;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  border-radius: 6rpx;
+  background: #f5d0ce;
+  float: right;
+}
+
+.way {
+  margin: 0 30rpx;
+  padding: 10rpx 0 20rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.way .item {
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  line-height: 50rpx;
+}
+
+.way .item view:last-child {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.way .message {
+  display: flex;
+  color: #999;
+}
+
+.way .message view {
+  white-space: nowrap;
+}
+
+.way .message input {
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 28rpx;
+}
+
+.totle {
+  margin: 0 30rpx;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  line-height: 88rpx;
+}
+
+.totle view:last-child {
+  color: #df625c;
+  font-size: 30rpx;
+}
+
+.orderInfo {
+  margin: 0 30rpx;
+}
+
+.orderInfo .title {
+  line-height: 66rpx;
+}
+
+.orderInfo .item {
+  color: #999;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+
+.btn {
+  margin: 80rpx 30rpx 40rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn button {
+  font-size: 28rpx;
+  line-height: 36rpx;
+  color: #666;
+  border: 2rpx solid #999;
+  padding: 0 14rpx;
+  margin: 0 10rpx;
+}
+
+.btn .paybtn {
+  border-color: #de635c;
+  color: #de635c;
+}

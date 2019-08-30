@@ -1,0 +1,94 @@
+/* pages/popOrder/popOrder.wxss */
+
+page {
+  font-size: 28rpx;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  color: #625f5f;
+}
+
+.tab_item {
+  width: 25%;
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.active {
+  color: #de635c;
+}
+
+.active .line {
+  width: 61rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  background: #de635c;
+  margin: 0 auto;
+}
+
+.list .thumb {
+  display: block;
+  width: 180rpx;
+  height: 180rpx;
+  flex-shrink: 0;
+  margin: 0 20rpx;
+}
+
+.list .item {
+  margin: 0 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.list .content {
+  flex: 1;
+}
+
+.list .content .label {
+  padding: 0 4rpx;
+  color: #666;
+  line-height: 36rpx;
+  font-size: 24rpx;
+  border: 2rpx solid #666;
+  border-radius: 8rpx;
+  float: right;
+}
+
+.list .content .time {
+  margin-top: 16rpx;
+  font-size: 20rpx;
+  color: #625f5f;
+}
+
+.list .content .orderNum {
+  font-size: 20rpx;
+  color: #625f5f;
+}
+
+.list .content .bottom {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list .content .bottom .price text {
+  color: #de635c;
+}
+
+.list .content .bottom .income {
+  color: #de635c;
+}

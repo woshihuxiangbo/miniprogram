@@ -1,0 +1,156 @@
+.container {
+  padding: 30rpx;
+}
+
+.container .item {
+  border-bottom: 1rpx solid #f2f2f2;
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.container .item .label {
+  width: 250rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+}
+
+.container .item .val {
+  flex: 1;
+  margin: 10rpx 0;
+}
+
+.container .item .pl {
+  font-size: 30rpx;
+  line-height: 88rpx;
+  color: #999;
+}
+
+.container .sele {
+  /* display: flex; */
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 20rpx;
+}
+
+.container .sele .label {
+  width: 150rpx;
+  padding-bottom: 30rpx;
+}
+
+.container .sele .list {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+}
+
+.container .sele .list .alone {
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #de635c;
+  text-align: center;
+  font-size: 26rpx;
+  padding: 0 10rpx;
+  color: #de635c;
+  margin-bottom: 30rpx;
+  margin-right: 20rpx;
+  width: 190rpx;
+}
+
+.container .sele .list view:nth-of-type(3){
+  margin-right: 0!important;
+}
+
+.container .sele .list view:nth-of-type(6){
+  margin-right: 0!important;
+}
+
+.container .sele .list view:nth-of-type(9){
+  margin-right: 0!important;
+}
+
+.container .sele .list view:nth-of-type(12){
+  margin-right: 0!important;
+}
+.container .sele .list .active {
+  background-color: #de635c;
+  color: #fff;
+}
+
+.container .btn {
+  width: 500rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #de635c;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: #fff;
+  margin: 100rpx auto;
+}
+
+.is_dian {
+  display: flex;
+  align-items: center;
+  padding-top: 30rpx;
+}
+
+.is_dian_text {
+  font-size: 30rpx;
+  color: #333;
+  width: 200rpx;
+}
+
+.is_dian .radio {
+  font-size: 30rpx;
+  margin-right: 30rpx;
+}
+
+.flex{
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .flex2{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border:none;
+}
+.cardphoto{
+  width: 30rpx;
+  height: 30rpx;
+}
+.pact{
+  color:#de635c;
+}
+.preview{
+  width: 300rpx;
+  height: 200rpx;
+  background-color: pink;
+}
+.agreebtn{
+   width: 30rpx;
+   height: 30rpx;
+   border-radius: 50%;
+   border: 1rpx solid #de635c;
+   position: relative;
+   margin-right: 20rpx;
+}
+.agreebtn::after{
+  content:'';
+  position: absolute;
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #de635c;
+  border-radius: 50%;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  transition:all 1s; 
+}
+.whitebgc::after{
+  background-color: #fff;
+}

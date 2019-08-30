@@ -1,0 +1,10 @@
+/* pages/xz_single/xz_single.wxss */
+
+.box {
+  padding: 30rpx;
+}
+
+.no_word {
+  font-size: 30rpx;
+  text-align: center;
+}

@@ -1,0 +1,95 @@
+/* pages/contactDetail/contactDetail.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+.top {
+  background: #fff;
+  margin: 0 30rpx;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  height: 125rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.info .avatar {
+  display: block;
+  width: 86rpx;
+  height: 86rpx;
+  flex-shrink: 0;
+  margin: 0 20rpx;
+  border-radius: 6rpx;
+}
+
+.moreIcon {
+  display: block;
+  width: 26rpx;
+  height: 26rpx;
+  margin: 0 20rpx 0 10rpx;
+}
+
+.shopIcon {
+  display: block;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.info .name {
+  flex: 1;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  background: #fff;
+  margin: 0 30rpx;
+  padding: 0 20rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  color: #454545;
+}
+
+.item .left {
+  flex: 1;
+}
+
+.item .status {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.wx-switch-input {
+  /* 激活 */
+  width: 72rpx !important;
+  height: 30rpx !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #df625c !important;
+  border: 0 !important;
+}
+
+.wx-switch-input::before {
+  /*关闭*/
+  width: 72rpx !important;
+  height: 30rpx !important;
+  background: #ccc !important;
+  border: 0 !important;
+}
+
+.wx-switch-input::after {
+  /*圆豆*/
+  width: 30rpx !important;
+  height: 30rpx !important;
+  background: #eee !important;
+}

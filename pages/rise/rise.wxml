@@ -1,0 +1,43 @@
+<!--pages/rise/rise.wxml-->
+<view class='container'>
+  <view class='title'>{{AppName}}目前设置了
+    <text>{{lvConfig.lv1.name}} ·总监 · {{lvConfig.lv3.name}}</text> 三个身份。
+  </view>
+  <view class='content'>
+
+    <view class='title_1'>{{shortName}}身份说明</view>
+    <view class='statement'>
+      <view class='statement_item' wx:for='{{statement}}' wx:key=''>
+        <view class='title_2'>{{item.title}}</view>
+        <view class='list' wx:for='{{item.txt}}' wx:key='' wx:for-index='idx_2' wx:for-item='item_2'>
+          <view>{{item_2.title}}</view>
+          <view>
+            <view wx:for='{{item_2.txt}}' wx:key='' wx:for-index='idx_3' wx:for-item='item_3'>{{item_3}}</view>
+          </view>
+        </view>
+        <view class='statement_tips'>{{item.tips}}</view>
+      </view>
+    </view>
+
+    <view class='title_1'>{{shortName}}如何升级？</view>
+    <view class='riseWay'>
+      <view wx:for='{{riseWay}}' wx:key=''>
+        <text>{{item.start}}</text> → 升级 →
+        <text>{{item.end}}</text> {{item.endTips}}
+      </view>
+    </view>
+
+    <view class='title_1'>{{shortName}}升级示例</view>
+    <view class='example'>
+      <view class='info' wx:for='{{example.info}}' wx:key=''>{{item}}</view>
+      <view class='example_title'>{{example.title}}</view>
+      <view class='example_content' wx:for='{{example.content}}' wx:key=''>{{item}}</view>
+    </view>
+
+    <view class='title_1'>{{shortName}}晋升好处</view>
+    <view class='advantage'>
+      <view wx:for='{{advantage}}' wx:key=''>{{item}}</view>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,59 @@
+.search_goods .search-box {
+  position: relative;
+  padding: 25rpx;
+  padding-bottom: 0;
+}
+
+.search_goods .search-box .searchcion {
+  position: absolute;
+  left: 40rpx;
+  margin: 18rpx 10rpx;
+}
+
+.search_goods .search-box .inp {
+  height: 60rpx;
+  padding-left: 80rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #625f5f;
+  background-color: #f4f4f4;
+}
+
+.search_goods .search-history, .search_goods .search-recommend {
+  margin: 0 52rpx;
+}
+
+.search_goods .search-history .head-box,
+.search_goods .search-recommend .head-box {
+  margin: 25rpx 0;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search_goods .search-history .head-box .tit-name,
+.search_goods .search-recommend .head-box .tit-name {
+  font-size: 28rpx;
+  color: #625f5f;
+}
+
+.search_goods .search-history .head-box .tit-icon,
+.search_goods .search-recommend .head-box .tit-icon {
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.search_goods .search-history .search-container .goods-item,
+.search_goods .search-recommend .search-container .goods-item {
+  display: inline-block;
+  height: 44rpx;
+  line-height: 44rpx;
+  padding: 0 15rpx;
+  background-color: #f5f5f5;
+  font-size: 24rpx;
+  color: #625f5f;
+  border-radius: 22rpx;
+  margin-right: 25rpx;
+  margin-bottom: 20rpx;
+}

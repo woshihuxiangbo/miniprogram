@@ -1,0 +1,55 @@
+.title{
+  text-align: center;
+  font-size: 34rpx;
+  color: #333333;
+  position: relative
+}
+
+.title view{
+  width: 80rpx;
+  height: 40rpx;
+  display: inline-block;
+  text-align: center;
+  line-height: 40rpx;
+  color: #666666;
+  border: 1rpx solid #666666;
+  border-radius: 10rpx;
+  position: absolute;
+  font-size: 24rpx;
+  top: 1rpx;
+  right: 30rpx;
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+  margin-top: 100rpx;
+  margin-bottom: 60rpx;
+}
+
+.img image{
+  width: 280rpx;
+  height: 260rpx;
+}
+
+.txt{
+  font-size: 32rpx;
+  color: #666666;
+  text-align: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-weight: 600;
+  margin-bottom: 40rpx;
+}
+
+.btn{
+  width: 320rpx;
+  height: 65rpx;
+  text-align: center;
+  line-height: 65rpx;
+  border-radius: 15rpx;
+  background: #de635c;
+  font-size: 28rpx;
+  color: #fff;
+  margin: 40rpx auto;
+}

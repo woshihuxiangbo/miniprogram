@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "推广订单",
+  "usingComponents": {
+    "emptylist": "/Component/emptylist/emptylist"
+  }
+}

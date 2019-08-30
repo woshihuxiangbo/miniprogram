@@ -1,0 +1,16 @@
+/* pages/headnews/headnews.wxss */
+.box{
+  margin: 0 30rpx;
+}
+.item{
+  height: 290rpx;
+  margin-bottom: 35rpx;
+  
+}
+.item_pic{
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+  background-color: #e5e5e5;
+  box-shadow: 0 6rpx 6rpx 0 rgba(0, 0, 0, 0.2);
+}

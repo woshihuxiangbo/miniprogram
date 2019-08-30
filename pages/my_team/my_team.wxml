@@ -1,0 +1,18 @@
+<!--pages/my_team/my_team.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="my_team">
+    <view class="team_data">
+        <view class='item' wx:for="{{leveList}}"  data-id="{{item.id}}" bindtap="switchTab" wx:key=''>{{item.txt}}</view>
+    </view>
+
+    <view class="person_list">
+        <view class="person_item" wx:for="{{teamList}}" wx:key="">
+            <view class="item_info">
+                <image class="info_pic" src="{{item.header}}"></image>
+                <view class="nickname">{{item.nickname}}</view>
+                <view class="job">{{item.level}}</view>
+            </view>
+            <view class="item_money">消费: ￥{{filter.consMoney(item.buyamount)}}</view>
+        </view>
+    </view>
+</view>

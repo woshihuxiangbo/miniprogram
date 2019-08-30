@@ -1,0 +1,81 @@
+<!--pages/goods_group_order/goods_group_order.wxml-->
+<view class='container'>
+  <view class='top'>
+    <view>
+      <image src='http://img.chuangxiaozhu.com/wxapp/icons/dui.png'></image>
+      <view>进行中</view>
+    </view>
+    <view>倒计时：{{countDown[0].hour}}:{{countDown[0].minute}}:{{countDown[0].second}}</view>
+  </view>
+
+  <view class='group'>
+    <scroll-view class='scroll' scroll-x>
+      <view class='flex {{group.length<=6 && "auto-center"}}'>
+        <view class='scorllItem' wx:for='{{group}}' wx:key=''>
+          <image class='avatar {{item.avatar || "avatarNoBorder"}}' src='{{item.avatar||"http://img.chuangxiaozhu.com/wxapp/goods_group/empty.png"}}'></image>
+          <view>{{index
+            <1? "团长":item.avatar? "已支付": ""}}</view>
+          </view>
+        </view>
+    </scroll-view>
+    <view class='tips'>剩余2人,即可拼团成功</view>
+    <view class='phone'>{{shortName}}：12345678910</view>
+    <view class='adress'>收货地址：黄金时代官网一年卡时间</view>
+    </view>
+    <view class='goodsDetail'>
+      <view class='title'>商品清单</view>
+      <view class='goods'>
+        <image class='thumb' mode='aspectFill' src='http://img.chuangxiaozhu.com/wxapp/earn/shoping.png'></image>
+        <view class='content'>
+          <view class='price'>￥565</view>
+          <view class='title'>Chinald圣纸抽纸(20包/箱）</view>
+          <view class='spec'>
+            <view>商品属性：</view>
+            <view>x1</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='goodsitem payWay'>
+        <view>支付方式</view>
+        <view>微信</view>
+      </view>
+
+      <view class='goodsitem'>
+        <view>配送方式</view>
+        <view>快递免邮</view>
+      </view>
+
+      <view class='goodsitem postage'>
+        <view>运费</view>
+        <view>￥30</view>
+      </view>
+
+      <view class='goodsitem message'>
+        <view>买家留言：</view>
+        <view>请打包完好，无损坏</view>
+      </view>
+
+      <view class='goodsitem payment'>
+        <view>实付款（含运费）</view>
+        <view>￥89</view>
+      </view>
+    </view>
+
+
+    <view class='foot'>
+
+      <view class='footTitle'>订单信息</view>
+      <view class='footItem'>
+        <view>订单编号：20181564346346454</view>
+        <view>微信交易编号：151544456464611</view>
+        <view>创建时间：20181105</view>
+        <view>付款时间：20181105 </view>
+      </view>
+      <view class='btn'>
+        <button hover-class='none' open-type='share'>分享活动</button>
+        <button hover-class='none'>取消拼团</button>
+      </view>
+    </view>
+    <!-- <repay></repay> -->
+  </view>

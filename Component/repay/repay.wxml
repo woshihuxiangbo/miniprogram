@@ -1,0 +1,13 @@
+<!--component/repay/repay.wxml-->
+<view class='table' style='animation: {{tableShow?"fadeInUp":"fadeOutDown" }} 0.5s ease both;'>
+  <view class='title'>{{title}}</view>
+  <view class='items'>
+    <view class='item' wx:for='{{items}}' wx:key='' bindtap='swichItem' data-idx='{{index}}'>
+      <view>{{item}}</view>
+      <view class='circle'>
+        <image hidden='{{currnetItem!=index}}' class='select' src='http://img.chuangxiaozhu.com/wxapp/icons/okpic.png'></image>
+      </view>
+    </view>
+  </view>
+  <button class='btn' hover-class='none' bindtap='submit'>提交</button>
+</view>

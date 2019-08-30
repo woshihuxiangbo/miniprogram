@@ -1,0 +1,236 @@
+<!--pages/partner/partner.wxml-->
+<view class="partner">
+  <view class="partner-info">
+    <view class="head-box">
+      <button class='head_left' open-type='getUserInfo' bindgetuserinfo='changePersonInfor'>
+        <view class="head-pic" style='width: 86rpx;height: 86rpx;border-radius: 50%;overflow: hidden;'>
+          <open-data type='userAvatarUrl'></open-data>
+        </view>
+        <view class="info">
+          <view class="top">
+            <open-data class="name" type='userNickName'></open-data>
+            <text class="type" data-rank='rank' hidden='{{!xzData.rank && !tuan}}'>{{xzData.rank+tuan}}</text>
+          </view>
+          <view class="bottom">修改个人信息</view>
+        </view>
+      </button>
+      <button open-type="contact" class="service">客服</button>
+      <navigator wx:if="{{rankNum==1||2||3?0:1}}" url="/pages/my_referrer/my_referrer" hover-class="none" class="relation" style='margin-right:20rpx'>
+        <view class="word">联系邀请人</view>
+        <image class="icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/code2.png"></image>
+      </navigator>
+    </view>
+
+    <view class="money-card">
+      <!-- <image class="set-pic pic" src="http://img.chuangxiaozhu.com/wxapp/xz_center/set.png"></image> -->
+      <view class="meney-data">
+        <view class="d1" wx:if="{{balanceShow}}">
+          <view class="val">
+            <text class="much">0</text>
+            <text class="unit">元</text>
+          </view>
+          <view class="name">{{shortName}}余额</view>
+        </view>
+        <navigator url="/pages/coupon/coupon" hover-class="none" class="d1">
+          <view class="val">
+            <text class="much">{{cashCoupon}}</text>
+            <text class="unit">张</text>
+          </view>
+          <view class="name">代金券</view>
+        </navigator>
+        <navigator url="/pages/message/message" hover-class="none" class="d1">
+          <view class="val">
+            <text class="much">{{message}}</text>
+            <text class="unit">条</text>
+          </view>
+          <view class="name">未读消息</view>
+        </navigator>
+        <navigator wx:if="{{moneyArticle}}" url="/pages/xz_single/xz_single?articleId={{moneyArticle.articleId}}&name={{moneyArticle.title}}" hover-class="none" class="d1">
+          <view class="val">
+            <text class="much">****</text>
+            <text class="unit">元</text>
+          </view>
+          <view class="name">可借金额</view>
+        </navigator>
+        <!-- <view class="d1" >
+          <view class="val">
+            <text class="much">0</text>
+            <text class="unit">元</text>
+          </view>
+          <view class="name">可借现金</view>
+        </view> -->
+      </view>
+
+      <!-- <image class="message-pic pic" src="http://img.chuangxiaozhu.com/wxapp/xz_center/message.png"></image> -->
+
+    </view>
+  </view>
+  <!-- 轮播banner -->
+  <!-- <view class="swiper-box">
+    <swiper class="swiper" autoplay='{{swiperTopauto}}' indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+      <block wx:for="{{banner}}" wx:key="">
+        <swiper-item bindtap="goBanner" data-index="{{index}}" data-name="{{item.title}}">
+          <my-video  wx:if='{{item.linkType == 4}}' id='v_3' src='{{item.externalUrl}}' poster='{{ossUrl+item.imgUrl}}' bindstart='videoStart' bindend='videoEnd'></my-video>
+          <image src="{{ossUrl}}{{item.imgUrl}}" mode="aspectFill" class="slide-image" wx:else />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view> -->
+  <!-- 导航（新） -->
+  <view class='navn'>
+    <button class='navitem' hover-class='none' wx:for='{{navnData}}' wx:key='index' open-type='{{(item.id==1||item.id==3||item.id==5||item.id==6) && "getUserInfo"}}' data-id='{{item.id}}' bindgetuserinfo='{{(item.id==1||item.id==3||item.id==5||item.id==6) && "gonavitem"}}'
+      bindtap='{{(item.id==1||item.id==3||item.id==5||item.id==6)||"gonavitem"}}'>
+      <image class='icon' src='{{item.icon}}'></image>
+      <view>{{item.txt}}</view>
+    </button>
+  </view>
+
+  <view class='upgrade'>
+    <view bindtap='gopower'>
+      <image class='icon' src='/images/icons/sj.png'></image>
+      <text>升级{{lvConfig.lv2.name}}/{{lvConfig.lv3.name}}</text>
+    </view>
+    <view class='flx'>
+      <view bindtap='godeposit_detail'>
+        <image class='icon' src='/images/icons/yck.png'></image>
+        <text>预存款余额:</text>
+        <text class='alt'>￥{{prestore}}</text>
+      </view>
+      <view bindtap='gocommission_detail'>
+        <image class='icon' src='/images/icons/yj.png'></image>
+        <text>佣金收益:</text>
+        <text class='alt'>￥{{income_total}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="order-form">
+    <view class="title">
+      <view class="left">
+        <image class="tit-icon" src="/images/icons/order_form.png"></image>
+        <view class="tit-name">{{shortName}}订单</view>
+      </view>
+
+      <navigator url="/pages/orderList/orderList?classId=0" hover-class="none" class="option">
+        <text class="tit-opt">查看全部</text>
+        <image class="return-icon" src="/images/icons/more.png"></image>
+      </navigator>
+    </view>
+
+    <view class="container">
+      <navigator url="/pages/orderList/orderList?classId=1" class="item" hover-class="none">
+        <image class="item-icon" src="/images/icons/wait_pay.png"></image>
+        <text class="item-name">待付款</text>
+        <view class='order_status_icon' wx:if="{{orderStatus.unpaid&&orderStatus.unpaid>0}}">{{orderStatus.unpaid>9?'9+':orderStatus.unpaid}}</view>
+      </navigator>
+      <navigator url="/pages/orderList/orderList?classId=2" class="item" hover-class="none">
+        <image class="item-icon" src="/images/icons/wait_fa.png"></image>
+        <text class="item-name">待发货</text>
+        <view class='order_status_icon' wx:if="{{orderStatus.dropshipping&&orderStatus.dropshipping>0}}">{{orderStatus.dropshipping>9?'9+':orderStatus.dropshipping}}</view>
+      </navigator>
+      <navigator url="/pages/orderList/orderList?classId=3" class="item" hover-class="none">
+        <image class="item-icon" src="/images/icons/wait_shou.png"></image>
+        <text class="item-name">待收货</text>
+        <view class='order_status_icon' wx:if="{{orderStatus.waitforfeceiving&&orderStatus.waitforfeceiving>0}}">{{orderStatus.waitforfeceiving>9?'9+':orderStatus.waitforfeceiving}}</view>
+      </navigator>
+      <navigator url="/pages/orderList/orderList?classId=4" class="item" hover-class="none">
+        <image class="item-icon" src="/images/icons/wait_evaluate.png"></image>
+        <text class="item-name">待评价</text>
+        <view class='order_status_icon' wx:if="{{orderStatus.unevaluated&&orderStatus.unevaluated>0}}">{{orderStatus.unevaluated>9?'9+':orderStatus.unevaluated}}</view>
+      </navigator>
+      <navigator url="/pages/refund_list/refund_list" class="item" hover-class="none">
+        <image class="item-icon" src="/images/icons/after_sale.png"></image>
+        <text class="item-name">退款/售后</text>
+      </navigator>
+    </view>
+  </view>
+  <view class='order-form'>
+    <view class="title">
+      <view class="left">
+        <image class="tit-icon" src="/images/icons/hd.png"></image>
+        <view class="tit-name">{{shortName}}活动</view>
+      </view>
+    </view>
+    <view class='container'>
+      <navigator class="item" url="" hover-class="none">
+        <image class="item-icon" src="/images/icons/tg.png"></image>
+        <text class="item-name">{{shortName}}团购</text>
+      </navigator>
+      <navigator class="item" url="" hover-class="none">
+        <image class="item-icon" src="/images/icons/yx.png"></image>
+        <text class="item-name">{{shortName}}游戏</text>
+      </navigator>
+      <navigator class="item" url="" hover-class="none">
+        <image class="item-icon" src="/images/icons/ms.png"></image>
+        <text class="item-name">{{shortName}}秒杀</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="order-form">
+    <view class="title">
+      <view class="left">
+        <image class="tit-icon" src="/images/icons/xz_service.png"></image>
+        <view class="tit-name">{{shortName}}服务</view>
+      </view>
+    </view>
+    <view class="container">
+      <navigator class="item" url="/pages/address/address" hover-class="none">
+        <image class="item-icon" src="/images/icons/addrees.png"></image>
+        <text class="item-name">收货地址</text>
+      </navigator>
+      <navigator class="item" url="/pages/comment/comment" hover-class="none">
+        <image class="item-icon" src="/images/icons/xz_evaluate.png"></image>
+        <text class="item-name">{{shortName}}评价</text>
+      </navigator>
+
+      <!-- <navigator class="item" url="/pages/coming_soon/coming_soon" hover-class="none">
+        <image class="item-icon" src="/images/icons/pei.png"></image>
+        <text class="item-name">贵就赔</text>
+      </navigator> -->
+      <view class="item" wx:if='{{gjp}}' data-id='{{gjp.id}}' bindtap="goClassItem" data-name="{{gjp.name}}">
+        <!-- ||'http://img.yjk027.com/yjk_v1/wxapp/yjkicons/fw_icons3.png' -->
+        <image class="item-icon" src="/images/icons{{gjp.icon}}"></image>
+        <text class="item-name">{{gjp.name}}</text>
+        <!-- 红包套餐 -->
+      </view>
+      <navigator class="item" url="/pages/collectList/collectList" hover-class="none">
+        <image class="item-icon" src="/images/icons/xz_collect.png"></image>
+        <text class="item-name">{{shortName}}收藏</text>
+      </navigator>
+    </view>
+  </view>
+
+
+  <view class="order-form">
+    <view class="title">
+      <view class="left">
+        <image class="tit-icon" src="/images/icons{{bigTit.school.icon}}"></image>
+        <view class="tit-name">{{bigTit.school.name}}</view>
+      </view>
+    </view>
+
+    <view class="container">
+      <view class="item" wx:for="{{schoolClass}}" wx:key="" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="goClassItem">
+        <image class="item-icon" src="/images/icons{{item.icon}}"></image>
+        <text class="item-name">{{item.name}}</text>
+      </view>
+      <!-- <navigator url="/pages/school/school" hover-class="none" class="item">
+        <image class="item-icon" src="http://img.chuangxiaozhu.com/wxapp/xz_center/new_scholl.png"></image>
+        <text class="item-name">新手学堂</text>
+      </navigator>
+      <navigator url='/pages/rise/rise' hover-class="none" class="item">
+        <image class="item-icon" src="http://img.chuangxiaozhu.com/wxapp/xz_center/xz_progress.png"></image>
+        <text class="item-name">{{shortName}}进阶</text>
+      </navigator>
+      <navigator url="/pages/ownerStory/ownerStory" hover-class="none" class="item">
+        <image class="item-icon" src="http://img.chuangxiaozhu.com/wxapp/xz_center/story.png"></image>
+        <text class="item-name">{{lvConfig.lv1.name}}故事</text>
+      </navigator> -->
+    </view>
+  </view>
+  <view class='copyright'>版权所有
+    <text></text> 武汉蔻得</view>
+</view>
+
+<shareBar tableShow='{{shareBarShow}}' bindsave='savImg' bindcancel='closePoster'></shareBar>
+<storePoster storeType='join' noPhotosAlbum='{{noPhotosAlbum}}' domShow='{{true}}' tableShow='{{cvsShow}}' avatar='' name='' phone='' sign='' storeId='' bindclose='closePoster' noPhotosAlbum='{{noPhotosAlbum}}' eventType='1' bindsavsuc='closePoster'></storePoster>

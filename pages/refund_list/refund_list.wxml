@@ -1,0 +1,37 @@
+<!--pages/refund_list/refund_list.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="refund_list">
+  <view class="refund_item" wx:for="{{info}}" wx:key="">
+    <view class="item_tit">
+      <view class="name">
+        <text >{{item.name || shopName}}</text>
+        <text>{{filter.fitStore(item.eventType||1)}}</text>
+      </view>
+      <view class="status">{{filter.afterSaleStatus(item.status)}}</view>
+    </view>
+
+    <view bindtap="goReturn" data-id="{{item.id}}" data-status='{{item.status}}'>
+      <view class="goods_info" wx:for="{{item.refundOrderList}}" wx:for-item="item2" wx:key=''>
+        <image class="goods_pic" src="{{ossUrl+item2.thumbnail}}"></image>
+        <view class="goods_data">
+          <view class="main">
+            <text class="name_l">{{item2.itemname}}</text>
+            <text class="price_r">¥ {{filter.consMoney(item2.totalprice)}}</text>
+          </view>
+          <view class="subs">
+            <text class="prop_l">{{item2.specname}}</text>
+            <text class="num_r">x{{item2.count}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="goods_count">共{{filter.compuTotal(item.refundOrderList,'count')}}件商品，合计¥ {{filter.consMoney(filter.compuTotal(item.refundOrderList,'totalprice'))}}</view>
+    <view class="call_box">
+      <button hover-class="none" class="call_btn" hidden='{{info.status!=6}}' bindtap='goLogistics'>查看物流</button>
+      <button hover-class="none" open-type="contact" class="call_btn">联系客服</button>
+      <!-- <view class="call_btn call_active">确认收货</view > -->
+    </view>
+
+  </view>
+  <emptylist hidden="{{!show}}"></emptylist>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/my_referrer/my_referrer.wxml-->
+<view class="box">
+    <view class="tit">您的上级联系人</view>
+    <view class="content">
+        <view class="info">
+            <image class="headpic" src="{{info.header}}"></image>
+            <view class="word">
+                <view class="name">{{info.nickname}}</view>
+                <view class="sub">{{info.signature}}</view>
+            </view>
+        </view>
+        <image class="pic" src="{{info.wechatQrcode}}"></image>
+    </view>
+</view>

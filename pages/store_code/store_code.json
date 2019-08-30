@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "storePoster":"/Component/storePoster/storePoster"
+  },
+  "navigationBarTitleText": "店铺二维码"
+}

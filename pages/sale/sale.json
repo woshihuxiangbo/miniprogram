@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "shareBar": "/Component/shareBar/shareBar",
+    "storePoster": "/Component/storePoster/storePoster",
+    "goodsPoster": "/Component/goodsPoster/goodsPoster",
+    "my-video":"/Component/my-video/my-video"
+  }
+}

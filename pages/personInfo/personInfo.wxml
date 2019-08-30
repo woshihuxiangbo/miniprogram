@@ -1,0 +1,97 @@
+<!--pages/personInfo/personInfo.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='topInfo'>
+    <view class='avatar'>
+      <view>{{shortName}}头像</view>
+      <view class='headimage'>
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+    </view>
+    <view class='edit'>
+      <view>会员名称</view>
+      <view class='right'>
+        <open-data class="name" type='userNickName'></open-data>
+      </view>
+    </view>
+
+    <view class='edit'>
+      <view>性别</view>
+      <picker mode="selector" range='{{gender}}' bindchange='genderChange'>
+        <view class='right'>
+          <view class='novalue' hidden='{{!((genderIdx*1!=0 && genderIdx*1!=1) && userInfo.gender==0)}}'>选择</view>
+          <view hidden='{{!(genderIdx*1>=0||userInfo.gender*1>0)}}'>{{gender[genderIdx] || gender[userInfo.gender-1]}}</view>
+          <image class='moreIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/more.png'></image>
+        </view>
+      </picker>
+    </view>
+
+    <view class='edit'>
+      <view>出生年月</view>
+      <picker mode='date' bindchange="dateChange" start='1900-00-00' end='{{filter.strSlice(filter.formatTime(end),0,10)}}'>
+        <view class='right'>
+          <view class='novalue' hidden='{{birthday || userInfo.birthday}}'>选择</view>
+          <view>{{birthday || userInfo.birthday}}</view>
+          <image class='moreIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/more.png'></image>
+        </view>
+      </picker>
+    </view>
+
+    <view class='edit'>
+      <view>个性签名</view>
+      <input hidden='{{!maskHidden}}' type='text' bindblur='inputFinish' maxlength='20' placeholder='请输入个性签名' value='{{userInfo.signature}}'></input>
+    </view>
+    <view class='edit'>
+      <view>地区</view>
+      <view class='right'>
+        <picker mode="region" bindchange="regionChange">
+          <view hidden='{{userInfo.province || region.length}}' class='novalue'>选择</view>
+          <view hidden='{{!(userInfo.province || region.length)}}'>{{ region[0]}} {{region[1]}} {{region[2]}}</view>
+        </picker>
+        <image class='moreIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/more.png'></image>
+      </view>
+    </view>
+    <view class='edit'>
+      <view>手机号</view>
+      <view class='right'>
+        <button class='nophone' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber' hover-class='none' style='color:{{userInfo.mobile||mobile?"#333":""}}'>{{mobile || userInfo.mobile ||"未绑定"}}</button>
+
+        <image class='moreIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/more.png'></image>
+      </view>
+    </view>
+
+    <!-- <view class='edit'>
+      <view>微信号</view>
+      <view class='right'>
+        <view>AA-LUCY</view>
+      </view>
+    </view> -->
+    <view class='edit'>
+      <view>个人二维码</view>
+      <view class='right' bindtap='upImg'>
+        <view hidden='{{wccode || userInfo.wechatQrcode}}' class='novalue'>上传</view>
+        <image hidden='{{!(wccode || userInfo.wechatQrcode)}}' class='qrcode' src='http://img.chuangxiaozhu.com/wxapp/icons/qrcode.png'></image>
+        <image class='moreIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/more.png'></image>
+      </view>
+    </view>
+    <view class='edit' wx:if="{{userInfo.storename}}">
+      <view>团购小店</view>
+      <input  value="{{userInfo.storename}}" bindblur='storenameFinish'></input>
+    </view>
+    <view class='edit' wx:if="{{userInfo.address}}">
+      <view>团长地址</view>
+      <input  value="{{userInfo.address}}" bindblur='addrFinish'></input>
+    </view>
+  </view>
+</view>
+
+<view class='mask' hidden='{{maskHidden}}'>
+  <view class='table'>
+    <view class='title'>绑定手机号</view>
+    <view class='txt'>您当前尚未绑定手机号，建议您绑定以获得更多优惠资讯</view>
+    <view class='btn'>
+      <button class='cancel' hover-class='none' bindtap='cancelTap'>取消</button>
+      <button class='confirm' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNumber' hover-class='none'>确定</button>
+    </view>
+  </view>
+</view>

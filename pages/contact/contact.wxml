@@ -1,0 +1,21 @@
+<!--pages/contact/contact.wxml-->
+<view class='container'>
+  <view class='frame'>
+    <view class='left'>
+
+    </view>
+  </view>
+  <view class='tabbar'>
+    <view class='tab_top'>我想
+      <text>精选食品</text>
+      <text>生活用品</text>
+      <text>服饰鞋帽</text>
+      <text>名优特产</text>
+    </view>
+    <view class='tab_bottom'>
+      <textarea></textarea>
+      <image class='cry' src='http://img.chuangxiaozhu.com/wxapp/contact/cry.png'></image>
+      <image class='add' src='http://img.chuangxiaozhu.com/wxapp/contact/add.png'></image>
+    </view>
+  </view>
+</view>

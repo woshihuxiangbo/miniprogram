@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "attachbox": "/Component/attachbox/attachbox",
+    "shareBar": "/Component/shareBar/shareBar",
+    "storePoster": "/Component/storePoster/storePoster",
+    "goodsPoster": "/Component/goodsPoster/goodsPoster",
+    "navtop":"/Component/navtop/navtop",
+    "modal": "/Component/modal/modal"
+  },
+  "navigationStyle": "custom"
+}

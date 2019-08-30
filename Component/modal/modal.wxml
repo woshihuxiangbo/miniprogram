@@ -1,0 +1,11 @@
+<!--Component/modal/modal.wxml-->
+<view class='mask' hidden='{{modalHidden}}'>
+  <view class='table'>
+    <image class='auth_pic' src="{{logo}}"></image>
+    <view class='title'>{{appName}}</view>
+    <view class='txt'>{{content}}</view>
+    <view class='btn'>
+      <button class='confirm' open-type='getUserInfo' bindgetuserinfo='getUserInfo' hover-class='none'>确定</button>
+    </view>
+  </view>
+</view>

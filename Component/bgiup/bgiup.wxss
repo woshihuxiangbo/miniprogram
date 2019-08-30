@@ -1,0 +1,45 @@
+.up_pic .tit {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+}
+
+.up_pic .pic_box {
+  display: flex;
+}
+
+.up_pic .pic_box .pic_item {
+  margin-right: 30rpx;
+  width: 220rpx;
+  position: relative;
+}
+
+.up_pic .pic_box .pic_item .pic {
+  width: 200rpx;
+  height: 200rpx;
+  box-shadow: 0px 4rpx 4rpx 0px 	rgba(0, 0, 0, 0.1);
+}
+
+.up_pic .pic_box .pic_item .clear_icon {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: -20rpx;
+  right: -10rpx;
+  color: #999;
+}
+
+
+
+.up_pic .pic_box .pic_btn .content .up_icon {
+  width:200rpx;
+  height: 200rpx;
+}
+
+.up_pic .pic_box .pic_btn .content .word {
+  font-size: 20rpx;
+  color: #999;
+}
+
+

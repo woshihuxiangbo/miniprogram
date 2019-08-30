@@ -1,0 +1,5 @@
+<!--pages/xz_single/xz_single.wxml-->
+<view class='box'>
+    <rich-text nodes="{{content}}"></rich-text>
+    <view class='no_word' wx:if="{{noword}}">暂无内容</view>
+</view>

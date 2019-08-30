@@ -1,0 +1,319 @@
+/* pages/return/return.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+  padding-bottom: 120rpx;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.status {
+  min-height: 100rpx;
+  background: #de635c;
+  padding: 30rpx;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.status  image {
+  display: block;
+  width: 36rpx;
+  height: 36rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.operation {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 10rpx solid #f8f8f8;
+}
+
+.operation  image {
+  display: block;
+  width: 44rpx;
+  height: 44rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+
+.tips {
+  padding: 30rpx;
+  border-bottom: 10rpx solid #f8f8f8;
+}
+
+.tips .tips_item {
+  padding-bottom: 50rpx;
+  color: #999;
+  font-size: 26rpx;
+  display: flex;
+  align-items: flex-start;
+}
+
+.tips .tips_item::before {
+  content: '';
+  display: block;
+  margin-top: 10rpx;
+  margin-right: 20rpx;
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background: #d8d8d8;
+}
+
+.tips .btn {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: -10rpx;
+}
+
+.tips .btn button {
+  color: #666;
+  font-size: 26rpx;
+  line-height: 48rpx;
+  padding: 0 16rpx;
+  border: 2rpx solid #999;
+  margin-left: 20rpx;
+}
+
+.tips .btn button:last-child {
+  color: #df625c;
+  border-color: #df625c;
+}
+
+.money, .way {
+  margin: 0 30rpx;
+  border-bottom: 2rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+  line-height: 80rpx;
+}
+
+.money view:last-child {
+  color: #ff4f52;
+  font-size: 32rpx;
+}
+
+.way view:last-child {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.info {
+  padding: 0 30rpx 30rpx;
+}
+
+.info .title {
+  line-height: 94rpx;
+  font-size: 30rpx;
+}
+
+.info .goods {
+  padding: 20rpx;
+  background: #f8f8f8;
+}
+
+.info .goods {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.info .goods .thumb {
+  display: block;
+  width: 140rpx;
+  height: 140rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.info .goods .content {
+  flex: 1;
+}
+
+.info .goods .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 32rpx;
+  line-height: 1;
+}
+
+.info .goods .title view:last-child {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.info .goods .txt {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #999;
+  padding-top: 20rpx;
+}
+
+.info .item {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 46rpx;
+}
+
+.info .item text {
+  margin-left: 20rpx;
+}
+
+.delivery {
+  padding: 10rpx 0 0;
+}
+
+.delivery .type {
+  margin: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 64rpx;
+}
+
+.delivery .type view:last-child {
+  color: #999;
+}
+
+.tabbar {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  width: 100vw;
+  height: 120rpx;
+  background: #fff;
+  border-top: 2rpx solid #e8e8e8;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tabbar button {
+  width: 330rpx;
+  border: 2rpx solid #999;
+  line-height: 74rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.tabbar button:last-child {
+  width: 334rpx;
+  background: #df625c;
+  color: #fff;
+  line-height: 78rpx;
+  border: none;
+}
+
+.return_money {
+  border-top: 10rpx solid #f2f2f2;
+  border-bottom: 10rpx solid #f2f2f2;
+  padding: 20rpx 0;
+}
+
+.return_money_item {
+  padding: 0 30rpx;
+  display: flex;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+
+.return_money_item view:first-child {
+  color: #999;
+  margin-right: 50rpx;
+}
+
+.return_money .alt view:last-child {
+  color: #ff4f52;
+}
+
+.return_money_process .kuang {
+  background: #fff !important;
+  border: 2rpx solid #999;
+}
+
+.orderclose {
+  padding: 20rpx 0;
+  margin: 0 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.editTui {
+  padding: 20rpx 30rpx;
+}
+
+.editTui .tuiItem {
+  line-height: 46rpx;
+}
+
+.editTui .more {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+
+.editTui .flex {
+  display: flex;
+  align-items: center;
+}
+
+.editTui .flex .space {
+  flex: 1;
+}
+
+.editTui .postage {
+  margin-top: 10rpx;
+  line-height: 68rpx;
+  border-top: 2rpx solid #f2f2f2;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.postageId {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+  line-height: 80rpx;
+}
+
+.postageId input {
+  text-align: right;
+  padding-right: 30rpx;
+}
+
+.submit {
+  background: #df625c;
+  color: #fff;
+  font-size: 30rpx;
+  width: 500rpx;
+  line-height: 70rpx;
+  position: fixed;
+  left: 50%;
+  bottom: 18vh;
+  transform: translateX(-50%);
+}
+
+.again {
+  font-size: 30rpx;
+  background: #df625c;
+  color: #fff;
+  line-height: 70rpx;
+  width: 500rpx;
+  position: fixed;
+  left: 50%;
+  bottom: 30vh;
+  transform: translateX(-50%);
+}

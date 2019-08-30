@@ -1,0 +1,88 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<!-- filter.consMoney(price) -->
+<view class="workbench">
+    <view class="cardbox">
+    <view class='cardbox_fans'>
+      <text>粉丝数:{{moneyData.fansCount||0}}</text>
+      <text>浏览量:{{moneyData.visitCount||0}}</text>
+    </view>
+        <view class="card">
+            <view class="tit">佣金收益余额</view>
+            <view class="money">
+                <view class='item'></view>
+                <view class="item big_money">￥{{filter.consMoney(moneyData.incomeAmount)}}</view>
+                <view bindtap='gowithdraw'  class="item ti">
+                  <view class='tibtn'>提现</view>
+                </view>
+            </view>
+            <view class="detail">
+                <view class="predict-money">
+                    <view class="val">￥{{filter.consMoney(moneyData.prestore)}}</view>
+                    <view class="name">预存款金额</view>
+                </view>
+                <view class="total-money">
+                    <view class="val">￥{{filter.consMoney(moneyData.buyAmount)}}</view>
+                    <view class="name">累计消费</view>
+                </view>
+                <view class="total-get">
+                    <view class="val">￥{{filter.consMoney(moneyData.incomeTotal)}}</view>
+                    <view class="name">累计收益</view>
+                </view>
+            </view>
+            
+            <image class="rpic" src="http://img.chuangxiaozhu.com/wxapp/workbench/cardr.png"></image>
+            <image class="lpic" src="http://img.chuangxiaozhu.com/wxapp/workbench/cardl.png"></image>
+        </view>
+    </view>
+
+    <view class="opt-money">
+        <view  class="item" bindtap='gorecharge' >预存款充值</view>
+        <view  class="item" bindtap='goedit_store'>编辑店铺</view>
+    </view>
+
+    <view class="grid-box">
+        <view class="row">
+            <navigator url="/pages/popOrder/popOrder" hover-class="none" class="ele">
+                <image class="ele-icon" src="http://img.chuangxiaozhu.com/wxapp/workbench/order.png"></image>
+                <view class="ele-name">推广订单</view>
+            </navigator>
+            <navigator url="/pages/myTeam2/myTeam2" hover-class="none" class="ele" >
+                <image class="ele-icon" src="http://img.chuangxiaozhu.com/wxapp/workbench/myteam.png"></image>
+                <view class="ele-name">我的团队</view>
+            </navigator>
+            <view class="ele" bindtap='gostore_code'>
+                <image class="ele-icon" src="http://img.chuangxiaozhu.com/wxapp/workbench/code2.png"></image>
+                <view class="ele-name">店铺二维码</view>
+            </view>
+        </view>
+        <view class="row">
+            <navigator class="ele" url="/pages/deposit_detail/deposit_detail" hover-class="none">
+                <image class="ele-icon" src="http://img.chuangxiaozhu.com/wxapp/workbench/savedetail.png"></image>
+                <view class="ele-name">预存款明细</view>          
+            </navigator>
+            <navigator url="/pages/commission_detail/commission_detail" hover-class="none" class="ele">
+                <image class="ele-icon" src="http://img.chuangxiaozhu.com/wxapp/workbench/getdetail.png"></image>
+                <view class="ele-name">佣金收益明细</view>
+            </navigator>
+            <navigator url="/pages/findbymoney/findbymoney" hover-class="none" class="ele">
+                <image class="ele-icon" src="http://img.chuangxiaozhu.com/wxapp/workbench/editshop.png"></image>
+                <view class="ele-name">累计消费明细</view>
+            </navigator>
+
+        </view>
+        <view class="row">
+            <navigator  url="/pages/fans/fans" hover-class="none" class="ele">
+                <image class="ele-icon" src="http://img.chuangxiaozhu.com/wxapp/workbench/myteam.png"></image>
+                <view class="ele-name">粉丝数</view>
+            </navigator>
+            <navigator url="/pages/views/views" hover-class="none" class="ele">
+                <image class="ele-icon" src="http://img.chuangxiaozhu.com/wxapp/workbench/myteam.png"></image>
+                <view class="ele-name">浏览量</view>
+            </navigator>
+            <view class="ele" bindtap="goHero">
+                <image class="ele-icon" src="http://img.chuangxiaozhu.com/wxapp/icons/icons_2/hero.png"></image>
+                <view class="ele-name">英雄榜</view>
+            </view>
+        </view>
+    </view>
+</view>

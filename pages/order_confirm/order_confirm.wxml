@@ -1,0 +1,148 @@
+<!--pages/order_confirm/order_confirm.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<form report-submit='true' bindsubmit='payMoney'>
+  <view class='container'>
+
+    <!-- 提货方式 -->
+    <view class='waytype'>
+      <view class='flex'>
+        <button class='{{currentWaytype==index && "waytypeActive"}}' wx:for='{{waytype}}' wx:key='' hover-class='none' bindtap='swichWaytype' data-idx='{{index}}'>{{item.name}}</button>
+      </view>
+      <view class='tips'>{{waytype[currentWaytype].desc}}</view>
+    </view>
+
+    <!-- 线上支付 填地址 -->
+    <view class='ad_adress' bindtap='selectAddress' hidden='{{waytype[currentWaytype].id!=1}}'>
+      <view>
+        <view hidden='{{defultAddress}}'>请填写收货地址</view>
+        <view class='havead' hidden='{{!defultAddress}}'>
+          <view>{{defultAddress.name}}：{{defultAddress.mobile}}</view>
+          <view class='addr'>
+            <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/icons/position.png'></image>
+            <view>收货地址：{{defultAddress.area[0]}} {{defultAddress.area[1]}} {{defultAddress.area[2]}} {{defultAddress.details}}</view>
+          </view>
+        </view>
+      </view>
+      <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/icons/more.png'></image>
+    </view>
+
+    <!-- 多家店铺时只展示一份取货人信息，所以提出来一份  -->
+    <view class='more' hidden='{{waytype[currentWaytype].id!=2||preOrder.userStores.length<=1}}'>
+      <view class='message'>
+        <view>取货人：</view>
+        <input placeholder='请输入姓名' name='name_top' value='{{defultAddress.name}}'></input>
+      </view>
+      <view class='message'>
+        <view>联系电话：</view>
+        <input placeholder='请输入手机号' type='number' maxlength='11' name='phone_top' value='{{defultAddress.mobile}}'></input>
+      </view>
+      <view class='message'>
+        <text>买家留言：</text>
+        <view style='position:relative;flex: 1;'>
+          <view hidden='{{focus_1}}' class='place'>选填：填写备注内容</view>
+          <textarea hidden='{{!addrTabHide}}' bindfocus='focusTap_1' bindblur='blurTap_1'  show-confirm-bar='' auto-height maxlength='100' name='message_top'></textarea>
+        </view>
+      </view>
+    </view>
+    <!-- 循环层 -->
+    <block wx:for='{{preOrder.userStores}}' wx:key='' wx:for-item='store' wx:for-index='storeIdx'>
+      <!-- 门店自提显示地址 -->
+      <view class='storeClass' hidden='{{waytype[currentWaytype].id==1}}'>
+        <view>{{preOrder.storeName}}</view>
+        <view>{{preOrder.storeAddress}}</view>
+      </view>
+
+      <!-- 拼团 -->
+      <!-- <view hidden='1'>
+      <view class='announcement'>
+        <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/icons/horn_1.png'></image>
+        <view class='txt'>【正在开团】立即支付，即可开团成功</view>
+      </view>
+      <view class='persons'>
+        <view class='item' wx:for='123' wx:key=''>
+          <image class='avatar' src='http://img.chuangxiaozhu.com/wxapp/order_confirm/headimg.jpg'></image>
+          <view class='name'>昵称呢不就按照你说就是</view>
+        </view>
+      </view>
+    </view> -->
+
+      <view class='detail'>
+        <view class='shop_title'>{{store.userStoreName}}{{filter.fitStore(eventType)}}</view>
+        <view class='content' wx:for='{{store.orderItems}}' wx:key=''>
+          <image class='thumb' mode='aspectFill' src='{{ossUrl+item.thumbnail}}'></image>
+          <view class='desc'>
+            <view class='price'>￥{{filter.consMoney(eventType==6? 0:item.price)}}</view>
+            <view class='title'>
+              <text class='label' wx:if='{{eventType==3}}'>团购</text> {{item.itemName}}
+            </view>
+            <view class='spec'>
+              <view>
+                <text>{{item.specName}} </text>
+              </view>
+              <view>x{{item.count}}</view>
+              <!-- <goodsNum bindchange='changeTap' disabled='true' startNum='{{item.count}}'></goodsNum> -->
+            </view>
+          </view>
+        </view>
+        <view class='info' hidden='{{waytype[currentWaytype].id==3}}'>
+          <view hidden='{{waytype[currentWaytype].id!=1}}'>
+            <view wx:if='{{postage*1||postage==undefined}}' class='way'>
+              <view>运费：</view>
+              <view hidden='{{!postage}}'>￥{{filter.consMoney(postage)}}</view>
+            </view>
+            <view wx:else class='way'>
+              <view>配送方式：</view>
+              <view>快递 免邮</view>
+            </view>
+            <view class='redFree'>
+              <view>代金券抵扣：</view>
+              <view>-￥{{filter.consMoney(preOrder.calcAmount.promotionAmount||0)}}</view>
+            </view>
+            <view class='message'>
+              <view>买家留言：</view>
+              <view style='position:relative;flex: 1;'>
+                <view hidden='{{focus_2}}' class='place'>选填：填写备注内容</view>
+                <textarea hidden='{{!addrTabHide}}'  bindfocus='focusTap_2' bindblur='blurTap_2' show-confirm-bar='' auto-height maxlength='100' name='message_2'></textarea>
+              </view>
+            </view>
+          </view>
+          <view hidden='{{waytype[currentWaytype].id!=2}}'>
+            <view class='redFree' wx:if='{{preOrder.calcAmount.promotionAmount}}'>
+              <view>代金券抵扣：</view>
+              <view>-￥{{filter.consMoney(preOrder.calcAmount.promotionAmount||0)}}</view>
+            </view>
+            <view hidden='{{preOrder.userStores.length>1}}'>
+              <view class='message'>
+                <view>取货人：</view>
+                <input placeholder='请输入姓名' name='name_3' value='{{defultAddress.name}}'></input>
+              </view>
+              <view class='message'>
+                <view>联系电话：</view>
+                <input placeholder='请输入手机号' type='number' maxlength='11' name='phone_3' value='{{defultAddress.mobile}}'></input>
+              </view>
+              <view class='message'>
+                <view>买家留言：</view>
+                <view style='position:relative;flex: 1;'>
+                  <view hidden='{{focus_3}}' class='place'>选填：填写备注内容</view>
+                  <textarea hidden='{{!addrTabHide}}'  bindfocus='focusTap_3' bindblur='blurTap_3' show-confirm-bar='' auto-height maxlength='100' name='message_3' ></textarea>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='totle'>
+          <text>共{{preOrder.calcAmount.sumNumber}}件商品</text>
+          <text>小计：</text>
+          <text class='money'>￥{{filter.consMoney(preOrder.calcAmount.payAmount*1+(waytype[currentWaytype].id==1?(postage*1)||0:0))}}</text>
+        </view>
+      </view>
+    </block>
+    <view class='tab'>
+      <view class='left'>合计：
+        <text>￥{{filter.consMoney(preOrder.calcAmount.payAmount*1+(waytype[currentWaytype].id==1?(postage*1)||0:0))}}</text>
+      </view>
+      <button class='btn' form-type='submit'>{{waytype[currentWaytype].id==3?"确认订单":"立即支付"}}</button>
+    </view>
+  </view>
+</form>
+<addressTable tableHidden='{{addrTabHide}}' bindconfirm='selectAddress' bindcancel='cancelAddress'></addressTable>

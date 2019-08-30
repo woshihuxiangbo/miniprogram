@@ -1,0 +1,7 @@
+<!--pages/login/login.wxml-->
+<view class="auth1">
+  <image class="auth_pic" src="{{ossUrl+storeLogo}}"></image>
+  <view class="name">{{AppName}}</view>
+  <view class="tips">您暂未授权{{AppName}}小程序获取您的信息，将无法正常使用小程序的功能。如需要正常使用，请点击“授权”按钮，打开头像，昵称等信息的授权。</view>
+  <button class="btn" open-type='getUserInfo' bindgetuserinfo='getUserInfo'>同意</button>
+</view>

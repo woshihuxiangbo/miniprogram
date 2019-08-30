@@ -1,0 +1,169 @@
+/* pages/goods_group/goods_group.wxss */
+
+page {
+  font-size: 28rpx;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.goods_detail {
+  padding: 30rpx;
+  display: flex;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.goods_detail .thumb {
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.goods_detail .content {
+  flex: 1;
+  position: relative;
+}
+
+.goods_detail .content .txt {
+  display: flex;
+  align-items: center;
+  padding-top: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.goods_detail .content .txt view:last-child {
+  background: #de635c;
+  color: #fff;
+  line-height: 32rpx;
+  padding: 0 24rpx;
+  border-radius: 16rpx;
+  margin-left: 20rpx;
+}
+
+.goods_detail .content .bottom {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: baseline;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.goods_detail .content .bottom .price {
+  color: #de635c;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-right: 30rpx;
+}
+
+.scroll {
+  white-space: nowrap;
+  padding: 38rpx 0;
+  height: 144rpx;
+}
+
+.scroll .flex {
+  display: flex;
+  position: absolute;
+}
+
+.scroll .auto-center {
+  justify-content: center;
+}
+
+.scorllItem {
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.scorllItem:last-child {
+  margin-right: 30rpx;
+}
+
+.scorllItem .avatar {
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  border: 2rpx solid #de635c;
+  margin: 0 auto;
+}
+
+.scorllItem .avatarNoBorder {
+  border: none;
+  width: 94rpx;
+  height: 94rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.cutDown {
+  /* padding: 20rpx 0; */
+  text-align: center;
+}
+
+.cutDown .tips text {
+  color: #de635c;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.cutDown .time {
+  padding-top: 40rpx;
+  font-size: 24rpx;
+}
+
+.cutDown .time::before {
+  content: '';
+  display: inline-block;
+  width: 150rpx;
+  height: 2rpx;
+  background: #e4e4e4;
+  position: relative;
+  top: -7rpx;
+}
+
+.cutDown .time::after {
+  content: '';
+  display: inline-block;
+  width: 150rpx;
+  height: 2rpx;
+  background: #e4e4e4;
+  position: relative;
+  top: -7rpx;
+}
+
+.cutDown .time text {
+  background: #de635c;
+  color: #fff;
+  display: inline-block;
+  width: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+}
+
+.share {
+  position: fixed;
+  bottom: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #de635c;
+  color: #fff;
+  width: 500rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+}

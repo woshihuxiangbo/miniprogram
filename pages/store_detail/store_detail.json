@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "shareBar": "/Component/shareBar/shareBar",
+    "goodsPoster": "/Component/goodsPoster/goodsPoster",
+    "navtop":"/Component/navtop/navtop"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "店铺详情"
+}

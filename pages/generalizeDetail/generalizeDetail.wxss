@@ -1,0 +1,30 @@
+/* pages/generalizeDetail/generalizeDetail.wxss */
+page ,.container{
+  height: 100%;
+}
+.pic{
+  height: 30vh;
+  width: 100%;
+}
+.list{
+  padding: 0 30rpx;
+  margin-bottom: 100rpx;
+  height:70vh;
+  overflow:auto;
+}
+.title{
+  font-size: 28rpx;
+  color:#333;
+  margin: 26rpx 0;
+}
+.item{
+  font-size: 24rpx;
+  color:#333;
+  border-bottom: 1rpx solid #f2f2f2;
+  display: flex;
+  line-height: 60rpx;
+  margin-bottom: 26rpx;
+}
+.val{
+  margin-left: 20rpx;
+}

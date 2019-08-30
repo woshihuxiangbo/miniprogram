@@ -1,0 +1,156 @@
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.horizontal-center {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commission .tab1 {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1rpx solid #f2f2f2;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.commission .tab1 .item1 {
+  line-height: 90rpx;
+  width: 125rpx;
+  text-align: center;
+  border-bottom: 4rpx solid #fff;
+  font-size: 28rpx;
+}
+
+.commission .tab1 .active {
+  border-bottom: 4rpx solid #de635c;
+  color: #de635c;
+}
+
+.commission .tab {
+  border-top: 1rpx solid #f2f2f2;
+  border-bottom: 1rpx solid #f2f2f2;
+  display: flex;
+  padding: 33rpx 0;
+}
+
+.commission .tab .item {
+  flex: 1;
+}
+
+.commission .item .box {
+  text-align: left;
+  margin-left: 90rpx;
+}
+
+.commission .tab .item:first-child {
+  border-right: 1rpx solid #999;
+}
+
+.commission .item .lab {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.commission .item .val {
+  font-size: 28rpx;
+  color: #de635c;
+  font-weight: bold;
+  margin-top: 15rpx;
+}
+
+.commission .head {
+  padding: 0 30rpx;
+  height: 94rpx;
+  font-size: 28rpx;
+  border-bottom: 10rpx solid #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.commission .head .datepicker {
+  background-color: #df625c;
+  width: 225rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.commission .head .datepicker .date {
+  color: #fff;
+}
+
+.commission .head .datepicker .san_jiao_bottom,
+.commission .head .datepicker .san_jiao_top {
+  width: 0;
+  height: 0;
+  border-left: 13rpx solid transparent;
+  border-right: 13rpx solid transparent;
+}
+
+.commission .head .datepicker .san_jiao_bottom {
+  margin-top: 20rpx;
+  border-top: 20rpx solid #fff;
+  border-bottom: 20rpx solid transparent;
+}
+
+.commission .head .datepicker .san_jiao_top {
+  margin-bottom: 20rpx;
+  border-top: 20rpx solid transparent;
+  border-bottom: 20rpx solid #fff;
+}
+
+.commission .head .money {
+  display: flex;
+  align-items: center;
+}
+
+.commission .head .money .money-in {
+  color: #df625c;
+  margin-right: 46rpx;
+}
+
+.commission .head .money .money-out {
+  color: #333;
+}
+
+.commission .container .item {
+  font-size: 28rpx;
+  height: 114rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  padding: 0 25rpx;
+}
+.item-left{
+  width: 320rpx;
+}
+.commission .container .item .item-left .type {
+  color: #333;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.commission .container .item .item-left .date {
+  color: #666;
+}
+
+.commission .container .item .item-right .money1 {
+  text-align: right;
+}
+
+.commission .container .item .item-right .add {
+  color: #df625c;
+}
+
+.commission .nolist {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  margin: 100rpx auto;
+}

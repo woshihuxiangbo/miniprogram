@@ -1,0 +1,49 @@
+<!--pages/free_gift/free_gift.wxml-->
+<view class="free_gift">
+    <view class="address horizontal-center border_bottom_line">
+        <text class="addr_name">请填写收货地址</text>
+        <image class="addr_icon" src="http://img.chuangxiaozhu.com/wxapp/more.png"></image>
+    </view>
+    <view class="goods_info_buy">
+        <view class="store_name border_bottom_line">店铺名称</view>
+        <view class="goods_item border_bottom_line">
+            <image class="goods_item_pic" src="{{posterSrc}}"></image>
+            <view class="gift_info">
+                <view class="top horizontal-center">
+                    <text class="name">免费领取</text>
+                    <view class="gift_price">
+                        <text class="unit">￥</text>
+                        <text class="price">39.9</text>
+                    </view>
+                </view>
+                <view class="top horizontal-center">
+                    <text class="name goods_prop">商品属性</text>
+                    <view class="gift_price">
+                      <goodsNum ></goodsNum>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="transportation_type horizontal-center border_bottom_line">
+            <view class="label">配送方式:</view>
+            <view class="type">
+                <text class="express">快递</text>
+                <text class="express">免邮</text>
+            </view>
+        </view>
+        <view class="statistics">
+            <text>共1件商品</text>
+            小记：<text class="price">￥0</text>
+        </view>
+    </view>
+
+    <view class="settle horizontal-center">
+        <view class="horizontal-center">
+            <view class="key">实付:</view>
+            <view class="total">￥0</view>           
+        </view>
+
+        <view class="ok">本宫要了</view>
+    </view>
+</view>

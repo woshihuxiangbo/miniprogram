@@ -1,0 +1,49 @@
+<!--pages/store_about/store_about.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<scroll-view scroll-into-view='{{viewId}}'	 scroll-y class='scrollview' scroll-with-animation>
+  <image class='head' src='https://s2.ax1x.com/2019/06/05/VUNC40.png'></image>
+  <view class='logobox'>
+    <image class='logo' src='{{filter.isHttpHead(detail.logo)?detail.logo:ossUrl+detail.logo}}'></image>
+  </view>
+  <view class='storename'>{{detail.name}}</view>
+  <view class='lookaddress' bindtap='gotarget'>
+    <image src='../../images/icons/store_address.png' class='addricon'></image>
+    <view class='addropt'>查看位置</view>
+  </view>
+  <view class='article'>
+      <view class='p'>
+          <text class='lab'>公司简介：</text>
+          <text class='word'>{{detail.shopIntroduce}}</text>
+      </view>
+      <view class='p'>
+          <text class='lab'>发展历程：</text>
+          <text class='word'>{{detail.developmentCourse}}</text>
+      </view>
+  </view>
+  <view class='phone' id='target'>
+      <view class='p p1'>
+        <view>
+          <text class='lab'>联系电话：</text>
+          <text class='word'>{{detail.mobile}}</text>
+        </view>
+        <image class='phoneicon' src='../../images/icons/phone.jpg'></image>
+      </view>
+  </view>
+  <view class='phone'>
+      <view class='p p1'>
+        <view>
+          <text class='lab'>联系地址：</text>
+          <text class='word'>{{detail.address}}</text>
+        </view>
+      </view>
+  </view>
+  <view class='photo'>
+      <view class='tit'>
+        <image class='titicon' src='../../images/icons/comp_about.png'></image>
+        <view class='titword'>企业相册</view>
+      </view>
+      <view class='photolist'>
+        <view class='item' wx:for='{{picture}}' wx:key=''><image class='pic' src='{{ossUrl+item}}'></image></view>
+      </view>
+  </view>
+</scroll-view>

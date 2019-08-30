@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uppic":"/Component/uppic/uppic"
+  },
+  "navigationBarTitleText": "申请退款"
+}

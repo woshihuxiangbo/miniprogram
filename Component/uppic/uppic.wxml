@@ -1,0 +1,17 @@
+<view class="up_pic">
+        <view class="tit">{{title}}</view>
+        <view class="pic_box">
+            <view class="pic_item" wx:for="{{picArr}}" wx:key='' >
+                <image class="pic" mode='aspectFill' src="{{item}}" ></image>
+                <icon bindtap="closePic" data-key="{{index}}" class="clear_icon" type="clear"></icon>
+            </view>
+
+            <view hidden="{{!picUpBtn}}" bindtap="upPicture" class="pic_item pic_btn">
+                <view class="content">
+                    <image class="up_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/up_icon.png"></image>
+                    <view class="word">上传图片</view>
+                    <view class="word">(最多{{currentKey}}张)</view>
+                </view>               
+            </view>
+        </view>
+    </view>

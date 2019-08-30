@@ -1,0 +1,75 @@
+<!--pages/apply_form/apply_form.wxml-->
+<form class="form" report-submit='true' bindsubmit='submitForm'>
+  <view class="container">
+    <view class="item">
+      <view class="label">姓名</view>
+      <input class="val" placeholder="请输入您的姓名" name='name' value='{{echoData.name}}'></input>
+    </view>
+    <view class="item">
+      <view class="label">提货地址</view>
+      <!-- <picker mode="region" bindchange="regionChange">
+          <view hidden='{{userInfo.province || region.length}}' class='novalue'>选择</view>
+          <view hidden='{{!(userInfo.province || region.length)}}'>{{ region[0]}} {{region[1]}} {{region[2]}}</view>
+        </picker> -->
+
+      <input class="val" placeholder="请输入您的详细收货地址" name='address' value='{{echoData.address}}'></input>
+    </view>
+    <view class="item">
+      <view class="label">联系电话</view>
+      <input class="val" maxlength='11' placeholder="请输入您联系电话" placeholder-class="pl" name='mobile' value='{{echoData.mobile}}'></input>
+    </view>
+    <view class="sele">
+      <view class="label">职业</view>
+      <view class="list" bindtap="selectAlone">
+        <view class="alone {{currentId == item.id?'active':''}}" wx:for='{{list}}' wx:key='index' data-id="{{item.id}}">{{item.name}}</view>
+      </view>
+    </view>
+    <view class='is_dian'>
+      <view class='is_dian_text'>是否有实体店</view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}" wx:key="this">
+          <radio value="{{item.name}}" checked="{{echoData.storeState == item.name?true:false}}" /> {{item.value}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="sele" wx:if="{{showType || echoData.storeState}}">
+      <view class="label" style='width:200rpx'>实体店类型</view>
+      <view class="list" bindtap="selectAlone_1">
+        <view class="alone {{currentId_1 == item.id?'active':''}}" wx:for='{{list_1}}' wx:key='index' data-id="{{item.id}}">{{item.name}}</view>
+      </view>
+    </view>
+
+    <view class="item" wx:if="{{showQt}}">
+      <view class="label" style='width:200rpx;'>请输入类型</view>
+      <input class="val" placeholder="请输入实体店类型" name='storeType'></input>
+    </view>
+    
+    <view class="item" wx:if='{{showType || echoData.storeState}}'>
+      <view class="label">店铺名称</view>
+      <input class="val" maxlength='20' placeholder="请输入店铺名称" name='storeName' value='{{echoData.storeName}}'></input>
+    </view>
+
+    <view class="item" wx:if='{{showType || echoData.storeState}}'>
+      <view class="label">简单介绍</view>
+      <input class="val" placeholder="请输入简单介绍" name='shopIntroduce' value='{{echoData.shopIntroduce}}'></input>
+    </view>
+
+    <view class='item flex' bindtap='upCardphoto' wx:if='{{showType || echoData.storeState}}'>
+      <view class='label'>上传营业执照</view>
+      <image class='cardphoto' src='../../images/icons/more.png'></image>
+    </view>
+    <view class='item' wx:if='{{showType && previePhoto || echoData.storeState}}'>
+      <image class='preview' src='{{ossUrl+previePhoto }}'></image>
+    </view>
+    <view class='item flex2'>
+        <view class='flex' bindtap='agreebtn'>
+            <view class='agreebtn {{!isAgree?"whitebgc":""}}' ></view>
+            <view class='label'>我已阅读并了解</view>
+        </view>
+
+        <navigator class='pact' url='/pages/bargain_page/bargain_page' hover-class="none">入驻申请合同</navigator>
+    </view>
+    <button class="btn" form-type='submit'>提交申请</button>
+  </view>
+</form>

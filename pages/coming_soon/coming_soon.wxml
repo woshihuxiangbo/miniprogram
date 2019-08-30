@@ -1,0 +1,34 @@
+<view class="title">
+  <image src='/images/tabbarimg/gjp_title.png'></image>
+</view>
+
+<view class='content'>
+  <view>
+    <image src='/images/tabbarimg/gjp_gz_icons.png'></image>
+    <text>基本赔付规则</text>
+  </view>
+  <view>用户下单7天内，若我司商品的实际支付价格高于当天该商品在其他渠道详情页展示的价格，在确认收货后，可在线申请贵就赔。用户下单7天内若我司平台出现商品折扣等促销活动，经核实商品存在差价，商品在确认收货后，统一退补差价。</view>
+</view>
+
+<view class='content'>
+  <view>
+    <image src='/images/tabbarimg/gjp_qd_icons.png'></image>
+    <text>比价渠道说明</text>
+  </view>
+  <view>接受比较渠道：天猫品牌旗舰店，京东自营，唯品会。</view>
+</view>
+
+
+<view class='content'>
+  <view>
+    <image src='/images/tabbarimg/gjp_price_icons.png'></image>
+    <text>比价价格说明</text>
+  </view>
+  <view>用于比价的商品详情页价格，是指商品在该平台的正常售卖价格，不包含限时、限量、抢购、拼团、秒杀和新品折扣等活动折扣，也不包含618，双十一等大型促销期间的销售价格。</view>
+</view>
+
+
+<view class='bottom'>
+  <image src='/images/tabbarimg/gjp_gou_icons.png'></image>
+  <view>生鲜水果，虚拟商品不支持买贵就赔服务。我司支持多渠道比价哦，买贵就赔</view>
+</view>

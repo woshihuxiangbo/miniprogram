@@ -1,0 +1,51 @@
+<!--pages/commission_detail/commission_detail.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="commission">
+        <view class='tab1' bindtap="tabSwitch">
+            <view data-id="{{index}}" wx:for="{{types}}" wx:key='' class='item1 {{active == index?"active":""}}' >{{item}}</view>
+        </view>
+        <view class='tab'>
+          <view class='item'>
+            <view class='box'>
+              <view class='lab'>可提现金额(元)</view>
+              <view class='val'>{{filter.consMoney(actualTotalAmount)}}</view>
+            </view>
+              
+          </view>
+          <view class='item'>
+            <view class='box'>
+              <view class='lab'>待提现金额(元)</view>
+              <view class='val'>{{filter.consMoney(awaitTotalAmount)}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="head">
+            <picker  mode="date" fields="month" bindtap="openPicker" bindcancel="cancelPicker" bindchange="dateSelect">
+                <view class="datepicker">
+                    <view class="date">{{date.year}}年{{date.month}}月</view>
+                    <view class="{{pickerOpen?'san_jiao_bottom':'san_jiao_top'}}"></view>
+                </view>
+            </picker>      
+            <view class="money">
+                <view class="money-in">收入：￥ {{filter.consMoney(totalMoney)}}</view>
+                <view class="money-out">支出：￥{{filter.consMoney(payMoney)}}</view>
+            </view>
+        </view>
+
+        <view class="container" >
+                <navigator url="/pages/yongjinDetail/yongjinDetail?id={{item.id}}&type={{active}}" class="item horizontal-center" wx:for="{{list}}" wx:key="">
+                    <view class="item-left vertical-center" >
+                        <view class="type" >{{item.name}}</view>
+                        <view class="date">{{filter.formatTime(item.createTime)}}</view>
+                    </view>
+                    <view  style="line-height:114rpx">{{filter.commissionDetail(item.status)}}</view>
+                    <view class="item-right vertical-center">
+                        <view class="money1 add">{{item.addorsub==0?'+':'-'}}￥{{filter.consMoney(item.amount)}}</view>
+                        <view class="money2 add">订单金额￥{{filter.consMoney(item.orderAmount)}}</view>
+                    </view>
+                </navigator>          
+        </view>
+        <view class='nolist' wx:if="{{list.length==0}}">无数据</view>
+    
+    </view>
+    

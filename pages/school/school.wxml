@@ -1,0 +1,18 @@
+<!--pages/school/school.wxml-->
+<view class='container'>
+  <view class='tab'>
+    <view class='tab_item {{currentIdx==index && "tab_active"}}' wx:for='{{tab}}' wx:key='' bindtap='swichTab' data-id='{{item.id}}' data-idx='{{index}}'>{{item.name}}</view>
+  </view>
+
+  <scroll-view class='content' scroll-y>
+
+    <view class='content_item' wx:for='{{rightTit}}' wx:key=''>
+      <view class='title' bindtap='swichTxt' data-idx='{{index}}'>
+        <view>{{item.title}}</view>
+        <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/icons/more_{{currentTxt==index?"top":"bottom"}}.png'></image>
+      </view>
+      <view class='txt' hidden='{{currentTxt!=index}}'><rich-text nodes="{{item.body}}"></rich-text></view>
+    </view>
+    <view wx:if="{{!rightTit.length}}" class='no_body'>暂无内容</view>
+  </scroll-view>
+</view>

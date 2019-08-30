@@ -1,0 +1,248 @@
+module.exports = {
+  consMoney: function(money) { //换算钱
+    var money = money || 0
+    return (((money * 1) / 100).toFixed(2));
+  },
+  //  时间戳转换
+  formatTime: function(timestamp) {
+    if (isNaN(timestamp * 1)) {
+      return timestamp
+    }
+    var time = (timestamp + '').length == 10 ? getDate(timestamp * 1000) : getDate(+timestamp);
+    var year = time.getFullYear();
+    var month = time.getMonth() + 1;
+    var day = time.getDate();
+    var hour = time.getHours();
+    var minute = time.getMinutes();
+    var second = time.getSeconds();
+
+    function formatNumber(n) {
+      n = n.toString();
+      return n[1] ? n : '0' + n;
+    };
+    return year +
+      "-" + formatNumber(month) +
+      "-" + formatNumber(day) +
+      " " + formatNumber(hour) +
+      ":" + formatNumber(minute) +
+      ":" + formatNumber(second);
+  },
+  //根据 后台字段 确定小店名称 后缀
+  fitStore: function(type) {
+    switch (type * 1) {
+      case 1:
+        return '的小店';
+      case 3:
+        return '的团购小店';
+      default:
+        return '的小店'
+    }
+  },
+  //  {{shortName}}等级
+  xzLevel: function(lvConfig, type) {
+    switch (type * 1) {
+      case 1:
+        return lvConfig.lv1.name;
+        break;
+      case 2:
+        return lvConfig.lv2.name;
+        break;
+      case 3:
+        return lvConfig.lv3.name;
+        break;
+      case 9:
+        return '访客';
+        break;
+      case 10:
+        return '会员';
+        break;
+      default:
+        return '其他'
+    }
+  },
+  // 计算总数
+  compuTotal: function(arr, key) {
+    var total = 0;
+    for (var i = 0; i < arr.length; i++) {
+      total += arr[i][key]
+    }
+    return total
+  },
+  // 售后状态
+  afterSaleStatus: function(status) {
+    switch (status * 1) {
+      case 1:
+        return '申请中';
+        break;
+      case 2:
+        return '等待卖家确认';
+        break;
+      case 3:
+        return '退款关闭'; //撤销退款
+        break;
+      case 4:
+        return '卖家拒接退款';
+        break;
+      case 5:
+        return '商家已同意';
+        break;
+      case 6:
+        return '等待商家确认收货';
+        break;
+      case 7:
+        return '待平台处理退款';
+        break;
+      case 8:
+        return '退款中';
+        break;
+      case 9:
+        return '退款失败';
+        break;
+      case 10:
+        return '退款成功';
+        break;
+      case 11:
+        return '商家处理超时，自动同意';
+        break;
+      default:
+        return '其他';
+    }
+  },
+  //截取字符串
+  strSlice: function(str, start, end) {
+    return str.slice(start, end)
+  },
+  // 订单状态
+  orderStatus: function(status) {
+    switch (status * 1) {
+      case 1:
+        return '未结算';
+        break;
+      case 2:
+        return '已结算';
+        break;
+      case 3:
+        return '已付款';
+        break;
+      case 4:
+        return '已失效';
+        break;
+      default:
+        return '其他'
+    }
+  },
+  //  推广订单详情 状态
+  generalizeType: function(status) {
+    switch (status * 1) {
+      case 0:
+        return '未付款订单';
+        break;
+      case 1:
+        return '待确认';
+        break;
+      case 2:
+        return '待发货';
+        break;
+      case 3:
+        return '待收货';
+        break;
+      case 4:
+        return '待取货';
+        break;
+      case 6:
+        return '订单关闭';
+        break;
+      case 9:
+        return '订单已完成';
+        break;
+      default:
+        return '其他'
+    }
+  },
+  // 返佣类型
+  returnMoneyType: function(type) {
+    switch (type * 1) {
+      case 1:
+        return '普通返佣';
+        break;
+      case 2:
+        return '特殊商品折扣返佣';
+        break;
+      case 3:
+        return '升级返佣';
+        break;
+      case 4:
+        return '扣除预存款';
+        break;
+      case 6:
+        return '团购订单';
+        break;
+      default:
+        return '其他'
+    }
+  },
+  depositStatus: function(status) {
+    switch (status * 1) {
+      case 0:
+        return '未结算';
+        break;
+      case 1:
+        return '未结算';
+        break;
+      case 2:
+        return '已结算';
+        break;
+      case 3:
+        return '已失效';
+        break;
+      default:
+        return '其他'
+    }
+  },
+  commissionDetail: function(status) {
+    switch (status * 1) {
+      case 1:
+        return '未结算';
+        break;
+      case 2:
+        return '已结算';
+        break;
+      case 3:
+        return '已失效';
+        break;
+      default:
+        return '其他'
+    }
+  },
+  //判断图片是否有 http
+  checkHttp: function(src) {
+    if (src) {
+      return src.indexOf('http') == 0
+    }
+  },
+  /**
+   * 商品详情 限购 与 库存不足 判断 （定制）
+   */
+  spotMaxNum: function(maxCount, stock, unit) {
+    if (maxCount && maxCount * 1 && maxCount < stock) {
+      var num_1 = Math.floor(maxCount / unit)
+      return {
+        num: num_1,
+        txt: '最大限购' + num_1 + '件',
+        type: 'limit'
+      }
+    } else {
+      var num_2 = null;
+      stock >= 0 && (num_2 = Math.floor(stock / unit))
+      return {
+        num: num_2,
+        txt: '库存不足',
+        type: 'stock'
+      }
+    }
+  },
+  // 判断是否是http开头的字符串
+  isHttpHead: function(str = '') {
+    return str.match("^http.*$")
+  },
+}

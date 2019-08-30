@@ -1,0 +1,25 @@
+/* component/goodsNum/goodsNum.wxss */
+
+.goodsNum {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.center {
+  font-size: 24rpx;
+  font-weight: bold;
+  width: 44rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.left, .right {
+  width: 40rpx;
+  height: 40rpx;
+  background: #eee;
+  border-radius: 8rpx;
+  color: #666;
+  text-align: center;
+  line-height: 40rpx;
+}

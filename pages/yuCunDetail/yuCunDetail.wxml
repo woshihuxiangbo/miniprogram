@@ -1,0 +1,33 @@
+<!--pages/yuCunDetail/yuCunDetail.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+
+<view class="container" wx:if="{{type == 1 }}">
+    <view class='item'>存款人：{{info.nickname}}</view>
+    <view class='item'>存款人身份：{{filter.xzLevel(lvConfig,info.userLevel)}}</view>
+    <view class='item'>金额：{{filter.consMoney(info.amount)}}</view>
+    <view class='item'>充值时间：{{filter.formatTime(info.createTime)}}</view>
+    <view class='item'>支付方式：{{info.channelName}}</view>
+</view>
+
+<view class="container" wx:if="{{type == 2 }}" >
+    <view class='item'>购买人：{{info.buyUserName}}</view>
+    <view class='item'>购买商品：{{info.itemName}}</view>
+    <view class='item' wx:if="{{info.count}}">商品数量：{{info.count}}</view>
+    <view class='item'>商品价格：{{filter.consMoney(info.orderAmount)}}</view>
+    <view class='item'>扣款人：{{info.userName}}</view>
+    <view class='item'>购买人身份：{{filter.xzLevel(lvConfig,info.userLevel)}}</view>
+    <view class='item'>扣款金额：{{filter.consMoney(info.cost)}}</view>
+    <view class='item'>扣款时间：{{filter.formatTime(info.createTime)}}</view>
+</view>
+
+<view class="container" wx:if="{{type == 3 }}" >
+    <view class='item'>充值人：{{info.depositUserName}}</view>
+    <view class='item'>名称：{{info.name}}</view>
+    <view class='item'>充值金额：{{filter.consMoney(info.amount)}}</view>
+    <view class='item'>扣款人：{{info.userName}}</view>
+    <view class='item'>扣款人身份：{{filter.xzLevel(lvConfig,info.userLevel)}}</view>
+    <view class='item'>扣款金额：{{filter.consMoney(info.amount)}}</view>
+    <view class='item'>扣款时间：{{filter.formatTime(info.createTime)}}</view>
+</view>
+
+

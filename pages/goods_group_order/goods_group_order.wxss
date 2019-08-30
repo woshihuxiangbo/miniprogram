@@ -1,0 +1,212 @@
+/* pages/goods_group_order/goods_group_order.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.top {
+  padding: 30rpx;
+  min-height: 100rpx;
+  background: #df625c;
+  color: #fff;
+  box-sizing: border-box;
+  line-height: 40rpx;
+}
+
+.top view:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.top view:first-child image {
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+
+.group {
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.scroll {
+  white-space: nowrap;
+  padding-top: 38rpx;
+  height: 144rpx;
+}
+
+.scroll .flex {
+  display: flex;
+  position: absolute;
+}
+
+.scroll .auto-center {
+  justify-content: center;
+}
+
+.scorllItem {
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.scorllItem:last-child {
+  margin-right: 30rpx;
+}
+
+.scorllItem .avatar {
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  border: 2rpx solid #de635c;
+  margin: 0 auto;
+}
+
+.scorllItem .avatarNoBorder {
+  border: none;
+  width: 94rpx;
+  height: 94rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.group .tips {
+  text-align: center;
+  padding: 30rpx 0 20rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.group .phone, .group .adress {
+  font-size: 24rpx;
+  padding: 0 30rpx;
+  line-height: 44rpx;
+}
+
+.group .phone {
+  padding-top: 10rpx;
+}
+
+.group .adress {
+  color: #625f5f;
+  padding-bottom: 10rpx;
+}
+
+.goodsDetail {
+  padding: 0 30rpx;
+}
+
+.goodsDetail .title {
+  font-weight: bold;
+  line-height: 88rpx;
+}
+
+.goodsDetail .thumb {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  border: 2rpx solid #eee;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.goodsDetail .goods {
+  display: flex;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.goodsDetail .goods .content {
+  flex: 1;
+}
+
+.goodsDetail .goods .title {
+  font-weight: normal;
+  line-height: 1;
+}
+
+.goodsDetail .goods .price {
+  float: right;
+  color: #de635c;
+}
+
+.goodsDetail .goods .spec {
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #625f5f;
+}
+
+.goodsDetail .goodsitem {
+  display: flex;
+  justify-content: space-between;
+  line-height: 44rpx;
+  font-size: 24rpx;
+  color: #625f5f;
+}
+
+.goodsDetail .payWay {
+  padding-top: 10rpx;
+}
+
+.goodsDetail .message {
+  justify-content: flex-start;
+  padding-bottom: 10rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.goodsDetail .payment {
+  line-height: 84rpx;
+}
+
+.goodsDetail .payment view:last-child {
+  font-size: 28rpx;
+  color: #de635c;
+}
+
+.foot {
+  padding: 0 30rpx 60rpx;
+}
+
+.foot .btn {
+  padding: 50rpx 150rpx 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.foot .btn button {
+  border: 2rpx solid #999;
+  color: #666;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  padding: 0 18rpx;
+}
+
+.foot .footTitle {
+  padding-top: 26rpx;
+}
+
+.foot .footItem {
+  padding-top: 14rpx;
+  font-size: 24rpx;
+  color: #625f5f;
+  line-height: 44rpx;
+}

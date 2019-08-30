@@ -1,0 +1,112 @@
+/* pages/store_about/store_about.wxss */
+page{
+  height: 100%;
+}
+.scrollview{
+  height: 100%;
+}
+.head{
+  width: 100%;
+  height: 290rpx;
+}
+.logobox{
+  text-align: center;
+}
+.logo{
+  width: 162rpx;
+  height: 162rpx;
+  border-radius: 10rpx;
+  box-shadow: 0px 4rpx 6rpx 0px 
+		rgba(0, 0, 0, 0.14);
+    background-color: pink;
+    margin-top: -80rpx;
+    
+}
+.storename{
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+}
+.lookaddress{
+  width: 190rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+	border: solid 1rpx #e5e5e5;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.addricon{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+}
+.addropt{
+  font-size: 24rpx;
+  color:#666;
+}
+.article{
+  padding: 30rpx;
+  border-bottom:1rpx solid #999;
+  border-top:1rpx solid #999;
+}
+.p{
+  margin-bottom: 60rpx;
+}
+.p .lab{
+  font-size: 28rpx;
+  color:#333;
+}
+.p .word{
+  font-size: 28rpx;
+  color:#999;
+}
+.phone{
+  padding: 30rpx;
+  border-bottom:1rpx solid #999;
+}
+.p1{
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.phoneicon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.photo{
+  padding: 30rpx;
+}
+.photo .tit{
+  display: flex;
+  align-items: center;
+}
+.photo .titicon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.photo .titword{
+  font-size: 24rpx;
+  color:#333;
+}
+.photolist{
+  margin-top: 30rpx;
+}
+.photolist .item{
+  display: inline-block;
+  width: 33.33%;
+  padding: 5rpx;
+  box-sizing: border-box;
+}
+.photolist .pic{
+  background: pink;
+  height: 196rpx;
+  width: 100%;
+  border-radius: 10rpx;
+}

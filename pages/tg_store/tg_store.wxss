@@ -1,0 +1,249 @@
+.bigtit {
+  background-color: #fff;
+  margin-top: 40rpx;
+}
+
+.bigtit .line {
+  width: 458rpx;
+  height: 2rpx;
+  background-color: #ccc;
+  margin: 50rpx auto;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.bigtit .line .cn {
+  font-size: 34rpx;
+  font-weight: 800;
+  color: #333;
+  position: absolute;
+  left: 50%;
+  top: -24rpx;
+  /* width: 190rpx; */
+  text-align: center;
+  background-color: #fff;
+  margin-left: -125rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.bigtit .en {
+  font-size: 20rpx;
+  color: #625f5f;
+  text-align: center;
+}
+
+.goods {
+  width: 690rpx;
+  height: 525rpx;
+  margin: 60rpx auto 40rpx auto;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.goods image {
+  width: 200rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+}
+
+.goods text {
+  font-size: 24rpx;
+  color: #333;
+  margin-top: 15rpx;
+  width: 190rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.goods swiper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.goods swiper-item {
+  float: left;
+}
+
+.tab {
+  width: 100%;
+  white-space: nowrap;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.tab view {
+  display: inline-block;
+  font-size: 28rpx;
+  color: #999;
+  margin-right: 35rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.active {
+  color: #de635c !important;
+}
+
+.goods_content {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin: 30rpx 0;
+}
+
+.goods_content image {
+  width: 690rpx;
+  height: 340rpx;
+  border-radius: 8rpx;
+}
+
+.goods_content_title {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 600;
+  margin-top: 10rpx;
+}
+
+.goods_content_content {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.goods_bottom text {
+  font-size: 34rpx;
+  color: #de635c;
+  font-weight: 600;
+  margin-right: 20rpx;
+}
+
+.goods_bottom view:nth-of-type(1) {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  border-radius: 15rpx;
+  background: #de635c;
+  text-align: center;
+  line-height: 30rpx;
+  color: white;
+  font-size: 20rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 280rpx;
+}
+
+.goods navigator {
+  width: 200rpx;
+  text-align: center;
+  display: inline-block;
+  margin: 15rpx;
+}
+
+.goods_bottom view:nth-of-type(2) {
+  width: 105rpx;
+  height: 35rpx;
+  border-radius: 20rpx;
+  background: #cd6a61;
+  text-align: center;
+  line-height: 35rpx;
+  color: white;
+  font-size: 22rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header {
+  height: 60rpx;
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #f8f8f8;
+  font-size: 24rpx;
+  color: #de635c;
+  line-height: 60rpx;
+  position: relative;
+}
+
+.header image {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 25%;
+}
+
+.share_btn {
+  width: 120rpx;
+  background: #de635c;
+  text-align: center;
+  line-height: 32rpx;
+  color: white;
+  font-size: 24rpx;
+  border-radius: 16rpx;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  right: 30rpx;
+  top: 13rpx;
+  padding: 0;
+  z-index: 998;
+}
+
+.goods_bottom {
+  position: relative;
+}
+
+.none {
+  font-size: 32rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  color: #666;
+}
+
+.message {
+  height: 40rpx;
+  width: 400rpx;
+  line-height: 40rpx;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 0 18rpx 18rpx 0;
+  box-shadow: 1rpx 2rpx 10rpx #d6bfc3;
+  margin-top: 18rpx;
+  padding-right: 15rpx;
+  font-size: 24rpx;
+  color: #de635c;
+}
+
+.message .swiper {
+  height: 40rpx;
+}
+
+.message .swiper .swiper_item {
+  display: flex;
+  align-items: center;
+}
+
+.message .swiper .swiper_item .horn {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.message .swiper .swiper_item .word {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.last {
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 100rpx;
+}

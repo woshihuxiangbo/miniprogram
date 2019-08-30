@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "emptylist": "/Component/emptylist/emptylist"
+  }
+}

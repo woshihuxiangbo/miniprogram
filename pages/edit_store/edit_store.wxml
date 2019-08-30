@@ -1,0 +1,53 @@
+<!--pages/edit_store/edit_store.wxml-->
+<view class="edit_store">
+  <view class="store_name">
+    <view class="label">店铺名称</view>
+    <input class="val" bindinput='name' maxlength='15' value='{{sendform.name}}' />
+  </view>
+  <view class="store_logo">
+    <view class="label">店铺头像</view>
+    <view class="val">建议尺寸200*200</view>
+  </view>
+  <view class="logo_up" bindtap='chooseLogo'>
+    <image class="logo_pic" src='{{sendform.logo}}'></image>
+  </view>
+  <!-- ----------------- -->
+  <view class="store_bgi" >
+    <view class="header">
+      <view class="title">店铺背景图</view>
+      <!-- <view class="right">
+        <view class="selcet"></view>
+        <view class="val" bindtap='thedefault'>默认白色</view>
+      </view> -->
+    </view>
+
+    <!-- <view class="pic_box">
+      <image class="pic_item" src="{{ossUrl+item.imgUrl}}" wx:for="{{backgroundArr}}" wx:key='' bindtap='chooseBackground' data-index="{{index}}" data-id="{{item.id}}"></image>
+    </view> -->
+      <bgiup  bind:upbgi='upbgi' bind:closeThisPic='closeThisPic' bind:picChange='picChange' url='{{ossUrl}}'></bgiup>
+  </view>
+
+   <!-- ----------------- -->
+  <view class="preview">
+    <view class="preview_title">预览效果</view>
+    <image class="preview_pic" src="{{ossUrl+imgSrc}}"></image>
+  </view>
+
+  <view class="in_item">
+    <view class="in_tit">个性签名</view>
+    <textarea class="in_area" placeholder-class="in_place" placeholder="填写个性签名" maxlength='20' bindinput='signature' value='{{sendform.signature}}'></textarea>
+  </view>
+  <view class="in_item phone">
+    <view class="in_tit phone">电话号码</view>
+    <input type='number' class="in_area" placeholder-class="in_place" placeholder="填写电话号码" maxlength='11' bindinput='phone' value='{{sendform.storeMobile}}'></input>
+  </view>
+  <view class="in_item phone">
+    <view class="in_tit phone">虚拟粉丝数</view>
+    <input type='number' class="in_area" placeholder-class="in_place" placeholder="填入虚拟粉丝数" maxlength='11' bindinput='virtualFan' value='{{sendform.virtualFan}}'></input>
+  </view>
+  <view class="in_item phone">
+    <view class="in_tit phone">虚拟访问数量</view>
+    <input type='number' class="in_area" placeholder-class="in_place" placeholder="填入虚拟访问数量" maxlength='11' bindinput='virtualVisit' value='{{sendform.virtualVisit}}'></input>
+  </view>
+  <view class="submit" bindtap='submit'>提交</view>
+</view>

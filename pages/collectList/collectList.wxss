@@ -1,0 +1,97 @@
+/* pages/collectList/collectList.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.emptyTips {
+  color: #999;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.list .item {
+  display: flex;
+  margin: 0 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  padding: 20rpx 0;
+}
+
+.list .thumb {
+  display: block;
+  width: 180rpx;
+  height: 180rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+  border-radius: 4rpx;
+}
+
+.list .timout {
+  width: 180rpx;
+  height: 180rpx;
+  position: absolute;
+  border-radius: 4rpx;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.list .timout view {
+  color: #fff;
+  width: 115rpx;
+  height: 115rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+  font-size: 20rpx;
+  line-height: 115rpx;
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.list .content {
+  flex: 1;
+}
+
+.list .txt {
+  padding-top: 10rpx;
+  font-size: 24rpx;
+  color: #6a6868;
+}
+
+.list .price {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #db665f;
+  padding-top: 20rpx;
+}
+
+.list .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.list .bottom button {
+  background: #db665f;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  padding: 0 16rpx;
+  margin-left: 16rpx;
+}
+
+.last {
+  text-align: center;
+  color: #999;
+  line-height: 80rpx;
+}

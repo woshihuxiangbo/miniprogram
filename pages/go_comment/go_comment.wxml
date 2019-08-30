@@ -1,0 +1,37 @@
+<!--pages/go_comment/go_comment.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="contaner">
+    <view class="box" wx:for='{{goodsList}}' wx:key=''>
+        <image class="goods_pic" src='{{ossUrl+item.thumb}}'></image>
+        <view class="goods_info">
+            <view class="main_info">
+                <view class="name">{{item.title}}</view>
+                <view class="price">￥{{filter.consMoney(item.price)}}</view>
+            </view>
+            <view class="sub_info">
+                <view class="prop">商品属性</view>
+                <view class="num">X{{item.num||item.goodsNum}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="form">
+        <textarea bindinput="textareaInp" class="area"  placeholder-class="area_pl" placeholder="宝贝满足你的期待吗？说说你的试用心得，分享给想买的他们吧" ></textarea>
+       
+        <!-- <view class="uppic" bindtap="upPic">
+            <view class="pic pic_btn">
+                <image src="http://img.chuangxiaozhu.com/wxapp/otherImgs/camera.png"></image>
+                <view >添加图片</view>
+            </view>
+        </view> -->
+        <uppic bind:picChange="getPicArr"></uppic>
+        
+
+        <view class="anonymity" bindtap="anonymSelect">
+            <image class="icon" wx:if="{{!isAnonymous}}" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/confirm_icon.png"></image>
+            <image class="icon" wx:if="{{isAnonymous}}" src="http://img.chuangxiaozhu.com/wxapp/icons/icons_2/anonym_ok.png"></image>
+            <view>匿名</view>
+        </view>
+    </view>
+    <view class="btn" bindtap="goComment">发布</view>
+</view>

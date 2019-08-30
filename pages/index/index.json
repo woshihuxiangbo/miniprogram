@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "bigtit": "/Component/bigtit/bigtit",
+    "shareBar": "/Component/shareBar/shareBar",
+    "attachbox": "/Component/attachbox/attachbox",
+    "storePoster": "/Component/storePoster/storePoster",
+    "goodsPoster": "/Component/goodsPoster/goodsPoster",
+    "modal": "/Component/modal/modal",
+    "my-video":"/Component/my-video/my-video"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "首页"
+}

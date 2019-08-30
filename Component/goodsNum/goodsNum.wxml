@@ -1,0 +1,6 @@
+<!--component/goodsNum/goodsNum.wxml-->
+<view class='goodsNum whole-class' style='color:{{color}};'>
+  <view class='left-class left' bindtap='{{disabled || "reduceTap"}}'>{{markHidden?"":"­­−"}}</view>
+  <view class='center-class center'>{{startNum||0}}</view>
+  <view class='right-class right' bindtap='{{disabled || "addTap"}}'>{{markHidden?"":"+"}}</view>
+</view>

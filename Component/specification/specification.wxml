@@ -1,0 +1,48 @@
+<!--Component/specification/specification.wxml-->
+<view>
+  <view hidden='{{!tableShow}}' class='mask'></view>
+  <view class='spec' style='animation: {{tableShow?"fadeInUp":"fadeOutDown" }} 0.5s ease both;'>
+    <view class='info'>
+      <image class='thumb' mode='aspectFill' src='{{thumb}}'></image>
+      <view>
+        <view class='price'>￥{{price}}</view>
+        <view class='txt'>
+          <text hidden='{{!((stock*1)>0)}}'>{{attribute[currentItem[0]].sku[currentItem[1]].skuName+" 数量："+attribute[currentItem[0]].sku[currentItem[1]].unit}}</text>
+          <text hidden='{{stock*1>0}}'>库存不足</text>
+          <!-- <text wx:for='{{attribute}}' wx:key=''>{{item[attributeStr]}} </text> -->
+        </view>
+      </view>
+      <image class='close' bindtap='closeTap' src='http://img.chuangxiaozhu.com/wxapp/icons/close.png'></image>
+    </view>
+    <!-- wx:for='{{attribute}}' wx:key='' -->
+    <view class='attribute' bindtap='swichAttribute'>
+      <view class='attributeTitle'></view>
+      <view class='items'>
+        <view wx:for='{{attribute}}' wx:key='' class='item {{currentItem[0]==index  && "active_item"}}' data-type='true' data-index='{{index}}'>{{item.spuName}}</view>
+      </view>
+    </view>
+
+    <view class='attribute' bindtap='swichAttribute'>
+      <view class='attributeTitle'></view>
+      <view class='items'>
+        <view wx:for='{{attribute[currentItem[0]].sku}}' wx:key='' class='item {{currentItem[1]==index  && "active_item"}}' data-type='true' data-idx='{{index}}'>{{item.skuName}}</view>
+      </view>
+    </view>
+    <view class='flex'>
+      <view class='attributeTitle'>数量
+        <text class='limit' hidden='{{maxNum.type!="limit"}}'>（限购{{maxNum.num}}件）</text>
+      </view>
+      <view class='num'>
+        <view class='left' bindtap='reduceTap'>
+          <view class='reduce'></view>
+        </view>
+        <view class='center'>{{num}}</view>
+        <view class='right' bindtap='addTap'>
+          <view class='reduce'></view>
+          <view class='add'></view>
+        </view>
+      </view>
+    </view>
+    <button class='confirm' bindtap='confirmTap'>确定</button>
+  </view>
+</view>

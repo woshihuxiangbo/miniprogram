@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wtdwp":"/Component/wtdwp/wtdwp"
+  },
+  "navigationBarTitleText": "提现详情"
+}

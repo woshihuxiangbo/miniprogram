@@ -1,0 +1,22 @@
+<!--pages/shop_street/shop_street.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="search">
+  <view class="search-box">
+    <icon class="searchcion" size='16' type='search'></icon>
+    <input class="inp" focus="true" bindconfirm="searchgoods" confirm-type="search" placeholder="请输入店铺名称" />
+  </view>
+</view>
+<!-- 列表b -->
+<view class='store_list'>
+  <view class='item' wx:for="{{storeList}}" wx:key=''>
+    <navigator url='/pages/store_detail/store_detail?userid={{item.userid}}&ownerId={{ownerId}}' class='box'>
+      <image class='pic' src='{{filter.isHttpHead(item.logo)?item.logo:ossUrl+item.logo}}'></image>
+      <view class='info'>
+        <view class='store_name'>{{item.storename ||'未获取到店铺名'}}</view>
+        <view class='good_num'>上架货物：{{item.coalesce}}件</view>
+      </view>
+    </navigator>
+  </view>
+</view>
+<view hidden="{{storeList && storeList.length}}" class='no-store'>没有搜索到店铺</view>
+<!-- 列表e -->

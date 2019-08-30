@@ -1,0 +1,48 @@
+.title image{
+  height: 200rpx;
+  width: 750rpx;
+}
+
+.content{
+  margin: 40rpx 0;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.content image{
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.content view:nth-of-type(1) text{
+  font-size: 32rpx;
+  color: #de635c;
+}
+
+.content view:nth-of-type(2){
+  font-size: 24rpx;
+  color: #666666;
+  padding-left: 42rpx;
+  margin-top: 25rpx;
+}
+
+
+.bottom image{
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+
+.bottom{
+  display: flex;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.bottom view{
+  margin-left: 10rpx;
+}

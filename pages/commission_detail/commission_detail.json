@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "佣金收益明细",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

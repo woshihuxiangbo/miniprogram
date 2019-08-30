@@ -1,0 +1,11 @@
+<!--Component/storePoster/storePoster.wxml-->
+<view wx:if='{{domShow}}' hidden='{{!tableShow}}'>
+  <view class='mask'></view>
+  <view class='src' hidden='{{!tempFilePath}}'>
+    <image class='close' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/closeWhite.png' bindtap='closeTap'></image>
+    <image class='thumb' bindtap='prevImg' mode='aspectFill' src='{{tempFilePath}}'></image>
+    <image class='change' wx:if='{{swichShow}}' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/change_2.png' bindtap='swichPoster'></image>
+    <button class='sa' hover-class='none' bindtap='save' open-type='{{noPhotosAlbum?"openSetting":""}}'>保存</button>
+  </view>
+</view>
+<canvas canvas-id='storeCvs' style='width:780px;height:1200px;position:fixed;z-index:999;left:150%;top:10%;'></canvas>

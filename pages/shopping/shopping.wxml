@@ -1,0 +1,134 @@
+<!--pages/shopping/shopping.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <!-- 正常购物车 -->
+  <view hidden=''>
+    <view class='top'>
+      <view hidden='{{empty!=2}}'>共 {{totleCount||0}} 件商品</view>
+      <view hidden='{{empty!=2}}' bindtap='manageShopTap'>{{manageShop?"完成":"管理"}}</view>
+    </view>
+    <!-- 有货 -->
+    <view hidden='{{empty!=2}}' style='padding-bottom: 120rpx;'>
+      <view class='list' wx:for='{{goodsList}}' wx:key='' wx:for-item='store' wx:for-index='storeidx'>
+        <view class='shop'>
+          <view class='tap' bindtap='chooseTap' data-storeidx='{{storeidx}}'>
+            <view class='kuang'>
+              <image lazy-load class='okpic' hidden='{{!(isStore[storeidx])}}' src='http://img.chuangxiaozhu.com/wxapp/icons/okpic.png' ></image>
+            </view>
+            <view>{{store.userStoreName+filter.fitStore(store.items[0].eventType)}}</view>
+          </view>
+        </view>
+        <view class='item' wx:for='{{store.items}}' wx:key=''>
+          <view class='flex'>
+            <view class='tap' bindtap='chooseTap' data-idx='{{index}}' data-storeidx='{{storeidx}}'>
+              <view class='kuang'>
+                <image lazy-load class='okpic' hidden='{{!(selectArr[storeidx][index])}}' src='http://img.chuangxiaozhu.com/wxapp/icons/okpic.png'></image>
+              </view>
+            </view>
+            <image lazy-load class='thumb' mode='aspectFill' src='{{ossUrl+item.thumbnail}}' bindtap='goDetail' data-storeidx='{{storeidx}}' data-idx='{{index}}'></image>
+            <view class='timout' hidden='{{!(item.spuDisabled ||item.itemDisabled||!item.skuId)}}'>
+              <view>商品已下架</view>
+            </view>
+
+            <view class='content' bindtap='goDetail' data-storeidx='{{storeidx}}' data-idx='{{index}}'>
+              <view class='paymethod' hidden='{{item.eventType!=3}}'>{{item.payMethod==2?"到家自提":"线上支付"}}</view>
+              <view class='title'>{{item.name}}</view>
+              <view class='txt'>{{item.effect}}</view>
+              <view class='price'>
+                <text class='newPrice'>￥{{filter.consMoney(item.price*(item.unit||1))}}</text>
+                <text class='oldPrice'>市场价￥{{filter.consMoney(item.marketPrice*(item.unit||1))}}</text>
+              </view>
+              <view class='bottom'>
+                <goodsNum class='goodsNum' whole-class='whole-class' left-class='left-class' center-class='center-class' right-class='right-class' minNum='{{1}}' maxNum='{{filter.spotMaxNum(item.countLimit,item.stock,item.unit)}}' startNum='{{startNum[storeidx][index]||item.count}}' disabled='{{item.spuDisabled||item.itemDisabled||!item.skuId}}' bindchange='chooseNum' data-storeidx='{{storeidx}}'
+                  data-idx='{{index}}' data-num='num'></goodsNum>
+                <view class='discount'>{{item.spuName}}{{item.skuName}}</view>
+                <!-- <view class='discount'  hidden='{{item.marketPrice-item.price<=0}}'>共为您节省{{filter.consMoney((item.marketPrice-item.price)*(item.unit||1))}}元</view> -->
+
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 购物车为空  或者 支付完成返回-->
+    <view class='empty' hidden='{{empty!=1}}'>
+      <view class='empty_top'>
+
+        <!-- 购物车为空 -->
+        <view hidden='{{payStatus}}'>
+          <image lazy-load class='emptyImg' src='http://img.chuangxiaozhu.com/wxapp/shopping/emptyImg.png'></image>
+          <view class='tips'>
+            <view>购物车居然是空的，奴婢好痛心~</view>
+            <image lazy-load class='emptyEmoji' src='http://img.chuangxiaozhu.com/wxapp/shopping/emptyEmoji.png'></image>
+          </view>
+        </view>
+
+        <!-- 支付完成返回 -->
+        <view class='orderFinish' hidden='{{!payStatus}}'>
+          <view>您的订单已完成</view>
+          <view>我们快马加鞭飞到{{shortName}}身边</view>
+        </view>
+      </view>
+
+      <view class='recommend'>
+        <view class='title_1'>
+          <view class='line'></view>
+          <view class='txt'>你可能还喜欢</view>
+          <view class='line'></view>
+        </view>
+        <view class='title_2'>今日活动</view>
+        <view class='list'>
+          <view class='recommend_item' wx:for='{{recommend}}' wx:key=''>
+            <image lazy-load class='thumb' mode='aspectFill' src='{{ossUrl+item.headerPic}}' bindtap='goGoodsDetail' data-itemid='{{item.itemId}}' data-skuid='{{item.skuId}}'></image>
+            <view class='title'>{{item.name}}</view>
+            <view class='line'></view>
+            <view class='txt'>{{item.effect}}</view>
+            <view class='bottom'>
+              <view class='price'>￥{{filter.consMoney(item.price)}}</view>
+              <view class='label' hidden='{{!item.benefit}}'>赚{{filter.consMoney(item.benefit)}}元</view>
+              <view class='grow'></view>
+              <!-- <button class='share' data-share='share' data-skuid='{{item.skuId}}' bindtap='shareTap'>分享赚</button> -->
+              <button class='share' data-share='share' data-skuid='{{item.skuId}}' open-type='getUserInfo' bindgetuserinfo='shareTap'>分享赚</button>
+            </view>
+          </view>
+          <view class='last' hidden='{{!isLast}}'>到底了</view>
+        </view>
+      </view>
+    </view>
+
+    <view hidden='{{empty!=2}}'>
+      <!-- 要了要了 -->
+      <view class='bought' hidden='{{manageShop}}'>
+        <view class='tap' bindtap='chooseTap' data-totle='totle'>
+          <view class='kuang'>
+            <image lazy-load class='okpic' hidden='{{!totleOpt}}' src='http://img.chuangxiaozhu.com/wxapp/icons/okpic.png'></image>
+          </view>
+          <view class='label'>全选</view>
+        </view>
+        <view class='price'>
+          <view>合计
+            <text>￥{{totlePrice}}</text>
+          </view>
+          <view class='tips' hidden='{{!(totlePrice*1)}}'>{{shortName}}别想了，带我回家你会变得更美丽哦!</view>
+        </view>
+        <button class='btn' open-type='getUserInfo' bindgetuserinfo='goorderconfirm'>{{appStoreId=="1"?"本宫要了":"立即购买"}}</button>
+      </view>
+      <!-- 编辑 -->
+      <view class='edit' hidden='{{!manageShop}}'>
+        <view class='tap' bindtap='chooseTap' data-totle='totle'>
+          <view class='kuang'>
+            <image lazy-load class='okpic' hidden='{{!totleOpt}}' src='http://img.chuangxiaozhu.com/wxapp/icons/okpic.png'></image>
+          </view>
+          <view class='label'>全选</view>
+        </view>
+        <view class='space'></view>
+        <button hover-class='none' bindtap='addCollectList'>移入收藏夹</button>
+        <button hover-class='none' bindtap='deleteTap'>删除</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<shareBar tableShow='{{shareBarShow}}' bindsave='savImg' bindcancel='closePoster'></shareBar>
+<goodsPoster doCvs='{{doCvs}}' noPhotosAlbum='{{noPhotosAlbum}}' goodsImg='{{ossUrl+shareGoods.thumbnail}}' goodsTitle='{{shareGoods.name}}' goodsDesc='{{shareGoods.effect}}' price='{{filter.consMoney(shareGoods.price*(shareGoods.unit||1))}}' marketPrice='{{filter.consMoney(shareGoods.marketPrice*(shareGoods.unit||1))}}'
+  itemId='{{}}' skuId='{{shareGoods.skuId}}' eventType='1' bindclose='closePoster' bindsavsuc='closePoster'></goodsPoster>

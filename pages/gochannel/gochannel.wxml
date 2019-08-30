@@ -1,0 +1,18 @@
+<!--pages/gochannel/gochannel.wxml-->
+<view class="gochannel">
+    <view class="title">
+        <view class="tit">{{name}}微信二维码</view>
+        <!-- <view class="change-code">更换</view> -->
+    </view>
+    <view class="code-box">
+        <view class="head-tit">
+            <!-- <image class="head-pic" ></image> -->
+            <!-- <view class="name">微信二维码</view> -->
+        </view>
+
+        <image class="code-pic" src="{{ossUrl+info.code}}" bindtap="previewImage"></image>
+        <!-- <view class="tips">该二维码7天内(2月2日前)有效,重新进入将更新</view> -->
+    </view>
+
+    <view class="hint">通过微信扫一扫,或保存图片进入微信相册扫码添加入群</view>
+</view>

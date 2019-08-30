@@ -1,0 +1,49 @@
+<!--pages/cancel_order/cancel_order.wxml-->
+<view class="cancel_order">
+    <view class="cancel_cause">请选择取消原因</view>
+
+    <view class="cancel_box">
+        <view class="cause_item one_item" bindtap="selectCause" data-causeid="0" data-text="我不想买了">
+            <view class="val">我不想买了</view>
+            <view class="opt">
+                <view class="opt_n"></view>
+                <image class="opt_y" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/okpic.png" hidden="{{0 != causeid}}"></image>
+            </view>
+        </view>
+        <view class="cause_item" bindtap="selectCause" data-causeid="1" data-text="无法联系卖家">
+            <view class="val">无法联系卖家</view>
+            <view class="opt">
+                <view class="opt_n"></view>
+                <image class="opt_y" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/okpic.png" hidden="{{1 != causeid}}"></image>
+            </view>
+        </view>
+        <view class="cause_item" bindtap="selectCause" data-causeid="2" data-text="卖家发货太慢">
+            <view class="val">卖家发货太慢</view>
+            <view class="opt">
+                <view class="opt_n"></view>
+                <image class="opt_y" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/okpic.png" hidden="{{2 != causeid}}"></image>
+            </view>
+        </view>
+        <view class="cause_item" bindtap="selectCause" data-causeid="3" data-text="其他原因">
+            <view class="val">其他原因</view>
+            <view class="opt">
+                <view class="opt_n"></view>
+                <image class="opt_y" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/okpic.png" hidden="{{3 != causeid}}"></image>
+            </view>
+        </view>
+    </view>
+
+    <button class="btn" bindtap="confirm">确认取消</button>
+
+    <!-- 弹窗 -->
+    <view class="box" hidden="{{popShow}}">
+        <view class="pop">
+            <view class="tit">确认取消该订单吗？</view>
+            <view class="tip">取消后不可恢复,如有需要请重新下单</view>
+            <view class="opt">
+                <view class="cancel" bindtap="cancel">取消</view>
+                <view class="ok"     bindtap="goCancelOrder">确认</view>
+            </view>
+        </view>
+    </view>
+</view>

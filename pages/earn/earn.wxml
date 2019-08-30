@@ -1,0 +1,36 @@
+<!--pages/earn/earn.wxml-->
+<view class='container'>
+  <view class='tab'>
+    <view class='tab_item {{currentItem==0 && "active"}}' bindtap='swichTab' data-item='0'>
+      <view>赚￥10元</view>
+      <view class='line'></view>
+    </view>
+    <view class='tab_item {{currentItem==1 && "active"}}' bindtap='swichTab' data-item='1'>
+      <view>赚￥50元</view>
+      <view class='line'></view>
+    </view>
+    <view class='tab_item {{currentItem==2 && "active"}}' bindtap='swichTab' data-item='2'>
+      <view>赚￥100元</view>
+      <view class='line'></view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='item' wx:for='12345678910' wx:key=''>
+      <image class='thumb' mode='' src='http://ws3.sinaimg.cn/large/005BYqpgly1g083igxnd8j3076050wfx.jpg'></image>
+      <view class='content'>
+        <view class='title'>商品名称商品名称商品名称商品名称商品名称</view>
+        <view class='desc'>商品描述商品描述商品描述</view>
+        <view class='bottom'>
+          <view class='price'>￥259.9</view>
+          <button class='btn' hover-class='none'>赚￥10</button>
+          <button class='share' open-type='share' hover-class='none'>
+            <image src='http://img.chuangxiaozhu.com/wxapp/icons/share.png'></image>
+            <view class='txt'>分享</view>
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <shareBar bindsave='saveTap'></shareBar> -->
+<goodsPoster></goodsPoster>

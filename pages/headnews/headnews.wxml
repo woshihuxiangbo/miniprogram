@@ -1,0 +1,6 @@
+<!--pages/headnews/headnews.wxml-->
+<view class='box' >
+  <view bindtap='goDetail' data-title='{{item.title}}' data-body='{{item.body}}' class='item' wx:for="{{headNews}}" wx:key=''>
+    <image class='item_pic' src="{{ossUrl+item.picture}}"   mode="aspectFill"></image>
+  </view>
+</view>

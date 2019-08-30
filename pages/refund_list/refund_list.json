@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "emptylist":"/Component/emptylist/emptylist"
+  },
+  "navigationBarTitleText": "退款/售后"
+}

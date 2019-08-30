@@ -1,0 +1,33 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='fans_title'>
+  <text>当前粉丝</text>
+  <text>{{fansNum}}人</text>
+</view>
+
+<view class='tab'>
+  <view wx:for='{{tab}}' bindtap='changeTab' data-index="{{index}}" wx:key="">
+    <text class='{{tabNum == index?"active":""}}'>{{item}}</text>
+  </view>
+</view>
+
+
+<view class='content_box'>
+  <view class='content' wx:for="{{userFans}}" wx:key="">
+    <image src='{{item.header}}'></image>
+    <text>{{item.nickname}}</text>
+    
+  </view>
+   <!-- <view class='content_text'>{{item.createTime && filter.formatTime(item.createTime)}}</view> -->
+  <!-- <view class='content' wx:for="{{zjArr}}" wx:key="" wx:if="{{tabNum == 1}}">
+    <image src='{{item.header}}'></image>
+    <text>{{item.nikemane}}</text>
+  </view>
+  <view class='content' wx:for="{{dzArr}}" wx:key="" wx:if="{{tabNum == 2}}">
+    <image src='{{item.header}}'></image>
+    <text>{{item.nikemane}}</text>
+  </view>
+  <view class='content' wx:for="{{hyArr}}" wx:key="" wx:if="{{tabNum == 3}}">
+    <image src='{{item.header}}'></image>
+    <text>{{item.nikemane}}</text>
+  </view> -->
+</view>

@@ -1,0 +1,19 @@
+<!--pages/contactDetail/contactDetail.wxml-->
+<view class='container'>
+  <view class='top'>
+    <view class='info'>
+      <image class='avatar' src='http://img.chuangxiaozhu.com/wxapp/order_confirm/headimg.jpg'></image>
+      <view class='name'>坚实的更加有限公司</view>
+      <image class='moreIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/more_1.png'></image>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>进店逛逛</view>
+    <image class='shopIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/shopIcon.png'></image>
+  </view>
+  <view class='item'>
+    <view class='left'>置顶聊天</view>
+    <switch checked='{{false}}' bindchange="switchChange" />
+  </view>
+  <view class='item'>清空聊天记录</view>
+</view>

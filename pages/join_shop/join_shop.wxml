@@ -1,0 +1,54 @@
+<!--pages/join_shop/join_shop.wxml-->
+<view class="join_shop">
+    <view class="banner">
+        <image mode="widthFix" class="banner-pic" src="http://img.chuangxiaozhu.com/wxapp/icons/icons_2/powerCard.png"></image>
+    </view>
+    <view class="shop-authority">
+        <view class="head">
+            <view class="tit">
+                <text class="tit-name">{{lvConfig.lv1.name}}权益</text>
+                <!-- <image class="tit-icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/top.png"></image> -->
+            </view>
+            <!-- <image class="go" src="http://img.chuangxiaozhu.com/wxapp/more.png"></image> -->
+        </view>
+    </view>
+
+    <view class="authority-list">
+        <view class="item" wx:for="{{equityList}}" wx:key=''>
+            <image class="item-pic" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/store.png"></image>
+            <view class="item-name">{{item}}</view>
+        </view>
+    </view>
+    <view class="shop-authority">
+            <view class="head">
+                <view class="tit">
+                    <text class="tit-name">入店说明</text>
+                    <!-- <image class="tit-icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/top.png"></image> -->
+                </view>
+            </view>
+    </view>
+    <view class="explain">
+        <view class="word">没有人因为{{lvConfig.lv1.price/100}}元而破产，却有人因为{{lvConfig.lv1.price/100}}元而成功，有时候一件衣服都不止{{lvConfig.lv1.price/100}}元，一顿晚饭都不止{{lvConfig.lv1.price/100}}元，而{{lvConfig.lv1.price/100}}元却能获得{{AppName}}永久经营权和超值礼包一份！站在移动社交电商的红利大风口，你还在犹豫什么？</view>
+        <view class="word">现在摆在你面前的只有两个选择：要么，略过这篇文章，你将获得原本生活的宁静和安逸，但你失去的将是未来一辈子的好事业；要么，支付{{lvConfig.lv1.price/100}}元成为{{lvConfig.lv1.name}}，你将开启零风险创业新征程，最快今晚你将收获人生第一桶金！</view>
+    </view>
+    <view class="shop-authority">
+            <view class="head">
+                <view class="tit">
+                    <text class="tit-name">入店礼包</text>
+                    <image class="tit-icon" src="http://img.chuangxiaozhu.com/wxapp/top.png"></image>
+                </view>
+            </view>
+    </view>
+    <view class="threegift">
+            <swiper class="swiper" indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+                <block wx:for="{{storeGift}}"  wx:key="">
+                    <swiper-item class="item3">
+                        <navigator class='an' hover-class='none' url='/pages/goodsDetail/goodsDetail?goodsId={{item.itemId}}&skuId={{item.skuId}}&eventType=5' wx:for="{{item}}"  wx:key="" >
+                            <image class='pic' src='{{ossUrl+item.thumbnail}}'></image>
+                            <view class='word'>{{item.itemName}}</view>
+                        </navigator>
+                   </swiper-item>
+                </block>
+            </swiper>
+    </view>
+</view>

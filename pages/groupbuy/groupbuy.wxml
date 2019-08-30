@@ -1,0 +1,69 @@
+<view class="groupbuy">
+    <view class="rob-progree">
+        <view class="rob1">三人团</view>
+        <view class="rob2">五人团</view>
+        <view class="rob3">八人团</view>
+    </view>
+    <view class="tips">
+        <text class="inform">小花刚拼团赚取2.2元</text>
+        <text class="recommend">爆款推荐</text>
+    </view>
+    <view class="container">
+        <view class="swiper3">
+                <swiper class="swiper"  indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+                        <block wx:for="{{arr}}"  wx:key="item">
+                          <swiper-item>
+                            <view class="item3">                         
+                                <view class="an">
+                                    <image src="{{posterSrc}}"></image>
+                                    <view class="text">
+                                        <view class="name">商品名称</view>
+                                        <view class="price">￥39.9</view>
+                                    </view>
+                                </view>
+                                <view class="an">
+                                    <image src="{{posterSrc}}"></image>
+                                    <view class="text">
+                                        <view class="name">商品名称</view>
+                                        <view class="price">￥39.9</view>
+                                    </view>
+                                </view>
+                                <view class="an">
+                                    <image src="{{posterSrc}}"></image>
+                                    <view class="text">
+                                        <view class="name">商品名称</view>
+                                        <view class="price">￥39.9</view>
+                                    </view>
+                                </view>
+                            </view>     
+                          </swiper-item>
+                        </block>
+                </swiper>
+        </view>
+
+        <view class="goodslist">
+            <view class="gooditem" wx:for="{{5}}" wx:key=''>
+                <view class="imgbox">
+                    <image class="goodpic" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/headpic.jpg"></image>
+                </view>
+                <view class="goodinfo">
+                    <view class="name">雅诗兰黛补水冷敷的化妆品你值得拥有的化妆品信息</view>
+                    <view class="money1">
+                        <text class="it-name">单买价:</text>
+                        <text class="it-much">￥89.9</text>
+                        <text class="it-other">赚9.20元</text>
+                    </view>
+                    <view class="money2">
+                        <text class="it-name">拼团价:</text>
+                        <text class="it-much">￥9.9-29.9</text>
+                        <text class="it-other">(3-8人团)</text>
+                    </view>
+                    <view class="other">
+                        <text class="ot-mun">已拼5648件</text>
+                        <text class="ot-go">去开团</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

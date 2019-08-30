@@ -1,0 +1,120 @@
+/* pages/earn/earn.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-bottom: 2rpx solid #f2f2f2;
+  z-index: 999;
+}
+
+.tab .tab_item {
+  width: 33.33%;
+  text-align: center;
+  padding-top: 10rpx;
+  line-height: 70rpx;
+  color: #999;
+}
+
+.tab .tab_item .line {
+  width: 62rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  margin: 0 auto;
+}
+
+.tab .active {
+  color: #de635c;
+}
+
+.tab .active .line {
+  background: #de635c;
+}
+
+.list {
+  padding: 90rpx 30rpx 0;
+}
+
+.list .item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.list .thumb {
+  display: block;
+  width: 260rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.list .content .desc {
+  padding-top: 16rpx;
+  color: #625f5f;
+  font-size: 24rpx;
+}
+
+.list .content .price {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #de635c;
+}
+
+.list .content .bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 38rpx;
+}
+
+.list .content .bottom .btn {
+  font-size: 24rpx;
+  background: #de635c;
+  color: #fff;
+  line-height: 32rpx;
+  border-radius: 16rpx;
+  padding: 0 20rpx;
+  margin-left: 30rpx;
+}
+
+.list .content .share {
+  color: #636363;
+  border: 2rpx solid #c8c8c8;
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  margin-top: -10rpx;
+}
+
+.list .content .share image {
+  display: block;
+  width: 24rpx;
+  height: 24rpx;
+  margin: 4rpx auto 0;
+}
+
+.list .content .share .txt {
+  text-align: center;
+  font-size: 16rpx;
+}

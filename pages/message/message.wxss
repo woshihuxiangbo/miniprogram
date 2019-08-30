@@ -1,0 +1,103 @@
+/* pages/message/message.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.emptyTips {
+  text-align: center;
+  color: #999;
+  line-height: 100rpx;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.scroll {
+  white-space: nowrap;
+  border-bottom: 2rpx solid #eee;
+}
+
+.scroll .tab_item {
+  display: inline-block;
+  padding: 0 30rpx;
+  text-align: center;
+  line-height: 74rpx;
+  color: #999;
+}
+
+.scroll .tab_item .line {
+  width: 60rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  margin: 0 auto;
+}
+
+.scroll .active {
+  color: #de635c;
+}
+
+.scroll .active .line {
+  background: #de635c;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.list .item {
+  margin: 30rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 3rpx 3rpx 3rpx #e4e4e4;
+}
+
+.list .label {
+  display: flex;
+  justify-content: space-between;
+  line-height: 70rpx;
+  border-bottom: 2rpx solid #ededed;
+  margin: 0 20rpx;
+}
+
+.list .label .time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.list .detail {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.list .detail .thumb {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 4rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.list .detail .content {
+  flex: 1;
+}
+
+.list .detail .content .txt {
+  padding-top: 20rpx;
+  font-size: 20rpx;
+  color: #696969;
+}
+
+.last {
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 100rpx;
+}

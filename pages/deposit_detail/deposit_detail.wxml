@@ -1,0 +1,37 @@
+<!--pages/deposit_detail/deposit_detail.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="deposit">
+    <view class='tab' bindtap="tabSwitch">
+        <view data-id="0" class='item {{active == 0?"active":""}}' >预存</view>
+        <view data-id="1" class='item {{active == 1?"active":""}}'>支出</view>
+    </view>
+    <view class="head">
+
+        <picker bindchange="dateSelect" bindtap="openPicker" bindcancel="cancelPicker" mode="date" fields="month" >
+            <view class="datepicker">
+                <view class="date">{{date.year}}年{{date.month}}月</view>
+                <view class="{{pickerOpen?'san_jiao_bottom':'san_jiao_top'}}"></view>
+            </view>
+        </picker>      
+
+        <view class="money">
+            <view class="money-in" wx:if="{{active == 0}}">预存：￥{{filter.consMoney(totalMoney)}}</view>
+            <view class="money-out" wx:if="{{active == 1}}">支出：￥{{filter.consMoney(payMoney)}}</view>
+        </view>
+
+    </view>
+    <view class="container">
+        <navigator  url="/pages/yuCunDetail/yuCunDetail?id={{item.id}}&type={{item.type}}" class="item horizontal-center" wx:for="{{list}}" wx:key="">
+            <view class="item-left vertical-center" >
+                <view class="type">{{item.name}}</view>
+                <view class="date">{{filter.formatTime(item.createtime||item.createTime)}}</view>
+            </view>
+            <view class='status' >{{filter.depositStatus(item.status)}}</view>
+            <view class="item-right add">{{item.addorsub==0?'+':'-'}}￥{{filter.consMoney(item.amount)}}</view>
+        </navigator>
+    </view>
+    <view class='nolist' hidden='{{list && list.length}}'>无数据</view>
+
+
+
+</view>

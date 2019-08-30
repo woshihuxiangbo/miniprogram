@@ -1,0 +1,32 @@
+.bigtit {
+  background-color: #fff;
+}
+
+.bigtit .line {
+  width: 458rpx;
+  height: 2rpx;
+  background-color: #ccc;
+  margin: 50rpx auto;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.bigtit .line .cn {
+  font-size: 34rpx;
+  font-weight: 800;
+  white-space: nowrap;
+  color: #333;
+  position: absolute;
+  left: 50%;
+  top: -24rpx;
+  padding: 0 20rpx;
+  text-align: center;
+  background-color: #fff;
+  transform: translateX(-50%);
+}
+
+.bigtit .en {
+  font-size: 20rpx;
+  color: #625f5f;
+  text-align: center;
+}

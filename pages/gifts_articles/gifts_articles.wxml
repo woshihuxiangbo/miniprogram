@@ -1,0 +1,34 @@
+<!--pages/gifts_articles/gifts_articles.wxml-->
+<view class="gifts_articles">
+  <view class="articles_banner">
+    <view class="tit">READ TO RECEIVE A GOOD GIFT</view>
+  </view>
+  <!-- 音频 -->
+  <!-- <audio></audio> -->
+  <!-- 音频 -->
+  <view class="container">
+   
+    <view style="margin:20rpx 0">
+      <rich-text nodes="{{title}}"></rich-text>
+    </view>
+
+    <rich-text nodes="{{body}}"></rich-text>
+  </view>
+
+
+  <view class="count_down">
+    <view hidden='{{!getFreed ||  getFreed==2}}'>
+      <view class="circle1">
+        <view class="circle2">
+          <view>
+            <view class="time">倒计时</view>
+            <view class="time">{{countDown[0].minute}}:{{countDown[0].second}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view hidden='{{!getFreed}}' class="btn {{(btnCan && getFreed==1)?'can ':' '}}" bindtap="goSelectGoods">{{getFreed==1?"免费领礼品":"已领取"}}</view>
+</view>

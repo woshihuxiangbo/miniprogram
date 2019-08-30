@@ -1,0 +1,29 @@
+<!--pages/recharge/recharge.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<form report-submit='true' bindsubmit='chongMoney' class='container'>
+  <view class='money'>
+    <view class='label'>充值金额</view>
+    <view class='num'>
+      <view class='icon'>￥</view>
+      <input type='digit' type="number" bindinput="getMeney" name="sum"></input>
+      <view class='tips'>最低金额为100元</view>
+    </view>
+  </view>
+  <view class='packet'>当前可用预存款：{{filter.consMoney(prestore)}}元</view>
+  <view class='way'>
+    <view class='title'>充值方式</view>
+    <radio-group class="radio_group" >
+      <view class='radio'>
+        <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/recharge/wx.png'></image>
+        <view class='txt'>微信</view>
+        <radio value="wx" checked="" />
+      </view>
+      <!-- <view class='radio'>
+        <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/recharge/zfb.png'></image>
+        <view class='txt'>支付宝</view>
+        <radio value="zfb" checked="" />
+      </view> -->
+    </radio-group>
+  </view>
+  <button class='btn' form-type='submit' >确认充值</button>
+</form>

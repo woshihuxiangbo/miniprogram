@@ -1,0 +1,11 @@
+<view class="attachbox" style='right:{{right}}rpx;bottom:{{bottom}}rpx;'>
+  <!-- <button class="go-share" open-type="{{isShare && 'share'}}" bindtap='{{isShare || "tap"}}'> -->
+  <button class="go-share" open-type="{{isShare?'share':'getUserInfo'}}" bindgetuserinfo='{{isShare || "tap"}}'>
+    <image class='img' src="http://img.chuangxiaozhu.com/wxapp/otherImgs/share.png"></image>
+    <view class="w">分享</view>
+  </button>
+  <button class="go-top" hidden="{{!footShare}}" bindtap="goTop">
+    <image class='img' src="http://img.chuangxiaozhu.com/wxapp/otherImgs/top.png"></image>
+    <view class="w">顶部</view>
+  </button>
+</view>

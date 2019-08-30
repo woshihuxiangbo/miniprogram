@@ -1,0 +1,74 @@
+<!--pages/store_detail/store_detail.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<navtop navTitle='店铺详情' backUrl='/pages/my_store/my_store?fuid={{ownerId}}'></navtop>
+<view class='head'>
+  <image class='bgi' src='{{ossUrl+headData.backgroundimage}}'></image>
+  <view class='head_info'>
+    <view class='box'>
+      <image class='store_pic' src='{{filter.isHttpHead(headData.logo)?headData.logo:ossUrl+headData.logo}}'></image>
+      <view class='store_info'>
+        <view class='store_name'>{{headData.storename}}</view>
+        <view class='store_word'>
+          <view class='sales'>销量：{{headData.sales||0}}</view>
+          <!-- <view class='collect'>收藏：0</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='data_info'>
+  <view class='menu_content'>
+    <view class='item store_menu  {{allActive?"active":""}}' bindtap='openMenu'>
+      <view>{{totalGoods}}</view>
+      <view>全部商品</view>
+      <!-- 菜单b -->
+      <view class='menu_list {{menuShow?"menu_show":""}}'>
+        <view class='item' bindtap='getAll'>全部</view>
+        <view class='item ' wx:for='{{menuGoods}}' bindtap='goCategory' data-id='{{item.id}}' wx:key=''>
+          <view class='item-b {{item.id==menuActiveId?"active":""}}'>{{item.name}}</view>
+        </view>
+      </view>
+      <!-- 菜单r -->
+    </view>
+  </view>
+  <view class='item {{recAtive?"active":""}}' bindtap='getRecommend'>
+    <view>{{isRecommendNum}}</view>
+    <view>推荐</view>
+  </view>
+  <view class='item {{newActive?"active":""}}' bindtap='getNew'>
+    <view>{{isNewNum}}</view>
+    <view>上新</view>
+  </view>
+  <navigator url='/pages/store_about/store_about?id={{headData.id}}' hover-class="none" class='item store_letter'>
+    <view>
+      <image class='store_icon' src='../../images/icons/store_icon.png'></image>
+    </view>
+    <view>店铺介绍</view>
+  </navigator>
+</view>
+<!-- 列表b -->
+<view class='goods_list'>
+  <view class='item' wx:for="{{goodsList}}" wx:key=''>
+    <view class='box2'>
+      <navigator url='/pages/goodsDetail/goodsDetail?itemId={{item.itemId}}&skuId={{item.skuId}}&fuid={{ownerId}}'>
+        <image class='pic' src='{{ossUrl+item.thumbnail}}'></image>
+      </navigator>
+      <view class='info'>
+        <view class='goods_name'>{{item.name}}</view>
+        <view class='goods_jieshao'>{{item.effect}}</view>
+        <view class='goods_opt'>
+          <view class='goods_price'>¥{{filter.consMoney(item.skuPrice*item.unit)}}</view>
+          <view hidden='{{!(item.benefit*1)}}' style='width:100%;'></view>
+          <button class='btn earn_money' hidden='{{!(item.benefit*1)}}'>赚{{filter.consMoney(item.benefit)}}元</button>
+          <button class='btn share_money' data-share='share' data-skuid='{{item.skuId}}' open-type='getUserInfo' bindgetuserinfo='shareTap'>分享赚</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 列表e -->
+<view class='more' wx:if='{{more}}'>没有更多了</view>
+
+<shareBar tableShow='{{shareBarShow}}' bindsave='savImg' bindcancel='closePoster'></shareBar>
+<goodsPoster doCvs='{{doCvs}}' noPhotosAlbum='{{noPhotosAlbum}}' goodsImg='{{ossUrl+shareGoods.thumbnail}}' goodsTitle='{{shareGoods.name}}' goodsDesc='{{shareGoods.effect}}' price='{{filter.consMoney(shareGoods.skuPrice*(shareGoods.unit||1))}}' marketPrice='{{filter.consMoney(shareGoods.marketPrice*(shareGoods.unit||1))}}'
+  itemId='{{}}' ownerId='{{ownerId}}' skuId='{{shareGoods.skuId}}' eventType='1' bindclose='closePoster' bindsavsuc='closePoster'></goodsPoster>

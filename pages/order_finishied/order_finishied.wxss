@@ -1,0 +1,195 @@
+/* pages/order_finishied/order_finishied.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.top_border {
+  margin: 0 33rpx;
+  height: 18rpx;
+  background: #f2f2f2;
+  border-radius: 8rpx;
+}
+
+.list_border {
+  height: 18rpx;
+  background: #f2f2f2;
+  border-radius: 8rpx;
+}
+
+.top .content {
+  height: 40vh;
+  position: relative;
+}
+
+.top .content image {
+  display: block;
+  width: 124rpx;
+  height: 162rpx;
+  padding-top: 2vh;
+  margin: 0 auto;
+}
+
+.top .content .title {
+  font-size: 34rpx;
+  font-weight: bold;
+  line-height: 74rpx;
+  color: #656363;
+  text-align: center;
+}
+
+.top .content .txt {
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.top .content .txt text {
+  color: #de635c;
+}
+
+.top .content .btn {
+  padding: 30rpx 165rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top .content .btn button {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 36rpx;
+  padding: 0 16rpx;
+  border: 2rpx solid #999;
+  border-radius: 6rpx;
+}
+
+.top .maybe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top .maybe .line {
+  height: 2rpx;
+  width: 126rpx;
+  background: #ebebeb;
+}
+
+.top .maybe .txt {
+  margin: 0 20rpx;
+  font-size: 30rpx;
+  color: #625f5f;
+}
+
+.top .activity {
+  padding: 40rpx 0 26rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.list {
+  margin: 0 30rpx;
+  padding-bottom: 100rpx;
+  border-top: 2rpx solid #f2f2f2;
+}
+
+.list .item {
+  padding-top: 30rpx;
+}
+
+.list .thumb {
+  display: block;
+  width: 100%;
+  height: 340rpx;
+  border-radius: 8rpx;
+}
+
+.list .title {
+  margin-top: 20rpx;
+  font-weight: bold;
+  line-height: 50rpx;
+}
+
+.list .line {
+  height: 2rpx;
+  width: 450rpx;
+  background: #f2f2f2;
+}
+
+.list .txt {
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #625f5f;
+}
+
+.list .bottom {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.list .bottom .price {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #de635c;
+  margin-right: 14rpx;
+}
+
+.list .bottom .label {
+  background: #de635c;
+  color: #fff;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  padding: 0 12rpx;
+  border-radius: 17rpx;
+}
+
+.list .bottom .grow {
+  flex: 1;
+}
+
+.list .bottom .share {
+  background: #de635c;
+  color: #fff;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  padding: 0 18rpx;
+  border-radius: 17rpx;
+}
+
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  animation: maskAnimal 2s linear both;
+}
+
+.mask image {
+  display: block;
+  width: 518rpx;
+  height: 375rpx;
+  margin: 10vh auto;
+}
+
+@keyframes maskAnimal {
+  80%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,75 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<navtop navTitle='{{navTitle||""}}'></navtop>
+<navigator url="/pages/apply_regimental/apply_regimental" class='header' hover-class="none" hidden="{{!tuanFlag}}">
+  <text>想拥有自己的团购小店吗？快来申请吧！</text>
+  <!-- <image src='http://img.yjk027.com/koude_v1/wxapp/icons/close_icons.png'></image> -->
+</navigator>
+
+<view class="bigtit">
+  <view class="line">
+    <view class="cn">热销团购商品</view>
+  </view>
+  <view class="en"></view>
+</view>
+
+<view class="goods">
+  <swiper indicator-dots="true" indicator-color="#e5e5e5" indicator-active-color="#858181">
+    <block>
+      <swiper-item wx:for="{{goods}}" wx:key='this'>
+        <navigator wx:for="{{item}}" wx:key='this' hover-class="none" url='/pages/goodsDetail/goodsDetail?goodsId={{item.itemId}}&skuId={{item.skuId}}&eventType=3&fuid={{fuid}}'>
+          <image mode='aspectFill' src='{{ossUrl}}{{item.thumbnail}}'></image>
+          <text>{{item.name}}</text>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- <view class='goods'>
+    <navigator wx:for="{{goods}}" wx:key='this' hover-class="none" url='/pages/goodsDetail/goodsDetail?goodsId={{item.itemId}}&skuId={{item.skuId}}&eventType=3&fuid={{fuid}}' wx:if="{{goods!=null}}">
+      <image src='{{ossUrl}}{{item.thumbnail}}'></image>
+      <text>{{item.name}}</text>
+    </navigator>
+  </view> -->
+
+<!-- 小主收益 广播 轮播 -->
+<view class="message" wx:if="{{broadcastList.length}}">
+  <swiper class="swiper" vertical='true' autoplay='true' circular='true' interval='2000' duration='500'>
+    <block wx:for="{{broadcastList}}" wx:key=''>
+      <swiper-item class="swiper_item">
+        <image class="horn" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/horn.png"></image>
+        <text class="word">{{item.msgDataJson.value.content}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class='content'>
+  <scroll-view scroll-x>
+    <view class='tab'>
+      <view wx:for="{{tab}}" wx:key='this' bindtap='chooseTab' data-index="{{index}}" data-id="{{item.id}}" class='{{tabNum == index ? "active":""}}'>{{item.name}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class='goods_content' wx:for="{{goodsContent}}" wx:key="" wx:if="{{goodsContent.length>0}}">
+  <image src='{{ossUrl}}{{item.headerPic}}' catchtap='goDetail' data-itemid="{{item.itemId}}" data-skuid="{{item.skuId}}" data-fuid="{{item.fuid}}"></image>
+  <view class='goods_content_title'>{{item.name}}</view>
+  <view class='goods_content_content'>{{item.effect}}</view>
+  <view class='goods_bottom'>
+    <text>￥{{filter.consMoney(item.price)}}</text>
+    <view wx:if="{{item.benefit>0}}">赚{{filter.consMoney(item.benefit)}}元</view>
+    <button data-share='share' class='share_btn' data-skuId="{{item.skuId}}" open-type='getUserInfo' bindgetuserinfo='shareTap'>分享赚</button>
+  </view>
+</view>
+<view class='last' hidden='{{!isLast}}'>到底了</view>
+
+<view wx:if="{{goodsContent == null}}" class="none">暂无商品...</view>
+<view hidden='{{!posterBtn}}'>
+  <attachbox footShare='{{footShare}}' isShare='{{false}}' bindshare='shareTap1' right='30' bottom='60'></attachbox>
+</view>
+<shareBar tableShow='{{shareBarShow}}' bindsave='savImg' bindcancel='closePoster'></shareBar>
+<storePoster storeType='groupStore' noPhotosAlbum='{{noPhotosAlbum}}' domShow='{{true}}' tableShow='{{cvsShow}}' bindclose='closePoster' noPhotosAlbum='{{noPhotosAlbum}}' eventType='' storeInfo='{{store}}' bindsavsuc='closePoster'></storePoster>
+
+<goodsPoster doCvs='{{doCvs}}' noPhotosAlbum='{{noPhotosAlbum}}' goodsImg='{{ossUrl+shareGoods.thumbnail}}' goodsTitle='{{shareGoods.name}}' goodsDesc='{{shareGoods.effect}}' price='{{filter.consMoney(shareGoods.price*(shareGoods.unit||1))}}' marketPrice='{{filter.consMoney(shareGoods.marketPrice*(shareGoods.unit||1))}}'
+  itemId='{{}}' skuId='{{shareGoods.skuId}}' eventType='3' bindclose='closePoster' bindsavsuc='closePoster'></goodsPoster>
+  <modal modalHidden='{{modalHidden}}'></modal>

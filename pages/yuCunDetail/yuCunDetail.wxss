@@ -1,0 +1,12 @@
+/* pages/yuCunDetail/yuCunDetail.wxss */
+.container{
+  border-top:1rpx solid #f2f2f2;
+  padding: 0 30rpx;
+}
+.item{
+  line-height: 65rpx;
+  border-bottom:1rpx solid #f2f2f2;
+  margin-top: 25rpx;
+  font-size: 28rpx;
+  color:#333;
+}

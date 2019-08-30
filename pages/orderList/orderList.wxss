@@ -1,0 +1,141 @@
+/* pages/orderList/orderList.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.tab {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background: #fff;
+  top: 0;
+  z-index: 999;
+}
+
+.tab .tab_item .txt {
+  color: #625f5f;
+  line-height: 76rpx;
+  text-align: center;
+  padding: 0 10rpx;
+  white-space: nowrap;
+}
+
+.tab .tabActive .txt {
+  color: #df625c;
+}
+
+.tab .tab_item .line {
+  height: 4rpx;
+  width: 60rpx;
+  border-radius: 2rpx;
+  margin: 0 auto;
+}
+
+.tab .tabActive .line {
+  background: #de635c;
+}
+
+.list {
+  padding: 50rpx 30rpx;
+}
+
+.list .item {
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.list .item .storeName {
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list .item .storeName text {
+  max-width: 300rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list .item .storeName .status {
+  color: #df625c;
+  font-size: 24rpx;
+}
+
+.list .flex {
+  display: flex;
+  margin-top: 40rpx;
+}
+
+.list .thumb {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.list .content {
+  flex: 1;
+}
+
+.list .content .title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list .content .num {
+  padding-top: 30rpx;
+  color: #625f5f;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list .totle {
+  text-align: right;
+  font-size: 24rpx;
+}
+
+.list .bottom {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.list .bottom button {
+  font-size: 24rpx;
+  line-height: 36rpx;
+  border-radius: 8rpx;
+  padding: 0 14rpx;
+  border: 2rpx solid #333;
+  margin-left: 14rpx;
+}
+
+.list .bottom .alt {
+  color: #df625c;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  border-radius: 8rpx;
+  padding: 0 14rpx;
+  border: 2rpx solid #df625c;
+  margin-left: 14rpx;
+}
+
+.no_more {
+  margin: 10rpx auto;
+  text-align: center;
+}

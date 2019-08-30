@@ -1,0 +1,114 @@
+.refund_list {
+  border-top: 1rpx solid #f2f2f2;
+  padding: 0 30rpx;
+}
+
+.refund_list .refund_item {
+  border-bottom: 2rpx solid #f2f2f2;
+  overflow: hidden;
+}
+
+.refund_list .refund_item .item_tit {
+  height: 85rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refund_list .refund_item .item_tit .name {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.refund_list .refund_item .item_tit .name text {
+  display: inline-block;
+  max-width: 300rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.refund_list .refund_item .item_tit .status {
+  font-size: 24rpx;
+  color: #de635c;
+}
+
+.refund_list .refund_item .goods_info {
+  margin-bottom: 10rpx;
+  padding: 20rpx;
+  background-color: #eee;
+  display: flex;
+}
+
+.refund_list .refund_item .goods_info .goods_pic {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+}
+
+.refund_list .refund_item .goods_info .goods_data {
+  height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex: 1;
+}
+
+.refund_list .refund_item .goods_info .goods_data .main,
+.refund_list .refund_item .goods_info .goods_data .subs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.refund_list .refund_item .goods_info .goods_data .main {
+  color: #333;
+}
+
+.refund_list .refund_item .goods_info .goods_data .main .name_l {
+  font-size: 28rpx;
+}
+
+.refund_list .refund_item .goods_info .goods_data .main .price_r {
+  font-size: 24rpx;
+}
+
+.refund_list .refund_item .goods_info .goods_data .subs {
+  font-size: 24rpx;
+  color: #625f5f;
+}
+
+.refund_list .refund_item .goods_info .goods_data .state {
+  font-size: 24rpx;
+  color: #de635c;
+  text-align: right;
+}
+
+.refund_list .refund_item .goods_count {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.refund_list .refund_item .call_box {
+  margin-bottom: 20rpx;
+  text-align: right;
+}
+
+.refund_list .refund_item .call_box .call_btn {
+  display: inline-block;
+  margin-left: 15rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  border: 1rpx solid #666;
+  border-radius: 10rpx;
+}
+
+.refund_list .refund_item .call_box .call_active {
+  color: #de635c;
+  border-color: #de635c;
+}

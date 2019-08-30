@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uppic":"/Component/uppic/uppic"
+  },
+  "navigationBarTitleText": "退货进度"
+}

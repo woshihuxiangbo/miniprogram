@@ -1,0 +1,48 @@
+.posterTable {
+  position: fixed;
+  left: 50%;
+  top: 47%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  overflow: visible;
+}
+
+.thumb {
+  width: 500rpx;
+  height: 700rpx;
+  border-radius: 15rpx;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.close {
+  display: block;
+  width: 49rpx;
+  height: 49rpx;
+  padding: 20rpx;
+  position: absolute;
+  z-index: 999;
+  right: -70rpx;
+  top: -70rpx;
+}
+
+.sa {
+  position: absolute;
+  left: 50%;
+  bottom: -69rpx;
+  transform: translateX(-50%);
+  margin: 0;
+  background: #fff;
+  color: #de635c;
+  font-size: 28rpx;
+  line-height: 44rpx;
+  padding: 0 36rpx;
+  border-radius: 22rpx;
+}

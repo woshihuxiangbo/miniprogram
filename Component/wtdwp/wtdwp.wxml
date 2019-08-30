@@ -1,0 +1,22 @@
+<!--Component/wtdwp/wtdwp.wxml-->
+<view class='flx'>
+  <view>
+    <image class='bi {{process>=1 && "active"}}' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/bi_{{process>=1?"2":"1"}}.png'></image>
+    <view class='txt {{process>=1 && "txtActive"}}'>提交申请</view>
+  </view>
+
+  <view class='line {{process>=1 && "active"}}'></view>
+  <view class='line {{process>=2 && "active"}}'></view>
+  <view>
+    <image class='dian {{process>=2 && "active"}}' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/dian_{{process>=2?"2":"1"}}.png'></image>
+    <view class='txt {{process>=2 && "txtActive"}}'>提交申请</view>
+  </view>
+
+  <view class='line {{process>=2 && "active"}}'></view>
+  <view class='line {{process>=3 && "active"}}'></view>
+  <view>
+    <image class='gou {{process>=3 && "active"}}' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/gou_{{process>=3?"2":"1"}}.png'></image>
+    <view class='txt {{process>=3 && "txtActive"}}'>成功到账</view>
+  </view>
+
+</view>

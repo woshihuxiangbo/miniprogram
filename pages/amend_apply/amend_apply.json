@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uppic":"/Component/uppic/uppic"
+  },
+  "navigationBarTitleText": "修改申请"
+}

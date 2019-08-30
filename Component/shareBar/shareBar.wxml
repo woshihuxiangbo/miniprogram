@@ -1,0 +1,19 @@
+<!--component/shareBar/shareBar.wxml-->
+<view class='mask' hidden='{{tableShow!=1}}'></view>
+<view class='table' hidden='{{tableShow==0}}' style='animation: {{tableShow==1?"fadeInUp":"fadeOutDown"}} 0.5s ease both;'>
+  <view class='flex'>
+    <button class='btn' open-type='share' hover-class='none'>
+      <view class='center'>
+        <image class='img' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/wx.png'></image>
+        <view class='txt'>微信好友</view>
+      </view>
+    </button>
+    <button class='btn' hover-class='none' bindtap='saveTap'>
+      <view class='center'>
+        <image class='img' src='http://img.chuangxiaozhu.com/wxapp/icons/save.png'></image>
+        <view class='txt'>保存图片</view>
+      </view>
+    </button>
+  </view>
+  <button class='cancel' hover-class='none' bindtap='cancelTap'>取消</button>
+</view>

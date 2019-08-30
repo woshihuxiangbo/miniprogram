@@ -1,0 +1,71 @@
+/* pages/school/school.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+.container {
+  display: flex;
+  border-top: 4rpx solid #e4e4e4;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.tab {
+  width: 180rpx;
+  box-sizing: border-box;
+  background: #eee;
+  text-align: center;
+}
+
+.tab .tab_item {
+  line-height: 108rpx;
+  border-bottom: 5rpx solid #fff;
+}
+
+.tab .tab_active {
+  background: #fff;
+}
+
+.content {
+  flex: 1;
+}
+
+.content .title {
+  font-weight: bold;
+  padding: 8rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.content .title view:first-child {
+  flex-grow: 1;
+}
+
+.content .title .icon {
+  display: block;
+  width: 25rpx;
+  height: 25rpx;
+  flex-shrink: 0;
+}
+
+.content .txt {
+  font-size: 24rpx;
+  padding-top: 20rpx;
+}
+
+.content .content_item {
+  padding: 24rpx 30rpx 24rpx 24rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.no_body{
+  text-align: center;
+  margin-top: 30rpx;
+}

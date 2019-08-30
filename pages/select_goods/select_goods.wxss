@@ -1,0 +1,108 @@
+.select_goods .goods_list {
+  padding-bottom: 150rpx;
+}
+
+.select_goods .goods_list .goods_item {
+  border-bottom: 1rpx solid #f2f2f2;
+  margin: 0 30rpx;
+  padding: 30rpx 0;
+  display: flex;
+}
+
+.select_goods .goods_list .goods_item .goods_radio {
+  width: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select_goods .goods_list .goods_item .goods_radio .select_radio {
+  height: 18rpx;
+  width: 18rpx;
+  border: 2rpx solid #999;
+  border-radius: 50%;
+}
+
+.select_goods .goods_list .goods_item .goods_radio .opt_y {
+  height: 30rpx;
+  width: 30rpx;
+  position: absolute;
+}
+
+.select_goods .goods_list .goods_item .goods_pic {
+  width: 163rpx;
+  height: 163rpx;
+  border: 1rpx solid #dcdbdd;
+}
+
+.select_goods .goods_list .goods_item .goods_info {
+  flex: 1;
+  position: relative;
+  padding-left: 26rpx;
+}
+
+.select_goods .goods_list .goods_item .goods_info .goods_name {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.select_goods .goods_list .goods_item .goods_info .goods_price {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 40rpx;
+  text-decoration: line-through;
+}
+
+.select_goods .goods_list .goods_item .goods_info .goods_get {
+  position: absolute;
+  bottom: 0;
+  font-size: 22rpx;
+  color: #df625c;
+  border: 1rpx solid #df625c;
+  height: 32rpx;
+  border-radius: 16rpx;
+  padding: 0 20rpx;
+}
+
+.select_goods .goods_bill {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 98rpx;
+  border-top: 2rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35rpx;
+  background-color: #fff;
+}
+
+.select_goods .goods_bill .left {
+  display: flex;
+  align-items: center;
+}
+
+.select_goods .goods_bill .left .type {
+  font-size: 30rpx;
+  margin: 0 26rpx;
+}
+
+.select_goods .goods_bill .left .price {
+  font-size: 34rpx;
+  font-weight: bold;
+  vertical-align: middle;
+  color: #df625c;
+}
+
+.select_goods .goods_bill .to_get {
+  margin: 0;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #df625c;
+  width: 260rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 16rpx;
+  text-align: center;
+}

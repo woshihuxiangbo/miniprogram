@@ -1,0 +1,54 @@
+.up_pic .tit {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+}
+
+.up_pic .pic_box {
+  display: flex;
+}
+
+.up_pic .pic_box .pic_item {
+  margin-right: 50rpx;
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+}
+
+.up_pic .pic_box .pic_item .pic {
+  width: 100%;
+  height: 100%;
+}
+
+.up_pic .pic_box .pic_item .clear_icon {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: -20rpx;
+  right: -10rpx;
+  color: #999;
+}
+
+.up_pic .pic_box .pic_btn {
+  box-sizing: border-box;
+  padding: 10rpx;
+  border: 2rpx solid #999;
+}
+
+.up_pic .pic_box .pic_btn .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.up_pic .pic_box .pic_btn .content .up_icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.up_pic .pic_box .pic_btn .content .word {
+  font-size: 20rpx;
+  color: #999;
+}

@@ -1,0 +1,100 @@
+/* pages/ownerStory/ownerStory.wxss */
+
+page {
+  font-size: 24rpx;
+  color: #333;
+}
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+.container {
+  padding-bottom: 200rpx;
+}
+
+.item {
+  padding: 50rpx 79rpx 0 75rpx;
+}
+
+.headimg .imgTop {
+  display: flex;
+  align-items: center;
+}
+
+.headReverse .headimg .imgTop {
+  flex-direction: row-reverse;
+}
+
+.headimg .rect {
+  width: 175rpx;
+  height: 115rpx;
+  background: #fef1ef;
+}
+
+.headimg .line {
+  width: 255rpx;
+  height: 2rpx;
+  background: #f5cbcb;
+  margin-left: -60rpx;
+}
+
+.headReverse .headimg .line {
+  margin-right: -60rpx;
+}
+
+.headimg .img {
+  display: block;
+  width: 420rpx;
+  height: 240rpx;
+  float: right;
+}
+
+.headReverse .headimg .img {
+  float: left;
+}
+
+.headimg::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.info {
+  text-align: right;
+  color: #625f5f;
+  line-height: 34rpx;
+  padding: 10rpx 0;
+}
+
+.headReverse .info {
+  text-align: left;
+}
+
+.info .line {
+  width: 200rpx;
+  height: 2rpx;
+  background: #efb9b5;
+  margin-top: 20rpx;
+  float: right;
+}
+
+.headReverse .info .line {
+  float: left;
+}
+
+.title {
+  font-size: 36rpx;
+  color: #de635c;
+}
+
+.headReverse .title {
+  text-align: right;
+}
+
+.story {
+  padding: 24rpx 0 0 14rpx;
+  line-height: 50rpx;
+  text-indent: 2em;
+}

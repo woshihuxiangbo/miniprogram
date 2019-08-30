@@ -1,0 +1,39 @@
+<!--pages/tuihuo_progress/tuihuo_progress.wxml-->
+<view >
+    <view class="hint_info">
+        <view class="word">
+            <image class="tips_x" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/tips_x.png"></image>
+            <text>商家拒绝退货，请修改退货申请</text>
+        </view>
+        <view class="word">拒绝理由：照片不清晰</view>
+    </view>
+    <view class="info_form">
+        <view class="info_item">
+            <view>是否收到货</view>
+            <view class="select">
+                <text class="select_word">请选择</text>
+                <image class="select_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/more.png"></image>
+            </view>
+        </view>
+        <view class="info_item">
+            <view>退货原因</view>
+            <view class="select">
+                <text class="select_word">七天无理由</text>
+                <image class="select_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/more.png"></image>
+            </view>
+        </view>
+
+        <view class="info_item">
+            <view>退款金额</view>
+            <view class="price">￥36.00</view>
+        </view>
+        <view class="cause">
+            <textarea class="cause_word" placeholder-class="cause_pla" placeholder="请输入退货原因"></textarea>
+        </view>
+        <!-- 图片上传组件 -->
+        <view class="upbox">
+            <uppic></uppic>
+        </view>
+
+    </view>
+</view>

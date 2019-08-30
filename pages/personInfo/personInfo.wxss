@@ -1,0 +1,132 @@
+/* pages/personInfo/personInfo.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.topInfo .avatar {
+  margin: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 146rpx;
+  border-bottom: 3rpx solid #f2f2f2;
+}
+
+.headimage {
+  width: 86rpx;
+  height: 86rpx;
+  overflow: hidden;
+}
+
+.topInfo .avatar image {
+  display: block;
+  width: 86rpx;
+  height: 86rpx;
+  padding-right: 30rpx;
+}
+
+.moreIcon {
+  display: block;
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 2rpx;
+}
+
+.edit {
+  margin: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+  border-bottom: 3rpx solid #f2f2f2;
+}
+
+.edit .right {
+  padding-left: 100rpx;
+  padding-right: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.edit .right .qrcode {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.edit .novalue {
+  color: #999;
+}
+
+.edit input {
+  flex: 1;
+  text-align: right;
+  padding: 0 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nophone {
+  font-size: 28rpx;
+  color: #999;
+  border-radius: 0;
+}
+
+.mask {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.table {
+  width: 540rpx;
+  min-height: 300rpx;
+  background: #fff;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  border-radius: 26rpx;
+}
+
+.table .title {
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: center;
+  padding: 50rpx 0 30rpx;
+}
+
+.table .txt {
+  padding: 0 30rpx;
+}
+
+.table .btn {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.table .btn button {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 40rpx;
+  padding: 0 24rpx;
+  border: 2rpx solid #999;
+}
+
+.table .btn .confirm {
+  color: #de635c;
+  border-color: #de635c;
+}

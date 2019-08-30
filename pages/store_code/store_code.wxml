@@ -1,0 +1,20 @@
+<!--pages/store_code/store_code.wxml-->
+<view class='container'>
+  <swiper current='{{current}}' bindchange='swichScroll'>
+    <swiper-item class='box' wx:for='{{posterRaw}}' wx:key='' style='background: url("{{ossUrl+item.src}}") 0 0/100% auto no-repeat;' bindtap='prevImg'>
+      <image class="pic" src='{{info.logo||avatar}}'></image>
+      <view class='txt' style='color:{{item.color||"#333"}}'>
+        <view>{{info.storename||nickName}}的小店</view>
+        <view>{{info.store_mobile}}</view>
+        <view class='sign'>{{info.signature}}</view>
+        <view class='title' style='color:{{item.fontColor}};'>{{item.title}}</view>
+        <view class='subtitle' style='color:{{item.fontColor}};'>{{item.subtitle}}</view>
+        <image class='qrcode' src='{{qrcode}}'></image>
+        <view class='footerText' style='color:{{item.fontColor}};'>{{item.footerText}}</view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class='btn' bindtap='swichTap' hidden='{{posterRaw.length<=1}}'>切换</view>
+<storePoster storeType='store' tableShow='{{cvsShow}}' avatar='{{info.logo||avatar}}' name='{{info.storename||nickName}}' phone='{{info.store_mobile}}' sign='{{info.signature}}' current='{{current}}' storeId='{{}}' bindqrcode='codeSuc' bindcvs='cvsSuc'
+  noPhotosAlbum='{{noPhotosAlbum}}' eventType='1'></storePoster>

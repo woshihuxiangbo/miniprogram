@@ -1,0 +1,26 @@
+<!--pages/select_goods/select_goods.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="select_goods">
+  <view class="goods_list">
+    <view class="goods_item" wx:for="{{indexData.storeGift}}" wx:key="1">
+      <view class="goods_radio" bindtap="selectCause" data-causeid="{{index}}" data-price="{{filter.consMoney(item.eventPrice)}}" data-skuid="{{item.skuId}}" data-spuid='{{item.spuId}}'>
+        <view class="select_radio"></view>
+        <image class="opt_y" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/okpic.png" hidden="{{index != causeid}}"></image>
+      </view>
+      <image class="goods_pic" src="{{imgUrl}}{{item.thumbnail}}" bindtap='goDetail' data-skuid='{{item.skuId}}' data-itemid='{{item.itemId}}'></image>
+      <view class="goods_info" bindtap='goDetail'  data-skuid='{{item.skuId}}' data-itemid='{{item.itemId}}'>
+        <view class="goods_name">{{item.itemName}}</view>
+        <view class="goods_price">￥{{filter.consMoney(item.marketPrice||0)}}</view>
+        <view class="goods_get">{{filter.consMoney(item.eventPrice)}}元免费领取</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="goods_bill">
+    <view class="left">
+      <text class="type">实付:</text>
+      <text class="price">￥{{price}}</text>
+    </view>
+    <button class="to_get" open-type='getUserInfo' bindgetuserinfo='goPay'>立即领取</button>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "shareBar":"../../Component/shareBar/shareBar",
+    "goodsPoster":"../../Component/goodsPoster/goodsPoster"
+  }
+}

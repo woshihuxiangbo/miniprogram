@@ -1,0 +1,290 @@
+/* pages/order_confirm/order_confirm.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.container {
+  padding-bottom: 120rpx;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.waytype {
+  padding: 0 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.waytype .flex {
+  display: flex;
+  padding: 20rpx 0 0;
+}
+
+.waytype .tips {
+  font-size: 24rpx;
+  line-height: 64rpx;
+  color: #999;
+}
+
+.waytype button {
+  font-size: 28rpx;
+  line-height: 60rpx;
+  color: #999;
+  height: 60rpx;
+  padding: 0 16rpx;
+  margin-right: 20rpx;
+  border-radius: 14rpx;
+  border: 2rpx solid #999;
+}
+
+.waytype .waytypeActive {
+  background: #de635c;
+  color: #fff;
+  border: none;
+}
+
+.ad_adress {
+  font-size: 24rpx;
+  min-height: 60rpx;
+  padding: 10rpx 30rpx;
+  display: flex;
+  line-height: 40rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.storeClass {
+  padding: 10rpx 30rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.storeClass view:first-child {
+  font-size: 28rpx;
+}
+
+.ad_adress  .havead {
+  color: #625f5f;
+}
+
+.ad_adress  .havead .addr {
+  display: flex;
+}
+
+.ad_adress  .havead .icon {
+  margin: 10rpx 10rpx 0 0;
+}
+
+.ad_adress .icon {
+  display: block;
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.announcement {
+  border-bottom: 2rpx solid #f2f2f2;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.announcement .icon {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 6rpx;
+}
+
+.announcement .txt {
+  font-weight: bold;
+  line-height: 80rpx;
+}
+
+.persons {
+  height: 200rpx;
+  border-bottom: 10rpx solid #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.persons .avatar {
+  display: block;
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 50%;
+  margin: 0 auto 10rpx;
+  border: 2rpx solid #de635c;
+}
+
+.persons .name {
+  max-width: 200rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.detail {
+  padding: 0 30rpx;
+}
+
+.detail .shop_title {
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.detail .content {
+  display: flex;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.detail .desc {
+  flex: 1;
+  position: relative;
+}
+
+.detail .desc .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.detail .thumb {
+  display: block;
+  border-radius: 6rpx;
+  width: 260rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+}
+
+.detail .desc .label {
+  display: inline-block;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  border-radius: 15rpx;
+  background: #de635c;
+  color: #fff;
+  padding: 0 12rpx;
+  margin-right: 10rpx;
+}
+
+.detail .desc .price {
+  float: right;
+  color: #de635c;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+
+.detail .desc .spec {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.detail .info {
+  padding: 14rpx 0;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.detail .info .way {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail .info .redFree {
+  display: flex;
+  justify-content: space-between;
+}
+
+.more {
+  padding: 10rpx 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  line-height: 50rpx;
+  font-size: 24rpx;
+}
+
+.message {
+  display: flex;
+  align-items: stretch;
+}
+
+.message view:first-child {
+  white-space: nowrap;
+}
+
+.message textarea {
+  width: 100%;
+  padding: 10rpx 0;
+  min-height: 30rpx;
+  line-height: 30rpx;
+}
+
+.message .place {
+  color: #999;
+  position: absolute;
+}
+
+.totle {
+  padding-top: 20rpx;
+  font-size: 24rpx;
+  text-align: right;
+}
+
+.totle .money {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #de635c;
+}
+
+.totle text:first-child {
+  margin-right: 20rpx;
+}
+
+.tab {
+  width: 100%;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  border-top: 2rpx solid #e8e8e8;
+  background: #fff;
+}
+
+.tab .left text {
+  color: #de635c;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.tab .btn {
+  background: #de635c;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  padding: 0 40rpx;
+  border-radius: 16rpx;
+}

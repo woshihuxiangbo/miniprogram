@@ -1,0 +1,11 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="skeps" style='color:{{color}}'>
+  <view class="step_item skeps-one" wx:for="{{skepsData}}" wx:key="">
+    <view class="ring skep-ring" style='background-color:{{index==0?activeColor:""}}'></view>
+    <view class='txt'>
+      <view class="addr skep-addr" style='color:{{index==0?activeColor:""}}'>{{type=="money"?filter.afterSaleStatus(item[addrStr]):item[addrStr]}}</view>
+      <view class="date">{{filter.formatTime(item[dateStr])}}</view>
+    </view>
+    <view class="line"></view>
+  </view>
+</view>

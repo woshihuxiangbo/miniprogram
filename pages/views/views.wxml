@@ -1,0 +1,30 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='fans_title'>
+  <view class='hidden_box' bindtap='showBox'>{{timeTXT}}
+    <image src='/images/tabbarimg/dbx_icons.png' class='{{more == false?"animation":""}}'></image>
+  </view>
+  <view class='fans_box' style='height:{{Height}}rpx'>
+    <view wx:for="{{timeArr}}" wx:key="" wx:if="{{showText}}" bindtap='chooseTime' data-index="{{index}}">{{item}}</view>
+  </view>
+  <text>共{{count}}次</text>
+</view>
+
+<view class='tab'>
+  <view wx:for='{{tab}}' bindtap='changeTab' data-index="{{index}}" wx:key="">
+    <text class='{{tabNum == index?"active":""}}'>{{item}}</text>
+  </view>
+</view>
+
+
+<view class='content_box'>
+  <view class='box' wx:for="{{fansArr}}" wx:key="">
+    <view class='content'>
+      <image src='{{item.header}}'></image>
+      <text>{{item.nickname}}</text>
+    </view>
+    <view class='content_text'>{{item.createTime && filter.formatTime(item.createTime)}}</view>
+  </view>
+
+</view>
+
+

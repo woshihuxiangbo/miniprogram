@@ -1,0 +1,9 @@
+/* pages/headnewsDetail/headnewsDetail.wxss */
+.box{
+  margin: 0 30rpx;
+}
+.title{
+  font-size: 40rpx;
+  font-weight: bold;
+  margin: 10rpx 0;
+}

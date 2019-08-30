@@ -1,0 +1,26 @@
+<!--pages/message/message.wxml-->
+<view class='container'>
+  <scroll-view class='scroll' scroll-x>
+    <view class='tab_item {{currentItem==index && "active"}}' wx:for='{{category}}' wx:key='' bindtap='swichTap' data-idx='{{index}}'>
+      <view>{{item}} {{views[index] && "("+(views[index]>999?"999+":views[index])+")"}}</view>
+      <view class='line'></view>
+    </view>
+  </scroll-view>
+  <view class='emptyTips' hidden="{{list && list.length}}">暂无消息</view>
+  <view class='list'>
+    <view class='item' wx:for='{{list}}' wx:key=''>
+      <view class='label'>
+        <view>账户通知</view>
+        <view class='time'>{{item.createTimeStr}}</view>
+      </view>
+      <view class='detail'>
+        <image class='thumb' src='{{item.imgUrl}}'></image>
+        <view class='content'>
+          <view class='title'>{{item.content}}</view>
+          <!-- <view class='txt'>订单编号：456486456565656</view> -->
+        </view>
+      </view>
+    </view>
+    <view class='last' hidden='{{!isLast}}'>到底了</view>
+  </view>
+</view>

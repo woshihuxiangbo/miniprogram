@@ -1,0 +1,44 @@
+/* pages/login/login.wxss */
+
+.auth1 {
+  padding: 0 30rpx;
+}
+
+.auth1 .auth_pic {
+  display: block;
+  height: 260rpx;
+  width: 260rpx;
+  border-radius: 50%;
+  margin: 15vh auto 0;
+}
+
+.name {
+  text-align: center;
+  font-size: 34rpx;
+  color: #333;
+  margin: 3vh 0;
+  font-weight: bold;
+}
+
+.tips {
+  font-size: 28rpx;
+  color: #666;
+  text-align: left;
+  line-height: 48rpx;
+}
+
+.btn {
+  border: none;
+  background-color: #db665f;
+  border-radius: 16rpx;
+  width: 500rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  margin-top: 8vh;
+  color: #fff;
+}
+
+.auth1 button::after {
+  border: none;
+}

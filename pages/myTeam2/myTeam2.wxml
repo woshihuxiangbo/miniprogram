@@ -1,0 +1,71 @@
+<!--pages/myTeam2/myTeam2.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='top'>
+    <view class='bg'>
+      <button>{{parentName}}</button>
+      <view class='prev' wx:if="{{prevBtn}}" bindtap="getPrevData">上一页</view>
+    </view>
+    <view class='avatar'>
+      <!-- <open-data type='userAvatarUrl'></open-data> -->
+      <image src="{{header}}" class="header"></image>
+    </view>
+    <view class='name'>
+      <!-- <open-data type='userNickName'></open-data> -->
+      {{userName}}
+    </view>
+    <view class='position'>
+      <image class='icon' src='http://img.chuangxiaozhu.com/wxapp/icons/position.png'></image>
+      <open-data type='userCity'></open-data>
+    </view>
+    <view class='tab'>
+      <view class='tab_item'>
+        <view class='num'>￥{{filter.consMoney(personageAmount)}}</view>
+        <view class='txt'>个人消费</view>
+      </view>
+
+      <view class='tab_item'>
+        <view class='num'>{{personageTeamCount}}</view>
+        <view class='txt'>团队人数</view>
+      </view>
+
+      <view class='tab_item'>
+        <view class='num'>￥{{filter.consMoney(personageTeamAmount)}}</view>
+        <view class='txt'>团队消费</view>
+      </view>
+    </view>
+  </view>
+  <view class='leveltab'>
+    <view class='levelitem {{currentLeveId==item.id && "levelitem_active"}}' wx:for='{{leveList}}' wx:key='' bindtap='swichTab' data-id='{{item.id}}'>
+      <view class='txt'>{{item.txt}}</view>
+      <view class='line'></view>
+    </view>
+
+  </view>
+  <view class='list'>
+    <view class='item' bindtap="getNextData" data-level="{{item.levelvalue}}" data-userid='{{item.userid}}' wx:for='{{teamList}}' wx:key=''>
+      <image class='avatar' src='{{item.header}}'></image>
+
+      <view class='content'>
+        <view class='center'>
+          <view class='center_title'>
+            <text class='name'>{{item.nickname}}</text>
+            <text class='type'>{{item.level}}</text>
+            <text class='way'>({{item.n==1?'直招':'间招'}})</text>
+          </view>
+          <view class='time'>注册时间：{{filter.strSlice(filter.formatTime(item.createtime||0),0,10)}}</view>
+        </view>
+        <view class='right'>
+          <view class='blod'>团队{{item.teamcount}}人</view>
+          <view class='money'>已消费:
+            <text>￥{{filter.consMoney(item.teamamount)}}</text>
+          </view>
+        </view>
+        <image class='more' src='http://img.chuangxiaozhu.com/wxapp/icons/more.png'></image>
+      </view>
+
+
+
+    </view>
+  </view>
+</view>

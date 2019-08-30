@@ -1,0 +1,46 @@
+<!--pages/order_finishied/order_finishied.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='top'>
+    <view class='content'>
+      <image mode='widthFix' src='http://img.chuangxiaozhu.com/wxapp/order_confirm/orderimg.png'></image>
+      <view class='title'>支付成功</view>
+      <view class='txt'>实付
+        <text>￥{{price}}</text>
+      </view>
+      <view class='btn'>
+        <button hover-class='none' bindtap='goindex'>返回首页</button>
+        <button hover-class='none' bindtap='goOrderDetail'>{{payMethod==2?"查看取货码":"查看订单"}}</button>
+      </view>
+    </view>
+    <view class='maybe'>
+      <view class='line'></view>
+      <view class='txt'>你可能还喜欢</view>
+      <view class='line'></view>
+    </view>
+    <view class='activity'>今日活动</view>
+  </view>
+  <view class='list'>
+    <view class='item' wx:for='{{list}}' wx:key=''>
+      <image class='thumb' mode='aspectFill' src='{{ossUrl+item.headerPic}}' bindtap='goGoodsDetail' data-id='{{item.skuId}}' data-itemid='{{item.itemId}}'></image>
+      <view class='title'>{{item.name}}</view>
+      <view class='line'></view>
+      <view class='txt'>{{item.effect}}</view>
+      <view class='bottom'>
+        <view class='price'>￥{{filter.consMoney(item.price)}}</view>
+        <view class='label' hidden='{{!item.benefit}}'>赚{{filter.consMoney(item.benefit)}}元</view>
+        <view class='grow'></view>
+        <!-- <button class='share' data-share='share' data-skuid='{{item.skuId}}' bindtap='shareTap'>分享赚</button> -->
+        <button class='share' data-share='share' data-skuid='{{item.skuId}}' open-type='getUserInfo' bindgetuserinfo='shareTap'>分享赚</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='mask'>
+  <image mode='widthFix' src='http://img.chuangxiaozhu.com/wxapp/order_confirm/orderFinished.png'></image>
+</view>
+
+
+<shareBar tableShow='{{shareBarShow}}' bindsave='savImg' bindcancel='closePoster'></shareBar>
+<goodsPoster doCvs='{{doCvs}}' noPhotosAlbum='{{noPhotosAlbum}}' goodsImg='{{ossUrl+shareGoods.thumbnail}}' goodsTitle='{{shareGoods.name}}' goodsDesc='{{shareGoods.effect}}' price='{{filter.consMoney(shareGoods.price*(shareGoods.unit||1))}}' marketPrice='{{filter.consMoney(shareGoods.marketPrice*(shareGoods.unit||1))}}'
+  itemId='{{}}' skuId='{{shareGoods.skuId}}' eventType='1' bindclose='closePoster' bindsavsuc='closePoster'></goodsPoster>

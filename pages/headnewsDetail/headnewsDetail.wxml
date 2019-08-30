@@ -1,0 +1,6 @@
+<!--pages/headnewsDetail/headnewsDetail.wxml-->
+<view class='box'>
+  <view class='title'>{{title}}</view>
+  <rich-text nodes="{{body}}" ></rich-text>
+</view>
+

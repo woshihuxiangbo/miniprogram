@@ -1,0 +1,6 @@
+<!--Component/my-video/my-video.wxml-->
+<view class='video'>
+  <image class='poster' hidden='{{posterHidden}}' src='{{poster}}'></image>
+  <image class='start' hidden='{{posterHidden}}' bindtap='startTap' src='{{startIcon.src}}' style='width:{{startIcon.w}}rpx;height:{{startIcon.h}}rpx'></image>
+  <video wx:if='{{posterHidden}}' src='{{src}}' id='{{id}}' style='width:100%;height:100%;' object-fit="cover" bindended='endFn'></video>
+</view>

@@ -1,0 +1,57 @@
+<!--pages/orderList/orderList.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='tab'>
+    <view class='tab_item {{currentIdx==index && "tabActive"}}' wx:for='{{tabList}}' wx:key='' bindtap='swichTab' data-idx='{{index}}'>
+      <view class='txt'>{{item}}</view>
+      <view class='line'></view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='item' wx:for='{{orderList}}' wx:for-item="order" wx:for-index='idx' wx:key="">
+      <view class='storeName'>
+        <view>
+          <!-- <text>{{order.storeName}}{{filter.fitStore(item.eventType)}}</text> -->
+          <text>{{order.storeName}}</text>
+        </view>
+        <view class='status'>{{order.orderStatus}}</view>
+      </view>
+      <!-- <view class='flex' style="border:1px solid red" bindtap="goOrderDetail" data-id="{{order.id}}" wx:for="{{order.items}}" wx:key=""> -->
+      <view class='flex'  bindtap="goOrderDetail" data-id="{{order.items.length>1?item.orderId:order.id}}" wx:for="{{order.items}}" wx:key="">
+        <image class='thumb' mode="aspectFill" src='{{ossUrl+item.thumb}}'></image>
+        <view class='content'>
+          <view class='title'>
+            <view>{{item.title}}</view>
+            <view>￥{{filter.consMoney(item.price)}}</view>
+          </view>
+
+          <view class='num'>
+            <view>{{item.specName}}</view>
+            <view>x{{item.num}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='totle'>共{{order.goodsTotal}}件商品，合计￥{{order.amount/100}}</view>
+      <view class='bottom'>
+        <block wx:for="{{order.operations}}" wx:key=''>
+          <button hidden='{{ order.items.length>1 && index==7}}' class='{{index==3 && "alt"}}' data-order="{{order.id}}" open-type='{{index==1 && "contact"}}' data-idx='{{idx}}' data-key='{{index}}' bindtap="operItem">{{item}}</button>
+        </block>
+        <!-- <button open-type='contact'>联系客服</button> -->
+        <!-- <button bindtap="goPay" data-payid="{{order.id}}"  wx:if="{{order.status == 0}}">去付款</button> -->
+        <!-- <navigator  class='alt' hover-class='none'>再次购买</navigator> -->
+        <!-- <navigator  class='alt' hover-class='none'>立即支付</navigator>
+        <navigator  class='alt' hover-class='none'>去支付</navigator>
+        <navigator  class='alt' hover-class='none'>确认收货</navigator>
+        <navigator  class='alt' hover-class='none'>查看物流</navigator>
+        <navigator wx:if="{{1==1}}" url="/pages/go_comment/go_comment" class='alt' hover-class='none'>去评价</navigator> -->
+      </view>
+    </view>
+    <!-- 无数据 -->
+
+    <emptylist markword="您的订单列表是空的" hidden="{{emptylistShow}}"></emptylist>
+    <!-- 无数据 -->
+  </view>
+
+  <!-- <view wx:if="{{more}}">没有更多了</view> -->
+</view>

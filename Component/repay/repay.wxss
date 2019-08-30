@@ -1,0 +1,117 @@
+/* component/repay/repay.wxss */
+
+.table {
+  width: 100%;
+  padding: 70rpx 30rpx 0;
+  box-sizing: border-box;
+  border-top: 2rpx solid #e8e8e8;
+  box-shadow: 0 -2rpx 6rpx 2rpx #f3f3f3;
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  background: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  font-size: 30rpx;
+}
+
+.title {
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.items {
+  max-height: 300rpx;
+  overflow-x: visible;
+  overflow-y: auto;
+}
+
+.items .circle {
+  width: 22rpx;
+  height: 22rpx;
+  border: 4rpx solid #a9a9a9;
+  border-radius: 50%;
+  margin-right: 10rpx;
+  position: relative;
+}
+
+.items .select {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.items .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 70rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.btn {
+  background: #db665f;
+  color: #fff;
+  width: 500rpx;
+  margin: 68rpx auto;
+  line-height: 70rpx;
+  font-size: 30rpx;
+}
+
+/*滚动条样式*/
+
+.items::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.items::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  width: 0;
+  height: 0;
+}
+
+.items::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  width: 0;
+  height: 0;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+  }
+
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+  }
+
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}

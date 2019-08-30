@@ -1,0 +1,97 @@
+<!--pages/refund_amend/refund_amend.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="amend_refund">
+  <view class="goods_info" wx:for="{{info.itemList}}" wx:key=''>
+    <image class="goods_pic" src="{{ossUrl+item.thumbnail}}" />
+    <view class="info_word">
+      <view class="name">{{item.itemname}}</view>
+      <view class="prop">{{item.specname}}</view>
+    </view>
+  </view>
+  <view class="detail_info">
+    <view class="info_item" bindtap="showService" data-item="item0">
+      <view class="tit">服务类型</view>
+      <view class="state_go">
+        <!-- <view class="word_go" >{{causeid == -1?'请选择':(causeid=='1'?'仅退款':'退款退货')}}</view> -->
+        <view class="word_current" wx:if="{{causeid != -1}}">{{causeid=='1'?'仅退款':'退款退货'}}</view>
+        <view class="word_go" wx:if="{{causeid == -1}}" >请选择</view>
+        <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/more.png"></image>
+      </view>
+    </view>
+    <!-- <view class="info_item">
+            <view class="tit">货物状态</view>
+            <view class="state_go">
+                <view class="word_go">未收到货</view>
+                <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/more.png"></image>
+            </view>
+        </view> -->
+    <view class="info_item" bindtap="showService" data-item="item1">
+      <view class="tit">退款原因</view>
+      <view class="state_go">
+        <view class="word_current" wx:if="{{tuiYin != '请选择'}}">{{tuiYin}}</view>
+        <view class="word_go" wx:if="{{tuiYin == '请选择'}}">{{tuiYin}}</view>
+        <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/more.png"></image>
+      </view>
+    </view>
+
+    <view class="info_item refund_money">
+      <view class="money">
+        <text>退款金额:</text>
+        <text class="much">￥{{filter.consMoney(info.buyOrder.amount)}}</text>
+      </view>
+    </view>
+    <view class="info_item refund_other">最多¥{{filter.consMoney(info.buyOrder.amount)}}，含发货邮费</view>
+    <view class="info_item refund_explain">
+      <view class="label">退款说明</view>
+      <input class="val" placeholder-class="val_pl" value="{{formData.remark}}" bindinput="remarkFinish" placeholder="选填"></input>
+    </view>
+    <!-- 这里做一个图片上传组件 -->
+
+    <uppic bind:picChange="getPicArr"></uppic>
+    <button class="btn" bindtap="submit">提交</button>
+  </view>
+  <!-- 选择弹窗 -->
+  <view class="pop" bindtap="closePop" data-pop="pop" hidden="{{popShow}}">
+    <view class="box">
+
+      <view class="tit">服务类型</view>
+      <view class="content" hidden="{{ itemShow }}">
+        <view class="item" bindtap="selectCause" data-causeid="1">
+          <view class="word">
+            <view class="tit_word">仅退款</view>
+            <view class="tps">未收到货（包含未签收），或卖家协商同意前提下</view>
+          </view>
+          <view class="opt">
+            <view class="opt_n"></view>
+            <image class="opt_y" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/okpic.png" hidden="{{1 != causeid}}"></image>
+          </view>
+        </view>
+        <view class="item" bindtap="selectCause" data-causeid="2">
+          <view class="word">
+            <view class="tit_word">退款退货</view>
+            <view class="tps">已收到货，需要退换已收到的货物</view>
+          </view>
+          <view class="opt">
+            <view class="opt_n"></view>
+            <image class="opt_y" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/okpic.png" hidden="{{2 != causeid}}"></image>
+          </view>
+        </view>
+      </view>
+
+      <view class="content" hidden="{{ !itemShow }}">
+        <view wx:for="{{refundCause}}" wx:key='' class="item" style="height: 60rpx;" bindtap="selectCause2" data-classid="{{item.id}}">
+          <view class="word">{{item.value}}</view>
+          <view class="opt">
+            <view class="opt_n"></view>
+            <image class="opt_y" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/okpic.png" hidden="{{item.id != classid}}"></image>
+          </view>
+        </view>
+
+      </view>
+
+      <view class="btn" data-btn="{{btn=='item0'?'btn1':'btn2'}}" bindtap='refundApply'>确认</view>
+    </view>
+
+
+  </view>
+</view>

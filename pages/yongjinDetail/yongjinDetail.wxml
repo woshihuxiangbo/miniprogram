@@ -1,0 +1,42 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container" >
+  <view class="swiper-item" >
+    <image mode="aspectFill" class='pic' wx:if="{{info.thumbnail}}" src="{{ossUrl+info.thumbnail}}" ></image>
+    <view class='list'>
+      <view class='title'>商品详情</view>
+      <view class='item'  wx:if="{{info.itemName}}">
+          <view class='lab'>商品名称:</view><view class='val'>{{info.itemName}}</view>
+      </view>
+      <view class='item' wx:if="{{info.specName}}">
+          <view class='lab' >商品规格:</view><view class='val'>{{info.specName}}</view>
+      </view>
+      <view class='item' wx:if="{{info.orderAmount}}">
+          <view class='lab' >商品价格:</view><view class='val'>{{filter.consMoney(info.orderAmount)}}</view>
+      </view>
+      <view class='item' wx:if="{{info.buyUserName}}">
+          <view class='lab' >下单姓名:</view><view class='val'>{{info.buyUserName||'无'}}</view>
+      </view>
+      <view class='item' wx:if="{{info.userLevel}}">
+          <view class='lab' >下单人身份等级:</view><view class='val'>{{filter.xzLevel(lvConfig,info.userLevel)}}</view>
+      </view>
+      <view class='item' wx:if="{{info.createTime}}">
+          <view class='lab' >下单时间:</view><view class='val'>{{filter.formatTime(info.createTime)}}</view>
+      </view>
+      <view class='item' wx:if="{{info.finishTime}}">
+          <view class='lab' >完成时间:</view><view class='val'>{{filter.formatTime(info.finishTime)||'未完成'}}</view>
+      </view>
+      <view class='item' wx:if="{{info.userName}}">
+          <view class='lab' >收益人:</view><view class='val'>{{info.userName}}</view>
+      </view>
+      <view class='item' wx:if="{{info.orderGain}}">
+          <view class='lab' >收益金额:</view><view class='val'>{{filter.consMoney(info.orderGain)}}</view>
+      </view>
+      <view class='item' wx:if="{{info.orderstatus|| info.orderStatus}}">
+          <view class='lab' >订单状态:</view><view class='val'>{{filter.generalizeType(info.orderstatus||info.orderStatus)|| '已失效'}}</view>
+      </view>
+      <view class='item' wx:if="{{info.type}}">
+          <view class='lab' >返佣类型:</view><view class='val'>{{filter.returnMoneyType(info.type)}}</view>
+      </view>
+    </view>
+  </view>  
+</view>

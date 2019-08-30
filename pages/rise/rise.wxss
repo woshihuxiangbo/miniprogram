@@ -1,0 +1,106 @@
+/* pages/rise/rise.wxss */
+
+.container {
+  font-size: 28rpx;
+  color: #333;
+}
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+.title {
+  width: 600rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24rpx;
+  margin: 0 auto;
+  background: radial-gradient(1000rpx 50rpx at 300rpx 25rpx, #f9e2e0, #fbeded);
+}
+
+.title text {
+  color: #f00;
+}
+
+.title_1 {
+  font-weight: bold;
+  color: #de635c;
+  text-align: center;
+  margin-top: 14rpx;
+  line-height: 86rpx;
+}
+
+.statement {
+  margin: 0 50rpx 0 70rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  background-color: #fefafa;
+  padding: 0 20rpx;
+  text-align: justify;
+}
+
+.title_2 {
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.statement .list {
+  display: flex;
+}
+
+.statement .list view:first-child {
+  flex-shrink: 0;
+}
+
+.statement .statement_item {
+  padding-bottom: 44rpx;
+}
+
+.riseWay {
+  color: #625f5f;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 70rpx;
+  padding-bottom: 40rpx;
+}
+
+.riseWay text {
+  font-weight: bold;
+}
+
+.example {
+  margin: 0 50rpx 0 70rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  background-color: #fefafa;
+  padding: 0 20rpx;
+  text-align: justify;
+}
+
+.example .info {
+  line-height: 50rpx;
+}
+
+.example .example_title {
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 90rpx;
+}
+
+.example .example_content {
+  padding-bottom: 30rpx;
+  line-height: 36rpx;
+}
+
+.advantage {
+  font-size: 24rpx;
+  white-space: nowrap;
+  line-height: 40rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 200rpx;
+}

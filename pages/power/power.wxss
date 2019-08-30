@@ -1,0 +1,358 @@
+/* pages/ownerAdvantage/ownerAdvantage.wxss */
+
+page {
+  font-size: 24rpx;
+  color: #625f5f;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.container {
+  padding: 30rpx 0;
+}
+
+.headpic {
+  position: relative;
+}
+
+.headpic .word {
+  font-size: 28rpx;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 160rpx;
+}
+
+.cardBg {
+  display: block;
+  width: 100%;
+  height: 340rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.partner .title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #f3665e;
+  padding-top: 30rpx;
+  text-align: center;
+}
+
+.partner .content {
+  margin: 0 30rpx;
+  color: #625f5f;
+}
+
+.partnerTxt {
+  padding-top: 20rpx;
+}
+
+.partner .content .text {
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+}
+
+.partner .content .txt {
+  line-height: 32rpx;
+}
+
+.top_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20rpx;
+}
+
+.top_title .txt {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #f3665e;
+  line-height: 80rpx;
+  margin: 0 30rpx;
+}
+
+.top_title .line {
+  width: 72rpx;
+  height: 3rpx;
+  background: #f3665e;
+  margin: 0 6rpx;
+}
+
+.top_title  .point {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: #f3665e;
+}
+
+.list {
+  padding: 0 30rpx;
+  color: #625f5f;
+}
+
+.item {
+  min-height: 250rpx;
+  box-shadow: 0 0 15rpx 0 #e8e8e8;
+  border-radius: 24rpx;
+  padding: 20rpx 26rpx 20rpx 30rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.item .middle {
+  /* position: absolute;
+  top: 45%;
+  left: 26rpx;
+  right: 16rpx;
+  transform: translateY(-50%); */
+}
+
+.item .img {
+  display: block;
+  width: 114rpx;
+  height: 114rpx;
+  float: left;
+  margin-top: 48rpx;
+}
+
+.item .content {
+  padding-left: 144rpx;
+}
+
+.item .title {
+  font-size: 28rpx;
+  color: #fd887d;
+  /* line-height: 68rpx; */
+  margin: 20rpx 0;
+}
+
+.item .txt {
+  font-size: 24rpx;
+  color: #625f5f;
+  line-height: 32rpx;
+}
+
+.item .collect {
+  display: block;
+  width: 28rpx;
+  height: 28rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.item .special {
+  line-height: 32rpx;
+}
+
+.storeGift {
+  padding: 0 30rpx;
+}
+
+.storeGift .title {
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.storeGift .title text {
+  font-size: 28rpx;
+  color: #df625c;
+  font-weight: bold;
+}
+
+.storeGift .goods_item .thumb {
+  display: block;
+  width: 220rpx;
+  height: 150rpx;
+  border-radius: 12rpx;
+}
+
+swiper {
+  height: 260rpx;
+}
+
+swiper-item {
+  display: flex;
+  justify-content: space-around;
+}
+
+swiper-item .txt {
+  width: 220rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 70rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.about .title {
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 60rpx;
+  background: #df625c;
+  color: #fff;
+  text-align: center;
+}
+
+.about .content {
+  padding: 30rpx 80rpx;
+  color: #625f5f;
+}
+
+.chong {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+
+.chong .meney {
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 30rpx;
+  border-radius: 16rpx;
+  margin: 0 30rpx;
+  background-color: #de635c;
+  color: #fff;
+  font-size: 25rpx;
+}
+
+.pop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tuanpop .img {
+  display: block;
+  margin: 0 auto;
+  width: 715rpx;
+  height: 757rpx;
+}
+
+.tuanpop .content {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding-top: 340rpx;
+}
+
+.tuanpop .content .title {
+  color: #fff;
+  font-size: 40rpx;
+  letter-spacing: 6rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+
+.tuanpop .content .txt {
+  padding-top: 50rpx;
+  color: #e65f5d;
+  text-align: center;
+  font-size: 46rpx;
+}
+
+.tuanpop .content .tip {
+  padding-top: 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.tuanpop .content .btn {
+  background: transparent;
+  padding: 0;
+  margin: 40rpx auto 0;
+  width: 240rpx;
+  height: 66rpx;
+  position: relative;
+}
+
+.tuanpop .content .btn .btnimg {
+  display: block;
+  width: 240rpx;
+  height: 66rpx;
+}
+
+.tuanpop .content .btn view {
+  position: absolute;
+  top: 0;
+  width: 240rpx;
+  text-align: center;
+  line-height: 66rpx;
+  color: #fff;
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
+}
+
+/* 
+.pop .box {
+  width: 600rpx;
+  height: 560rpx;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 16rpx;
+}
+
+.pop .box .close {
+  position: absolute;
+  right: -10rpx;
+  top: 100rpx;
+  width: 50rpx;
+  height: 50rpx;
+} */
+
+.box .tit {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #de635c;
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.box .p {
+  width: 100%;
+  position: absolute;
+  bottom: 80rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.box .p .top {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.box .p .top .l {
+  color: #999;
+}
+
+.box .p .top .r {
+  color: #de635c;
+  font-size: 34rpx;
+}
+
+.box .p .bottom {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #de635c;
+  margin-top: 20rpx;
+}

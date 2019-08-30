@@ -1,0 +1,41 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="container">
+  <view class="swiper-item">
+    <view class='list'>
+      <view class='title'>消费详情</view>
+      <view class='item'>
+        <view class='lab'>商品名称:</view>
+        <view class='val'>{{info.goodsname}}</view>
+      </view>
+      <view class='item'>
+        <view class='lab'>商品金额:</view>
+        <view class='val'>{{filter.consMoney(info.goodsamount)}}</view>
+      </view>
+      <view class='item'>
+        <view class='lab'>下单时间:</view>
+        <view class='val'>{{filter.formatTime(info.createtime)}}</view>
+      </view>
+      <view class='item'>
+        <view class='lab'>订单状态:</view>
+        <view class='val'>{{filter.generalizeType(info.status)}}</view>
+      </view>
+      <view class='item'>
+        <view class='lab'>用户级别:</view>
+        <view class='val'>{{filter.xzLevel(lvConfig,info.userlevel)}}</view>
+      </view>
+      <view class='item'>
+        <view class='lab'>下单人名称:</view>
+        <view class='val'>{{info.nickname}}</view>
+      </view>
+      <view class='item' wx:if="{{info.gainname}}">
+        <view class='lab'>收益人:</view>
+        <view class='val'>{{info.gainname}}</view>
+      </view>
+      <view class='item'>
+        <view class='lab'>完成时间:</view>
+        <view class='val'>{{info.finishtime==0?'未完成':filter.formatTime(info.finishtime)}}</view>
+      </view>
+
+    </view>
+  </view>
+</view>

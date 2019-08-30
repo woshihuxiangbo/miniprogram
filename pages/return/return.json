@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "skeps": "../../Component/skeps/skeps",
+    "uppic": "/Component/uppic/uppic"
+  }
+}

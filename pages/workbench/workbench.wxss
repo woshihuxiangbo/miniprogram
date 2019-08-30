@@ -1,0 +1,165 @@
+.workbench {
+  padding: 35rpx 25rpx 0 25rpx;
+}
+
+.workbench .cardbox {
+  height: 388rpx;
+  background-color: #de635c;
+  border-radius: 25rpx 25rpx 0 0;
+  position: relative;
+}
+
+.workbench .cardbox .card {
+  height: 354rpx;
+  width: 100%;
+  border-radius: 25rpx 25rpx 0 0;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 5rpx 15rpx #ccc;
+  color: #de635c;
+}
+
+.workbench .cardbox .card .tit {
+  font-size: 20rpx;
+  text-align: center;
+  margin: 30rpx 0;
+}
+
+.workbench .cardbox .card .money {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.workbench .cardbox .card .money .item {
+  flex: 1;
+}
+
+.workbench .cardbox .card .money .big_money {
+  font-size: 60rpx;
+  font-weight: bold;
+}
+
+.workbench .cardbox .card .money .ti {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.workbench .cardbox .card .money .ti .tibtn {
+  width: 100rpx;
+  background-color: #de635c;
+  border-radius: 10rpx;
+  margin: 0 auto;
+}
+
+.workbench .cardbox .card .detail {
+  box-sizing: border-box;
+  padding: 0 60rpx;
+  padding-top: 33rpx;
+  display: flex;
+  height: 150rpx;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1rpx solid #de635c;
+}
+
+.workbench .cardbox .card .detail view {
+  flex: 1;
+  text-align: center;
+}
+
+.workbench .cardbox .card .detail view .val {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+
+.workbench .cardbox .card .detail view .name {
+  font-size: 20rpx;
+}
+
+.workbench .cardbox .card .rpic {
+  width: 164rpx;
+  height: 164rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.workbench .cardbox .card .lpic {
+  width: 80rpx;
+  height: 65rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.workbench .opt-money {
+  font-size: 24rpx;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  padding: 24rpx 0 50rpx 0;
+}
+
+.workbench .opt-money .item {
+  background-color: #de635c;
+  padding: 16rpx 34rpx;
+  border-radius: 10rpx;
+}
+
+.workbench .grid-box {
+  border-top: 8rpx solid #fbfbfb;
+  border-left: 8rpx solid #fbfbfb;
+}
+
+.workbench .grid-box .row {
+  display: flex;
+}
+
+.workbench .grid-box .row .ele {
+  flex: 1;
+  height: 230rpx;
+  border-right: 8rpx solid #fbfbfb;
+  border-bottom: 8rpx solid #fbfbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.workbench .grid-box .row .ele .ele-icon {
+  height: 45rpx;
+  width: 45rpx;
+}
+
+.workbench .grid-box .row .ele .ele-name {
+  margin-top: 24rpx;
+  font-size: 24rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.workbench .grid-box .row3 {
+  display: block;
+}
+
+.workbench .grid-box .row3 .ele {
+  box-sizing: border-box;
+  height: 230rpx;
+  width: 234rpx;
+}
+.cardbox_fans text{font-size: 24rpx;color: white;}
+.cardbox_fans {
+  display: flex;
+  justify-content: space-between;
+  padding:0 20rpx;
+}

@@ -1,0 +1,11 @@
+<!--Component/addressTable/addressTable.wxml-->
+<view hidden='{{tableHidden}}'>
+  <view class='mask' bindtap='cancelTap'></view>
+  <view class='table'>
+    <view class='txt'>您还没有收货地址，是否现在新建一个？</view>
+    <view class='btn'>
+      <button class='btn_1' bindtap='cancelTap' hover-class='none'>取消</button>
+      <button class='btn_2' bindtap='confirmTap'>新建</button>
+    </view>
+  </view>
+</view>

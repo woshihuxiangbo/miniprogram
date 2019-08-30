@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "skeps":"/Component/skeps/skeps"
+  },
+  "navigationBarTitleText": "查看物流"
+}

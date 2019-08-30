@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单支付完成",
+  "usingComponents": {
+    "shareBar": "/Component/shareBar/shareBar",
+    "goodsPoster": "/Component/goodsPoster/goodsPoster"
+  }
+}

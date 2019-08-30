@@ -1,0 +1,198 @@
+<!--pages/seckill_detail/seckill_detail.wxml-->
+<view class="seckill_detail">
+    <view class="video_info">
+        <view class="video_box">
+            <video class="videowh" id="videoNum2"  src="{{src}}" poster="{{posterSrc}}" show-center-play-btn="{{false}}"  objectFit="fill" controls="{{false}}">
+                <cover-image wx:if="{{video1Show}}"  class="cover_img" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/startVideo.png"></cover-image>
+            </video>
+        </view>
+
+        <view class="finish_time container-center">       
+            <view>距离活动结束还剩下</view>
+            <view class="time_box">{{countDown[0].hour}}</view>小时
+            <view class="time_box">{{countDown[0].minute}}</view>分
+            <view class="time_box">{{countDown[0].second}}</view>秒
+        </view>
+    </view>
+    <!-- 广播 -->
+    <view class="broadcast"> 
+        <image class="broadcast_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/horn.png"></image>
+        武汉市{{lvConfig.lv1.name}}雷**刚刚赚到 88.8元
+    </view>
+    <!-- 广播 -->
+    <view class="goods_name horizontal-center">
+        <view>服务/商品名称名称名称名称名称名称</view>
+        <image class="attention_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/collect_icon.png"></image>
+    </view>
+    <view class="goods_sub">标签or简短说明</view>
+
+    <view class="goods_price container-center">
+        <view class="old_price">￥199.00</view>
+        <view class="now_price">价格 ￥99.00</view>
+        <view class="get_much">赚 ￥100</view>
+    </view>
+    <!-- 权益 6 个 -->
+    <view class="equity">
+        <view class="item" wx:for="{{equityNameArr}}" wx:key="i">
+            <image class="small_icon_Wh" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/trait_icon.png"></image>
+            <text class="name">{{item}}</text>
+        </view>        
+    </view>
+
+    <view class="option_goods_parameter vertical-center">
+        <view class="type_item horizontal-center">
+            <view class="label">选择：选择颜色</view>
+            <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/more.png"></image>
+        </view>
+        <view class="type_item horizontal-center" >
+            <view class="label">选择：选择颜色</view>
+            <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/more.png"></image>
+        </view>
+    </view>
+    
+    <view class="goods_other">
+        <!-- 质检报告 -->
+        <view class="quality_report border_bottom_line horizontal-center">
+            <text>质检报告</text>
+            <view class="go container-center">
+                <text class="target_page">查看更多</text>
+                <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/more.png"></image>
+            </view>
+        </view>
+        <!-- 拼团块 -->
+        <view >
+            <!-- 拼团进程 -->
+                    <view class="skeps">
+                        <view class="top">
+                            <view class="circle">1</view>
+                            <view class="line"></view>
+                            <view class="circle">2</view>
+                            <view class="line"></view>
+                            <view class="circle">3</view>
+                            <view class="line"></view>
+                            <view class="circle">4</view>
+                        </view>
+                        <view class="word">
+                            <view>支付开团或者参团</view>
+                            <view>邀请好友参团</view>
+                            <view>人数达到分别发货</view>
+                            <view>人数不够自动退款</view>
+                        </view>
+                    </view>
+            <!-- 加入拼团 -->
+                    <view class="join">
+                        <view class="item">
+                            <image class="icon" src="http://img.chuangxiaozhu.com/wxapp/logo.jpg"></image>
+                            <view class="num">3人团</view>
+                            <view class="price">￥50.00</view>
+                            <view class="go">去开团</view>
+                        </view>
+                        <view class="item">
+                            <image class="icon" src="http://img.chuangxiaozhu.com/wxapp/logo.jpg"></image>
+                            <view class="num">5人团</view>
+                            <view class="price">￥50.00</view>
+                            <view class="go">去开团</view>
+                        </view>
+                        <view class="item">
+                            <image class="icon" src="http://img.chuangxiaozhu.com/wxapp/logo.jpg"></image>
+                            <view class="num">8人团</view>
+                            <view class="price">￥50.00</view>
+                            <view class="go">去开团</view>
+                        </view>
+                    </view>
+        </view>
+
+
+        <!-- 评论列表 -->
+        <view class="comment_list">
+            <view class="common_tit horizontal-center">
+                <text>商品评论</text>
+                <view class="go container-center">
+                    <text class="target_page">查看更多</text>
+                    <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/more.png"></image>
+                </view>
+            </view>
+            <view class="comment_list_item border_bottom_line " wx:for="{{2}}" wx:key="i">
+
+                <view class="user horizontal-center">
+                    <view class="user_head container-center">
+                        <image class="user_head_pic" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/store.png"></image>
+                        <text class="user_name">用户昵称</text>
+                    </view>
+                    <text class="comment_date">2018.12.15 16:25:45</text>
+                </view>
+
+                <view class="comment_word">
+                        用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论用户评论
+
+                </view>
+            </view>
+        </view>
+
+        <view class="store horizontal-center">
+            <view class="store_info container-center">
+                <image class="store_head_pic" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/logo.jpg"></image>
+                <text class="store_name">店铺名称</text>
+            </view>
+            <view class="go_sotre">进店逛逛</view>
+
+        </view>
+        
+        <view class="store_abstract">
+            <image class="store_abstract_pic" src="{{posterSrc}}"></image>
+        </view>
+    </view>
+
+    <view class="submit_bar horizontal-center">
+        <view class="bar_left container-center">
+            <view class="go_page vertical-center">
+                <image class="page_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/home_icon.png"></image>
+                <text class="page_name">首页</text>
+            </view>
+            <view class="go_page vertical-center">
+                <image class="page_icon" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/service_icon.png"></image>
+                <text class="page_name">客服</text>
+            </view>
+        </view>
+        <view class="bar_right container-center">
+            <view class="add_shop_car">加入购物车</view>
+            <view class="shop_confirm">本宫要了</view>
+        </view>
+    </view>
+    <!-- 选择商品规格弹窗 -->
+    <view class="select_panel" hidden="{{true}}">
+        <view class="panel_info">
+            <view class="goods_card">
+                <image class="good_pic" src="http://img.chuangxiaozhu.com/wxapp/otherImgs/headpic.jpg"></image>
+                <view class="good_info">
+                    <view class="price">￥69.90</view>
+                    <view class="tips">请选择颜色,尺寸</view>
+                </view>
+            </view>
+            <view class="color_select">
+                <view class="tit">颜色</view>
+                <view class="list">
+                    <view class="item">红色</view>
+                    <view class="item">黄色</view>
+                    <view class="item active">白色</view>
+                    <view class="item">分色</view>
+                </view>
+            </view>
+            <view class="size_select">
+                <view class="tit">尺寸</view>
+                <view class="list">
+                    <view class="item">S</view>
+                    <view class="item active">M</view>
+                    <view class="item">L</view>
+                    <view class="item">XL</view>
+                </view>
+            </view>
+            <view class="count">
+                <view>数量</view>
+                <view>+-</view>
+            </view>
+        </view>
+
+        <view class="goods_ok">确定</view>
+    </view>
+</view>

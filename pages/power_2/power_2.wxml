@@ -1,0 +1,108 @@
+<!--pages/ownerAdvantage/ownerAdvantage.wxml-->
+<view class='container'>
+  <view class='headpic'>
+    <image class='cardBg' mode='widthFix' src='{{ossUrl+powerData.headPic}}'></image>
+    <view class='word'>{{powerData.headTitle}}</view>
+  </view>
+
+  <view class='partner' hidden='{{!(powerData.mainContent && powerData.mainContent.length)}}'>
+    <view class='top_title'>
+      <view class='line'></view>
+      <view class='point'></view>
+      <view class='txt'>{{powerData.mainTitle}}</view>
+      <view class='point'></view>
+      <view class='line'></view>
+    </view>
+    <view class='content'>
+      <view class='partnerTxt' wx:for='{{powerData.mainContent}}' wx:key='index'>
+        <view class='text'>{{item.title}}</view>
+        <view class='txt' wx:for='{{item.content}}' wx:key='' wx:for-item='item_2'>{{item_2.text}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view hidden='{{!(powerData.subContent && powerData.subContent.length)}}'>
+    <view class='top_title'>
+      <view class='line'></view>
+      <view class='point'></view>
+      <view class='txt'>{{powerData.subTitle}}</view>
+      <view class='point'></view>
+      <view class='line'></view>
+    </view>
+    <view class='list'>
+      <view class='item' wx:for='{{powerData.subContent}}' wx:key='index'>
+        <image class='img' mode="widthFix" src='{{ossUrl+item.icon}}'></image>
+        <view class='content'>
+          <view class='title'>{{item.title}}</view>
+          <block wx:for='{{item.content}}' wx:key='' wx:for-item='item_2'>
+            <view class='txt' hidden='{{item_2.isStar}}'>{{item_2.text}}</view>
+            <view class='special' hidden='{{!item_2.isStar}}'>
+              <image class='collect' src='http://img.chuangxiaozhu.com/wxapp/ownerAdvantage/collect.png'></image>
+              <view>{{item_2.text}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 哪些人适合成为创小主店主？ -->
+  <view class='partner term'>
+    <view class='top_title'>
+      <view class='line'></view>
+      <view class='point'></view>
+      <view class='txt'>{{term.title}}</view>
+      <view class='point'></view>
+      <view class='line'></view>
+    </view>
+    <view class='content'>
+      <view class='txt' wx:for='{{term.content}}' wx:key='index'>{{item}}</view>
+    </view>
+  </view>
+
+  <view class='storeGift' hidden='{{!(storeGift && storeGift.length)}}'>
+    <view class='title'>购买入店礼包即可成为
+      <text>{{AppName}}店主</text>
+    </view>
+    <swiper indicator-dots indicator-active-color='#858181' autoplay circular>
+      <swiper-item wx:for='{{storeGift}}' wx:key='index'>
+        <navigator class='goods_item' wx:for='{{item}}' wx:key='index' wx:for-item='item2' hover-class='none' url='/pages/goodsDetail/goodsDetail?goodsId={{item2.itemId}}&skuId={{item2.skuId}}&eventType=5&fuid={{fuid}}'>
+          <image class='thumb' mode='aspectFill' src='{{ossUrl+item2.thumbnail}}'></image>
+          <view class='txt'>{{item2.itemName}}</view>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 充值 -->
+  <form wx:if='{{flagItem!=1}}' report-submit='true' bindsubmit='getFormId'>
+    <view class="chong">
+      <button form-type='submit' open-type='getUserInfo' bindgetuserinfo='chongMoney' class="meney" data-level='2'>充值{{(lvMoney.lv2.price/100)||""}}元成为{{(lvMoney.lv2.name)||""}}</button>
+      <button form-type='submit' open-type='getUserInfo' bindgetuserinfo='chongMoney' class="meney" data-level='3'>充值{{(lvMoney.lv3.price/100)||""}}元成为{{(lvMoney.lv3.name)||""}}</button>
+    </view>
+  </form>
+
+
+  <!-- 关于 -->
+  <view class='about' hidden='{{!powerData.footerContent}}'>
+    <view class='title'>{{powerData.footerTitle}}</view>
+    <text class='content'>{{powerData.footerContent}}</text>
+  </view>
+</view>
+
+<!-- 弹窗 -->
+<!--  -->
+<view class='pop' wx:if="{{popShow}}">
+  <view class='tuanpop'>
+    <image class='img' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/cong.png'></image>
+    <view class='content'>
+      <view class='title'>恭喜{{shortName}}</view>
+      <view class='txt'>成为 {{AppName+role}}</view>
+      <view class='tip'>开启无忧创业，享财貌兼得</view>
+      <button class='btn' bindtap="closePop">
+        <image class='btnimg' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/congBtn.png'></image>
+        <view>知道了</view>
+      </button>
+    </view>
+  </view>
+</view>

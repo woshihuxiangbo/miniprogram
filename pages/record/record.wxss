@@ -1,0 +1,34 @@
+/* pages/record/record.wxss */
+.box{
+  background-color: #eee;
+  position: absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+}
+.card{
+  margin: 30rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  box-shadow: 0 4rpx 2rpx 0 rgba(19, 19, 19, 0.2);
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+.tit{
+  font-size: 30rpx;
+  display: flex;
+}
+
+.pic{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 10rpx;
+}
+.word{
+  text-align: center;
+  margin: 60rpx auto;
+}
+.time{
+  text-align: right;
+}

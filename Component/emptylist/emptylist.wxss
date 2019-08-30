@@ -1,0 +1,17 @@
+.box{
+    font-size: 28rpx;
+    text-align: center;
+}
+.word{
+    color:#666;
+    margin: 100rpx 0;
+}
+.link{
+    width: 500rpx;
+    line-height: 80rpx;
+    border-radius: 16rpx;
+    background-color: #de635c;
+    color:#fff;
+    margin: 0 auto;
+
+}

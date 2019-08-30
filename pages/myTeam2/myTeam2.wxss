@@ -1,0 +1,238 @@
+/* pages/myTeam2/myTeam2.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.top {
+  padding-bottom: 40rpx;
+}
+
+.top .bg {
+  background: #df756f;
+  height: 142rpx;
+  overflow: hidden;
+}
+.top .bg .prev{
+  color:#fff;
+  margin: 20rpx 0 0 50rpx;
+}
+
+.top .bg button {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #df756f;
+  line-height: 40rpx;
+  padding: 0 10rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+  position: absolute;
+  right: 64rpx;
+  max-width: 200rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top .avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: -110rpx auto 0;
+  border: 20rpx solid #fff;
+  box-shadow: 0 10rpx 20rpx #ededed;
+}
+.top .avatar .header{
+  width: 100%;
+  height: 100%;
+}
+
+.top .name {
+  margin-top: 24rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #df756f;
+}
+
+.top .position {
+  margin-top: 10rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top .position .icon {
+  display: block;
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+
+.top .tab {
+  display: flex;
+  padding: 0 24rpx;
+  margin-top: 50rpx;
+}
+
+.top .tab .tab_item {
+  width: 33.33%;
+  text-align: center;
+}
+
+.top .tab .num {
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  color: #df625c;
+  line-height: 38rpx;
+}
+
+.top .tab .txt {
+  padding-top: 10rpx;
+  color: #666;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 24rpx;
+}
+
+.list {
+  padding: 0 24rpx;
+}
+
+.list .item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+}
+
+.list .avatar {
+  display: block;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.list .content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+
+.list .center {
+  flex: 1;
+}
+
+.list .center .center_title {
+  display: flex;
+  align-items: center;
+}
+
+.list .center .center_title .name {
+  font-weight: bold;
+  display: inline-block;
+  max-width: 200rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list .center .center_title .type {
+  color: #df625c;
+  border: 2rpx solid #de635c;
+  border-radius: 12rpx;
+  line-height: 24rpx;
+  font-size: 16rpx;
+  padding: 0 8rpx;
+  margin: 0 10rpx;
+  white-space: nowrap;
+}
+
+.list .center .center_title .way {
+  font-size: 20rpx;
+  white-space: nowrap;
+  color: #040404;
+}
+
+.list .center .time {
+  padding-top: 30rpx;
+  font-size: 24rpx;
+  color: #625f5f;
+}
+
+.list .right {
+  flex-shrink: 0;
+  position: relative;
+  text-align: right;
+  margin-left: 20rpx;
+}
+
+.list .right .blod {
+  font-weight: bold;
+  font-size: 24rpx;
+}
+
+.list .right .money {
+  font-size: 24rpx;
+  color: #625f5f;
+  padding-top: 30rpx;
+}
+
+.list .right .money text {
+  color: #de635c;
+}
+
+.list .more {
+  width: 26rpx;
+  height: 26rpx;
+  margin: -40rpx 0 0 20rpx;
+}
+
+.leveltab {
+  display: flex;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.leveltab .levelitem {
+  width: 33.3%;
+  text-align: center;
+}
+
+.leveltab .levelitem .txt {
+  line-height: 70rpx;
+  text-align: center;
+}
+
+.leveltab .levelitem .line {
+  height: 4rpx;
+  width: 60rpx;
+  margin: 0 auto;
+}
+
+.leveltab .levelitem_active {
+  color: #de635c;
+}
+
+.leveltab .levelitem_active .line {
+  background: #de635c;
+}

@@ -1,0 +1,21 @@
+<!--pages/ownerStory/ownerStory.wxml-->
+<view class='container'>
+  <view class='item {{index%2?"headReverse":""}}' wx:for='{{content}}' wx:key=''>
+    <view class='headimg'>
+      <view class='imgTop'>
+        <view class='rect'></view>
+        <view class='line'></view>
+      </view>
+      <image class='img' mode='aspectFill' src='http://img.chuangxiaozhu.com/wxapp/order_confirm/headimg.jpg'></image>
+    </view>
+    <view class='info '>
+      <view>{{shortName}}姓名：{{item.name}}</view>
+      <view>{{shortName}}年龄：{{item.age}}</view>
+      <view>{{shortName}}职业：{{item.work}}</view>
+      <view class='line'></view>
+    </view>
+
+    <view class='title'>{{shortName}}有话说：</view>
+    <view class='story'>{{item.story}}</view>
+  </view>
+</view>

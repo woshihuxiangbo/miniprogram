@@ -1,0 +1,74 @@
+/* pages/shop_street/shop_street.wxss */
+.search-box {
+  position: relative;
+  padding: 25rpx;
+  padding-bottom: 0;
+}
+
+.search-box .searchcion {
+  position: absolute;
+  left: 40rpx;
+  margin: 18rpx 10rpx;
+}
+
+.search-box .inp {
+  height: 60rpx;
+  padding-left: 80rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #625f5f;
+  background-color: #f4f4f4;
+}
+
+
+.store_list{
+  margin: 40rpx 20rpx;
+}
+
+.store_list .item{
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+}
+.item .box{
+  box-shadow: 0px 0px 10rpx 0px 	rgba(0, 0, 0, 0.12);
+	border-radius: 10rpx;
+  margin: 10rpx;
+  font-size: 0;
+}
+.box .pic{
+  height: 290rpx;
+  width: 100%;
+  background-color: pink;
+
+}
+.info{
+  height: 110rpx;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+}
+.store_name, .good_num{
+  line-height: 55rpx;
+}
+.info .store_name{
+  font-size: 28rpx;
+  color:#333;
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+.info .good_num{
+  font-size: 24rpx;
+  color:#666;
+}
+
+.no-store{
+  text-align: center;
+  color:#999;
+  font-size: 24rpx;
+  line-height: 100rpx;
+}

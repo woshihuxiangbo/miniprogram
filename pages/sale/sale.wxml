@@ -1,0 +1,83 @@
+<!--pages/sale/sale.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <swiper style='height:{{bannerHeight||""}}px;' autoplay='{{swiperTopauto}}' circular indicator-dots indicator-color='rgba(255,255,255,1)' indicator-active-color='#858181'>
+    <swiper-item wx:for='{{banner_list}}' wx:key='' bindtap='goBanner' data-index="{{index}}" data-name="{{item.title}}">
+
+      <my-video wx:if='{{item.linkType == 4}}' src='{{item.externalUrl}}' poster='{{ossUrl+item.imgUrl}}' bindstart='videoStart' bindend='videoEnd'></my-video>
+
+      <image wx:else src="{{ossUrl}}{{item.imgUrl}}" mode="widthFix" class="slide-image" bindload='bannerLoad' />
+    </swiper-item>
+  </swiper>
+
+  <view class='content_2' wx:if='{{layout=="square"}}' style='top:{{bannerHeight||150}}px;'>
+    <!-- <view class='title'>{{currentTitle}}</view> -->
+    <scroll-view scroll-y scroll-top='{{scroll_top}}' scroll-with-animation bindscrolltolower='getGoodsList'  style='height:100%;'>
+      <view class='md' wx:for='{{squareItems}}' wx:key='index' hidden='{{!item.items.length}}'>
+        <!-- hidden='{{currentItem.id==item.name.id}}' -->
+        <view class='title catitle'>{{item.name.name}}</view>
+        <view class='items'>
+          <view class='item' wx:for='{{item.items}}' wx:for-item='goods' wx:for-index='idx' wx:key='idx' bindtap='goGoodsDetail' data-id='{{goods.itemId}}' data-skuid='{{goods.skuId}}'>
+            <image class='headerPic' mode='widthFix' src='{{ossUrl+goods.headerPic}}'></image>
+            <view class='bottom'>
+              <view class='name'>{{goods.name}}</view>
+              <view class='txt'>{{goods.effect}}</view>
+              <view class='pb'>
+                <view class='price'>
+                  <text>￥{{filter.consMoney(goods.price)}} </text>元</view>
+                <view class='flx'>
+                  <view class='label' hidden='{{!(goods.benefit*1)}}'>赚￥{{filter.consMoney(goods.benefit)}}</view>
+                  <view hidden='{{goods.benefit*1}}'></view>
+                  <button class='share' data-share='share' data-skuid='{{goods.skuId}}' open-type='getUserInfo' bindgetuserinfo='shareTap'>分享赚</button>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='islast' hidden='{{!isLast}}'>到底了</view>
+    </scroll-view>
+  </view>
+
+  <view class='content' wx:if='{{layout=="items"}}' style='top:{{bannerHeight||150}}px;'>
+    <scroll-view scroll-y class='tab'>
+      <view class='tab_item {{currentItem.id==item.id && "currentActive"}}' wx:for='{{category}}' wx:key='' bindtap='swichTab' data-id='{{item.id}}' data-name='{{item.name}}'>{{item.name}}</view>
+    </scroll-view>
+    <scroll-view scroll-y class='items' scroll-top='{{scroll_top}}' scroll-with-animation bindscrolltolower='getGoodsList'>
+      <view class='item' wx:for='{{items}}' wx:key='' hidden='{{}}'>
+        <image class='thumb' mode="aspectFill" src='{{ossUrl+item.headerPic}}' bindtap='goGoodsDetail' data-id='{{item.itemId}}' data-skuid='{{item.skuId}}'></image>
+        <view class='title'>{{item.name}}</view>
+        <view class='txt'>{{item.effect}}</view>
+        <view class='oldPrice'>￥{{filter.consMoney(item.marketPrice)}}</view>
+        <view class='bottom'>
+          <view class='newPrice'>价格￥{{filter.consMoney(item.price)}}</view>
+          <view class='label' hidden='{{!item.benefit}}'>赚￥{{filter.consMoney(item.benefit)}}</view>
+          <view class='grow'></view>
+          <button class='share' data-share='share' data-skuid='{{item.skuId}}' open-type='getUserInfo' bindgetuserinfo='shareTap'>分享赚</button>
+        </view>
+      </view>
+      <view class='islast' hidden='{{!isLast}}'>到底了</view>
+      <view class='stay' hidden='{{stayHidden}}'>
+        <image src='http://img.chuangxiaozhu.com/wxapp/sale/stay.png'></image>
+        <view>敬请期待~</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class='footBtn'>
+    <!-- <button class="oldShare" hover-class='none'  bindtap='shareTap'> -->
+    <button class="oldShare" hover-class='none' open-type='getUserInfo' bindgetuserinfo='shareTap'>
+      <image src="http://img.chuangxiaozhu.com/wxapp/otherImgs/share.png"></image>
+      <view class="w">分享</view>
+    </button>
+    <button class="goTop" bindtap="goTop" hover-class='none'>
+      <image src="http://img.chuangxiaozhu.com/wxapp/otherImgs/top.png"></image>
+      <view class="w">顶部</view>
+    </button>
+  </view>
+</view>
+
+<shareBar tableShow='{{shareBarShow}}' bindsave='savImg' bindcancel='closePoster'></shareBar>
+<storePoster noPhotosAlbum='{{noPhotosAlbum}}' domShow='{{true}}' tableShow='{{cvsShow}}' avatar='' name='' phone='' sign='' storeId='' bindclose='closePoster' noPhotosAlbum='{{noPhotosAlbum}}' eventType='1' bindsavsuc='closePoster'></storePoster>
+<goodsPoster doCvs='{{doCvs}}' noPhotosAlbum='{{noPhotosAlbum}}' goodsImg='{{ossUrl+shareGoods.thumbnail}}' goodsTitle='{{shareGoods.name}}' goodsDesc='{{shareGoods.effect}}' price='{{filter.consMoney(shareGoods.price*(shareGoods.unit||1))}}' marketPrice='{{filter.consMoney(shareGoods.marketPrice*(shareGoods.unit||1))}}'
+  itemId='{{}}' skuId='{{shareGoods.skuId}}' eventType='1' bindclose='closePoster' bindsavsuc='closePoster'></goodsPoster>

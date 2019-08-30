@@ -1,0 +1,49 @@
+/* component/scroll-group/scroll-group.wxss */
+
+.scroll {
+  white-space: nowrap;
+  padding: 38rpx 0;
+  height: 144rpx;
+}
+
+.scroll .flex {
+  display: flex;
+  position: absolute;
+}
+
+.scroll .auto-center {
+  justify-content: center;
+}
+
+.scorllItem {
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.scorllItem:last-child {
+  margin-right: 30rpx;
+}
+
+.scorllItem .avatar {
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  border: 2rpx solid #de635c;
+  margin: 0 auto;
+}
+
+.scorllItem .avatarNoBorder {
+  border: none;
+  width: 94rpx;
+  height: 94rpx;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

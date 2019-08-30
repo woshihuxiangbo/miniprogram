@@ -1,0 +1,57 @@
+<!--pages/myTeam/myTeam.wxml-->
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='top'>
+    <view class='bg'>
+      <view class='bg_color'></view>
+      <view class='bg_img'>
+        <image class='bg1' src='http://img.chuangxiaozhu.com/wxapp/myTeam/bg1.png'></image>
+        <image class='bg2' src='http://img.chuangxiaozhu.com/wxapp/myTeam/bg2.png'></image>
+      </view>
+    </view>
+    <view class='content'>
+      <view class='myHead' wx:if="{{}}">我的上级</view>
+      <view class='avatar'>
+        <open-data type='userAvatarUrl'></open-data>
+      </view>
+      <view class='name'>
+        <open-data type='userNickName'></open-data>
+      </view>
+      <view class='tab'>
+        <view>
+          <view class='title'>个人消费</view>
+          <view class='num'>￥{{filter.consMoney(teamInfo.buy_amount)}}</view>
+        </view>
+        <view>
+          <view class='title'>团队人数</view>
+          <view class='num'>{{teamInfo.tuan_size}}</view>
+        </view>
+        <view>
+          <view class='title'>团队消费</view>
+          <view class='num'>￥{{filter.consMoney(teamInfo.buy_amount_tuan)}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='list' >
+    <view class='item' wx:for='{{teamInfo.levels}}' wx:key='' bindtap="goTeamDetail" data-detail="{{item}}">
+      <image class='avatar' src='{{item.header}}'></image>
+      <view class='center'>
+        <view class='center_title'>
+          <text class='name'>{{item.nikename}}</text>
+          <text class='type'>{{filter.xzLevel(lvConfig,item.level)}}</text>
+          <text class='way'>(直招)</text>
+        </view>
+        <view class='time'>注册时间：{{item.cretatime}}</view>
+      </view>
+      <view class='right'>
+        <view class='blod'>团队{{item.size}}人</view>
+        <view class='money'>已消费:
+          <text>￥{{totel_buy_amount}}</text>
+        </view>
+      </view>
+      <image class='more' src='http://img.chuangxiaozhu.com/wxapp/icons/more.png'></image>
+    </view>
+  </view>
+</view>

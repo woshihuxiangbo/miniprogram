@@ -1,0 +1,30 @@
+<!--pages/coupon/coupon.wxml-->
+<view class="tab" bindtap="selectOpt">
+  <view data-i="0" class="item {{0==indexs ? 'active':''}}" >未使用</view>
+  <view data-i="1" class="item {{1==indexs ? 'active':''}}">已使用</view>
+</view>
+<view class='container'>
+  <!-- ------------------- -->
+  <view class='coupon' wx:for="{{list}}" wx:if="{{ 0 == indexs}}"  wx:key=''>
+      <view class='title'>
+        <view>入店礼包</view>
+        <view>专享代金券</view>
+      </view>
+      <view class='money'>
+        <text style="font-size:{{72-(money.length-3)*8}} rpx">{{item.couponAmount/100}}</text>元
+      </view>
+
+      <view class='tips'>购买入店礼包即可减免</view>
+  </view>
+  <!-- ------------------- -->
+  <view class='coupon2' wx:for="{{list}}" wx:if="{{ 1 == indexs}}"  wx:key=''>
+      <view class='money'>
+        <text style="font-size:{{72-(money.length-3)*8}} rpx">{{item.couponAmount/100}}</text>元
+      </view>
+  </view>
+  <!-- ------------------- -->
+
+
+  <emptylist markword="无代金券" hidden="{{listShow}}"></emptylist>
+
+</view>

@@ -1,0 +1,12 @@
+<view class='title'>
+  <text>客服微信二维码</text>
+  <view>插入</view>
+</view>
+
+<view class='img'>
+  <image src='/images/tabbarimg/maomi_img.png'></image>
+</view>
+
+<view class='txt'>遗憾，您暂时无法加入群，您还不是{{AppName}}的{{lvConfig.lv3.name}}哟，赶快加入吧！</view>
+<view class='btn'>成为店主</view>
+<view class='btn'>成为{{lvConfig.lv3.name}}/{{lvConfig.lv2.name}}</view>

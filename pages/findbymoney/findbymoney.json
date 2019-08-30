@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "累计消费明细",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

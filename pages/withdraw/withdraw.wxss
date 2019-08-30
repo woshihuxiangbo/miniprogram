@@ -1,0 +1,199 @@
+/* pages/withdraw/withdraw.wxss */
+
+page {
+  font-size: 30rpx;
+}
+
+.tab {
+  border-top: 1rpx solid #f2f2f2;
+  border-bottom: 1rpx solid #f2f2f2;
+  display: flex;
+  padding: 33rpx 0;
+}
+
+.tab .item {
+  flex: 1;
+}
+
+.item .box {
+  text-align: left;
+  margin-left: 90rpx;
+}
+
+.tab .item:first-child {
+  border-right: 1rpx solid #999;
+}
+
+.item .lab {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.item .val {
+  font-size: 28rpx;
+  color: #de635c;
+  font-weight: bold;
+  margin-top: 15rpx;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+
+.money {
+  padding: 30rpx 30rpx 6rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.money .num {
+  display: flex;
+  align-items: baseline;
+  padding-top: 20rpx;
+  line-height: 60rpx;
+}
+
+.money .num .icon {
+  font-size: 36rpx;
+}
+
+.money .num input {
+  flex: 1;
+  font-size: 36rpx;
+  text-align: right;
+  color: #333;
+}
+
+.money .num .inppl {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.money .num .tips {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.packet {
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  display: flex;
+}
+
+.packet .left {
+  flex: 1;
+}
+
+.packet .tips {
+  color: #de635c;
+}
+
+.way .title {
+  line-height: 80rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+}
+
+.way .radio {
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  font-size: 30rpx;
+}
+
+.way .radio .icon {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.way .radio .txt {
+  flex: 1;
+}
+
+.info input {
+  display: block;
+  height: 30rpx;
+  padding-left: 30rpx;
+}
+
+.info .info-placeholder {
+  font-size: 24rpx;
+  line-height: 30rpx;
+  color: #999;
+}
+
+.info>view {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #f2f2f2;
+  padding: 0 30rpx;
+}
+
+.info>view view {
+  margin-right: 50rpx;
+}
+
+.btn {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20vh;
+}
+
+.btn .submit {
+  background: #de635c;
+  width: 600rpx;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  border-radius: 14rpx;
+}
+
+.btn .goDetail {
+  font-size: 24rpx;
+  line-height: 64rpx;
+  width: 200rpx;
+  margin: 0 auto;
+}
+
+.moreTips {
+  padding-top: 30rpx;
+  margin: 80rpx 30rpx 0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx 10rpx #f6f6f6;
+}
+
+.moreTips .bions {
+  display: block;
+  margin: 0 auto;
+  width: 116rpx;
+  height: 117rpx;
+}
+
+.moreTips .tip {
+  color: #de635c;
+  font-size: 32rpx;
+  text-align: center;
+  padding-top: 20rpx;
+}
+
+.moreTips .txt {
+  text-align: center;
+}
+
+.moreTips .txt  text {
+  color: #999;
+  font-size: 24rpx;
+  display: inline-block;
+  padding: 20rpx;
+}

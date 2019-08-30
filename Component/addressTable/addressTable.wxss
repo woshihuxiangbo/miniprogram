@@ -1,0 +1,52 @@
+/* Component/addressTable/addressTable.wxss */
+
+.btn_1, .btn_2 {
+  margin: 0;
+  background: transparent;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  border: 2rpx solid #999;
+  border-radius: 14rpx;
+}
+
+.mask {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.table {
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  width: 600rpx;
+  min-height: 240rpx;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 24rpx;
+  z-index: 999;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.table .txt {
+  padding-top: 30rpx;
+  line-height: 108rpx;
+  text-align: center;
+}
+
+.btn {
+  padding: 0 160rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn .btn_2 {
+  color: #de635c;
+  border-color: #de635c;
+}

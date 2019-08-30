@@ -1,0 +1,194 @@
+<!--pages/seckill_detail/seckill_detail.wxml-->
+<block wx:if='{{goods}}'>
+  <wxs src="../../utils/filter.wxs" module="filter" />
+  <view class="seckill_detail">
+    <view class="video_info">
+      <swiper style='height:100%;' autoplay='{{swipauto}}' indicator-dots circular indicator-active-color='#df625c' indicator-color='rgba(255,255,255,1)'>
+        <swiper-item wx:for='{{goods.slide}}' wx:key='index'>
+          <my-video id='g_1' wx:if='{{item.videoUrl}}' src='{{item.videoUrl}}' poster='{{ossUrl+item.picUrl}}' bindstart='videoStart' bindend='videoEnd'></my-video>
+          <image wx:else class='video_box' mode='aspectFill' src='{{ossUrl+item.picUrl}}' bindtap='prevImg' data-src='{{goods.slide}}'></image>
+        </swiper-item>
+      </swiper>
+      <!-- <view class='cutdown'>距离活动结束还剩
+      <text>{{countDown[0].hour}}</text> 小时
+      <text>{{countDown[0].minute}}</text> 分
+      <text>{{countDown[0].second}}</text>
+    </view> -->
+    </view>
+    <!-- 广播 -->
+    <swiper class="broadcast" vertical autoplay circular interval='2000' hidden='{{!(horn && horn.length)}}'>
+      <swiper-item wx:for='{{horn}}' wx:key=''>
+        <image class="broadcast_icon" src="http://img.chuangxiaozhu.com/wxapp/icons/horn.png"></image>
+        <view class='txt'>{{item.content||item.msgDataJson.value.content}}</view>
+      </swiper-item>
+    </swiper>
+    <!-- 商品 -->
+    <view class="goods_name">
+      <image hidden='{{empty}}' class="attention_icon" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/{{is_collect?'collect_icon_1':'collect_icon'}}.png" bindtap='addCollect'></image>
+      <view>{{goods.itemName}}</view>
+    </view>
+    <view class='effect'>{{goods.effect}}</view>
+    <view class="goods_price container-center">
+      <view class="old_price">￥{{currentAttr.marketPrice && filter.consMoney(currentAttr.marketPrice*(currentAttr.unit||1))}}</view>
+      <view class="now_price">价格 ￥{{(currentAttr.price) && filter.consMoney(currentAttr.price*(currentAttr.unit||1))}}</view>
+      <view class="get_much" wx:if='{{benefit[currentAttr.id]}}'>赚 ￥{{filter.consMoney(benefit[currentAttr.id])}}</view>
+    </view>
+    <!-- 权益 6 个 -->
+    <view class="equity">
+      <view class="item">
+        <image class="small_icon_Wh" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/trait_icon.png"></image>
+        <view class="name">闪电发货</view>
+      </view>
+      <view class="item">
+        <image class="small_icon_Wh" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/trait_icon.png"></image>
+        <view class="name">假一赔十</view>
+      </view>
+      <view class="item">
+        <image class="small_icon_Wh" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/trait_icon.png"></image>
+        <view class="name">七天无理由退货</view>
+      </view>
+      <!-- <view class="item" wx:if='{{goods.isFreeExpress || (goods.storeFreeExpress*1>0)}}'>
+        <image class="small_icon_Wh" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/trait_icon.png"></image>
+        <view class="name">{{goods.isFreeExpress?"免邮费": "满"+filter.consMoney(goods.storeFreeExpress)+"包邮"}}</view>
+      </view> -->
+      <view class="item" wx:if='{{goods.expressType==1}}'>
+        <image class="small_icon_Wh" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/trait_icon.png"></image>
+        <view class="name">免邮费</view>
+      </view>
+      <view class="item">
+        <image class="small_icon_Wh" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/trait_icon.png"></image>
+        <view class="name">{{empty?"已下架": (currentAttr.stock*1>0?("库存"+currentAttr.stock):"售罄")}}</view>
+      </view>
+      <view class="item">
+        <image class="small_icon_Wh" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/trait_icon.png"></image>
+        <view class="name">销量 {{currentAttr.salesCount + (goods.fictitiousSalesCount||0)}}</view>
+      </view>
+    </view>
+    <view hidden='{{empty}}' class="option_goods_parameter vertical-center" bindtap='attributeSelect'>
+      <view class="type_item horizontal-center">
+        <view class="label" hidden='{{!currentAttr}}'>属性：
+          <text>{{currentAttr.attr}} </text>
+          <text>{{currentAttr.num}}件 </text>
+        </view>
+        <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/icons/more.png"></image>
+      </view>
+    </view>
+    <view class="goods_other">
+      <!-- 质检报告 -->
+      <view hidden='{{!goods.aptitude}}' class="quality_report border_bottom_line horizontal-center" bindtap='prevImg' data-src='{{goods.aptitude}}'>
+        <text>质检报告</text>
+        <view class="go container-center">
+          <text class="target_page">查看更多</text>
+          <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/icons/more.png"></image>
+        </view>
+      </view>
+      <!-- 拼团 -->
+      <!-- <view class='group' wx:if='{{eventType==3}}'>
+        <view class='title'>参团成员</view>
+        <scroll-view class='scroll' scroll-x>
+          <view class='flex {{group.length<8 && "auto-center"}}'>
+            <view class='scorllItem' wx:for='{{group}}' wx:key=''>
+              <image class='avatar {{item.header || "avatarNoBorder"}}' src='{{item.header ||"http://img.chuangxiaozhu.com/wxapp/icons/icons_2/empty.png"}}'></image>
+            </view>
+            <view class='scorllItem'>
+              <image class='avatar avatarNoBorder' src='http://img.chuangxiaozhu.com/wxapp/icons/icons_2/pin.png'></image>
+            </view>
+          </view>
+        </scroll-view>
+      </view> -->
+      <!-- 评论列表 -->
+      <view class="comment_list">
+        <view class="common_tit horizontal-center">
+          <text>商品评价</text>
+          <view class="go container-center" bindtap='gocomment'>
+            <text class="target_page">查看更多</text>
+            <image class="go_icon" src="http://img.chuangxiaozhu.com/wxapp/icons/more.png"></image>
+          </view>
+        </view>
+        <view>
+          <view class='nocomment' hidden='{{commentList.length}}'>暂无评价</view>
+          <view class='comment_item' wx:for='{{commentList}}' wx:key=''>
+            <view class='info'>
+              <image class='avatar' src='{{item.header && (filter.checkHttp(item.header)?item.header:(ossUrl+item.header))}}'></image>
+              <view class='name'>{{item.disabled?"匿名":item.nikeName}}</view>
+              <view class='space'></view>
+              <view class='time'>{{filter.formatTime(item.createTime)}}</view>
+            </view>
+            <view class='commentTxt'>{{item.body}}</view>
+            <view class='img'>
+              <image wx:for='{{item.imgs}}' wx:key='' mode='aspectFill' wx:for-item='item_2' src='{{ossUrl+item_2}}' bindtap='prevImg' data-src='{{item_2}}'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="store horizontal-center" hidden='{{!store}}'>
+        <view class="store_info container-center">
+          <image class="store_head_pic" src="{{store.logo}}"></image>
+          <text class="store_name">{{store.name}}</text>
+          <text class="store_name">{{filter.fitStore(eventType)}}</text>
+        </view>
+        <view class="go_sotre" hidden='{{store.storeId==store.userId}}' bindtap='gostore'>进店逛逛</view>
+      </view>
+
+      <view class='goodsDetail'>
+        <!-- <view class="store_abstract" hidden='{{!detail}}'>
+        <image class="store_abstract_pic" src="{{detail.video}}"></image>
+        <image class='playIcon' src='http://img.chuangxiaozhu.com/wxapp/icons/startVideo_1.png'></image>
+      </view> -->
+        <!-- <view hidden='{{!detail}}'> -->
+        <!-- <view class='picTxtTit'>图文详情</view> -->
+
+        <view class='picTxt'>
+          <import src="../../wxParse/wxParse.wxml" />
+          <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+      </view>
+    </view>
+
+    <view class='bottomBar' wx:if="{{isShow==2}}">
+      <view class='bottomMask' hidden='{{!empty}}'>商品已下架</view>
+      <view class="submit_bar horizontal-center">
+        <view class="bar_left container-center">
+          <view class="go_page vertical-center" bindtap='goindex'>
+            <image class="page_icon" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/home_icon.png"></image>
+            <text class="page_name">首页</text>
+          </view>
+          <button class="go_page vertical-center" open-type='contact' session-from='skuId为{{currentAttr.id}}' send-message-title='{{goods.name}}' send-message-img='{{goods.thumbnail[0].src}}' show-message-card>
+            <image class="page_icon" src="http://img.chuangxiaozhu.com/wxapp/goodsDetail/service_icon.png"></image>
+            <text class="page_name">客服</text>
+          </button>
+        </view>
+        <view class="bar_right container-center" style='color:{{empty && "rgba(255,255,255,0.5)"}};'>
+          <view class="add_shop_car" bindtap='{{(!empty) && "addShopping"}}' hidden='{{eventType==5 || eventType==3}}'>加入购物车</view>
+          <button class="shop_confirm {{(eventType==5||eventType==3) && 'cicel'}}" style='color:{{empty && "rgba(255,255,255,0.5)"}};' open-type='getUserInfo' bindgetuserinfo="getUserInfo">{{appStoreId=="1"?"本宫要了":"立即购买"}}</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view hidden='{{!tableShow}}'>
+    <specification thumb='{{goods.thumbnail?ossUrl+goods.thumbnail:""}}' attribute='{{attribute}}' currentItem='{{currentItem}}' attributeStr='' attributeArrStr='sku' stock='{{currentAttr.stock}}' maxNum='{{filter.spotMaxNum(goods.maxCount,currentAttr.stock,currentAttr.unit)}}'
+      price='{{filter.consMoney(currentAttr.price*(currentAttr.unit||1))}}' tableShow='{{tableShow}}' bindswich='swichAttribute' bindnum='changeNum' bindconfirm='confirmAttribute' bindclose='closeAttribute'></specification>
+  </view>
+
+  <view hidden='{{!posterBtn}}'>
+    <attachbox wx:if='{{!empty}}' isShare='{{false}}' footShare='{{footShare}}' bottom='150' bindshare='shareTap'></attachbox>
+  </view>
+  <shareBar tableShow='{{shareBarShow}}' bindsave='savePoster'></shareBar>
+  <goodsPoster doCvs='{{doCvs}}' noPhotosAlbum='{{noPhotosAlbum}}' goodsImg='{{ossUrl+goods.thumbnail}}' goodsTitle='{{goods.itemName}}' goodsDesc='{{goods.effect}}' price='{{filter.consMoney(currentAttr.price*(currentAttr.unit||1))}}' marketPrice='{{filter.consMoney(currentAttr.marketPrice*(currentAttr.unit||1))}}'
+    itemId='{{goods.itemId}}' skuId='{{currentAttr.id}}' ownerId='{{store.userId}}' eventType='{{eventType}}' bindclose='closeTap' bindsavsuc='closeTap'></goodsPoster>
+</block>
+
+
+<view wx:if='{{(!goods) && empty}}' class='empty'>
+  <image class='emptyImg' src='http://img.chuangxiaozhu.com/wxapp/shopping/emptyImg.png'></image>
+  <view class='tips'>
+    <view>你来晚了，商品下架了</view>
+    <image class='emptyEmoji' src='http://img.chuangxiaozhu.com/wxapp/shopping/emptyEmoji.png'></image>
+  </view>
+  <view class='btn' bindtap='goIndex'>去首页逛逛</view>
+</view>
+
+
+<modal modalHidden='{{modalHidden}}' binduserInfoSuc='userInfoSuc'></modal>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navtop": "/Component/navtop/navtop"
+  },
+  "navigationBarTitleText": "申请团长",
+  "navigationStyle": "custom"
+}

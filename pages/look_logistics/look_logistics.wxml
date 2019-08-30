@@ -1,0 +1,19 @@
+<!--pages/look_logistics/look_logistics.wxml-->
+<view class="look_logistics">
+    <view class="logistics_info">
+        <image class="goods_pic" src="{{ossUrl+thumbnail}}"></image>
+        <view class="goods_logistics">
+            <!-- <view class="express_info status">物流状态：运输中</view> -->
+            <view class="express_info dhl">快递公司：{{expressCompany}}</view>
+            <view class="express_info experss_number">快递单号：{{expressId}}</view>
+        </view>
+    </view>
+
+    <view class="skep_info">
+        <view class="skep_tit">物流跟踪</view>
+
+        <skeps skepsData="{{expressData}}" addrStr="context" dateStr="time"></skeps>
+    </view>
+
+    
+</view>

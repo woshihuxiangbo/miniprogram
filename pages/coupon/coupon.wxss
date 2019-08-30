@@ -1,0 +1,110 @@
+/* pages/coupon/coupon.wxss */
+
+page {
+  font-size: 28rpx;
+  color: #333;
+}
+button {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+}
+.coupon {
+  margin: 30rpx auto;
+  width: 690rpx;
+  height: 260rpx;
+  background: url('http://ws3.sinaimg.cn/large/005BYqpgly1g03pm7ma84j30j6078aa0.jpg') 0 0/cover no-repeat;
+  box-shadow: 0 5rpx 15rpx 15rpx #ededed;
+  border-radius: 20rpx;
+  position: relative;
+}
+.coupon2{
+  margin: 30rpx auto;
+  width: 690rpx;
+  height: 260rpx;
+  background: url('http://s2.ax1x.com/2019/03/26/AUfT39.png') 0 0/cover no-repeat;
+  box-shadow: 0 5rpx 15rpx 15rpx #ededed;
+  border-radius: 20rpx;
+  position: relative;
+}
+.coupon .title {
+  font-size: 36rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+  color: #de635c;
+  text-align: center;
+  position: absolute;
+  width: 310rpx;
+  top: 70rpx;
+}
+
+.coupon .bottom {
+  width: 310rpx;
+  position: absolute;
+  bottom: 30rpx;
+}
+
+.coupon .time {
+  font-size: 20rpx;
+  color: #de635c;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.coupon .btn {
+  margin-top: 16rpx;
+  height: 40rpx;
+}
+
+.coupon .btn button {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  background: #de635c;
+  color: #fff;
+  position: absolute;
+  padding: 0 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.coupon .money, .coupon2 .money{
+  position: absolute;
+  right: 76rpx;
+  top: 46rpx;
+  color: #fff;
+  font-weight: bold;
+  height: 114rpx;
+  line-height: 114rpx;
+  min-width: 160rpx;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.coupon .money text {
+  font-size: 72rpx;
+}
+
+.coupon .tips {
+  width: 334rpx;
+  font-size: 24rpx;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  bottom: 60rpx;
+  color: #fff;
+}
+.tab{
+  border:1rpx solid #f2f2f2;
+  display: flex;
+  align-items: center;
+}
+.tab .item{
+  line-height: 70rpx;
+  flex:1;
+  text-align: center;
+}
+.tab .active{
+  border-bottom:5rpx solid #de635c;
+}

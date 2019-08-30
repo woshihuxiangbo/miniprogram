@@ -1,0 +1,4 @@
+<view class="box" hidden="{{hidden}}">
+    <view class="word">{{markword}}</view>
+    <navigator hidden='{{!btnShow}}' url="/pages/index/index" open-type="switchTab" class="link" hover-class="none">去首页逛逛</navigator>
+</view>

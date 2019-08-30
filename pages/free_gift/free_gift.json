@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "goodsNum":"/Component/goodsNum/goodsNum"
+  },
+  "navigationBarBackgroundColor":"#db665f",
+  "navigationBarTitleText": "免费领礼品",
+  "navigationBarTextStyle":"white"
+}
